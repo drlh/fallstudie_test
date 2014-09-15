@@ -6,5 +6,6 @@ public class Test2 {
 		System.out.println("Guudee, Yolo");
 		
 		//ihr seid doch alle bleed
+		/* blub di blub. Kommentare so damit wir die Doku automatisch erstellen können :) */
 	}
 }
