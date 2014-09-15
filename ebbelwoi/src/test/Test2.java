@@ -9,7 +9,7 @@ public class Test2 {
 	
 		while (true) {
 			System.out.println("Wo ist Greg?");
-			
+			Thread.sleep(1000);
 		}
 	
 	}
