@@ -26,11 +26,13 @@ import net.miginfocom.swing.MigLayout;
 import java.awt.FlowLayout;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JEditorPane;
+import java.awt.Color;
+import java.awt.SystemColor;
 
 public class mockGUI extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField txtFirmenname;
 
 	/**
 	 * Launch the application.
@@ -53,7 +55,7 @@ public class mockGUI extends JFrame {
 	 */
 	public mockGUI() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 829, 507);
+		setBounds(100, 100, 1071, 532);
 		
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
@@ -83,29 +85,20 @@ public class mockGUI extends JFrame {
 		panStart.setLayout(new BorderLayout(0, 0));
 		
 		JLabel lblTitleStart = new JLabel("Herzlich willkommen beim Unternehmensplanspiel \"Apfelweinkelterei\"");
-		lblTitleStart.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTitleStart.setEnabled(false);
+		lblTitleStart.setBackground(SystemColor.text);
+		lblTitleStart.setVerticalAlignment(SwingConstants.TOP);
+		lblTitleStart.setLabelFor(panStart);
+		lblTitleStart.setHorizontalAlignment(SwingConstants.LEFT);
 		lblTitleStart.setFont(new Font("Tahoma", Font.BOLD, 18));
 		panStart.add(lblTitleStart, BorderLayout.NORTH);
 		
-		JPanel panStartContent = new JPanel();
-		panStart.add(panStartContent, BorderLayout.CENTER);
-		
-		JLabel lblBeschFirmenname = new JLabel("Firmenname:");
-		lblBeschFirmenname.setHorizontalAlignment(SwingConstants.LEFT);
-		
-		txtFirmenname = new JTextField();
-		txtFirmenname.setHorizontalAlignment(SwingConstants.CENTER);
-		txtFirmenname.setColumns(10);
-		
-		JLabel lblBeschStandort = new JLabel("Standort:");
-		panStartContent.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
-		panStartContent.add(lblBeschFirmenname);
-		panStartContent.add(txtFirmenname);
-		panStartContent.add(lblBeschStandort);
-		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Frankfurt", "Limburg", "Wetter"}));
-		panStartContent.add(comboBox);
+		JEditorPane dtrpnHalloUndWillkommen = new JEditorPane();
+		dtrpnHalloUndWillkommen.setEnabled(false);
+		dtrpnHalloUndWillkommen.setBackground(SystemColor.text);
+		dtrpnHalloUndWillkommen.setText("Hallo und willkommen zu unserem Unternehmensplanspiel \"Apfelweinkelterei\".\r\n\r\nHier k\u00F6nnte eine gerkl\u00F6rung zu der ganzen kiste stehen daraufhin ist unten ein button der mit \"Jetzt spielen\" beschriftet sein k\u00F6nnte, somit in den unternehmenstab springt und die anderen tabs enabled");
+		dtrpnHalloUndWillkommen.setEditable(false);
+		panStart.add(dtrpnHalloUndWillkommen, BorderLayout.CENTER);
 		
 		JPanel panUnternehmen = new JPanel();
 		tabbedPane.addTab("Unternehmen", null, panUnternehmen, null);
