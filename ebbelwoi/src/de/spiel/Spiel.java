@@ -1,5 +1,5 @@
 package de.spiel;
 
-public class Start {
+public class Spiel {
 
 }
