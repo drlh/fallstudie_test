@@ -7,10 +7,8 @@ public abstract class Mitarbeiter
     String nachname, vorname;
     MitarbeiterStufe stufe;
 
-    String[] vornamen = { "Christina", "Yannick", "Niklas", "Leo", "Basti",
-	    "Fabi" };
-    String[] nachnamen = { "Junghans", "Sarnoch", "Miroll", "Hellwich",
-	    "Brehm", "Angst" };
+    String[] vornamen = { "Christina", "Yannick", "Niklas", "Leo", "Basti","Fabi" };
+    String[] nachnamen = { "Junghans", "Sarnoch", "Miroll", "Hellwich","Brehm", "Angst" };
 
     public Mitarbeiter()
     {
@@ -37,7 +35,7 @@ public abstract class Mitarbeiter
     @Override
 	public String toString() 
 	{
-		return this.getClass().getName()+"[vorname="+vorname+", nachname="+nachname+", stufe="+this.getStufe()+"]";
+		return this.getClass().getSimpleName()+"[vorname="+vorname+", nachname="+nachname+", stufe="+this.getStufe()+"]";
 	}
 
 }
