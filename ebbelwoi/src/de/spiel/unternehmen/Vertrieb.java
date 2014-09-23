@@ -1,5 +1,5 @@
 package de.spiel.unternehmen;
 
-public class Verkauf {
+public class Vertrieb {
 
 }
