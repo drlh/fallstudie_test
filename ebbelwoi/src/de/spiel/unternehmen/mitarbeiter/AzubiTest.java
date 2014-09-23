@@ -8,9 +8,11 @@ public class AzubiTest
 {
 
     @Test
-    public void testAzubi()
+    public void test()
     {
 	Azubi a = new Azubi();
+	a.upgrade();
+	a.upgrade();
 	System.out.println(a);
     }
 
