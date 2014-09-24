@@ -1,9 +1,10 @@
-package de.spiel.unternehmen.abteilung;
+package de.Junit;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import de.spiel.unternehmen.abteilung.Einkauf;
 import de.spiel.unternehmen.mitarbeiter.Vertrieb;
 
 public class EinkaufTest
