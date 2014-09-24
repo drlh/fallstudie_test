@@ -1,4 +1,4 @@
-package test;
+package de.spiel.GUI;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;

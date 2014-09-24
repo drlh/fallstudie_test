@@ -22,6 +22,11 @@ public class Qualitaetstufe
     {
         return aktuelleStufe;
     }
+    
+    public String getAktuelleBez()
+    {
+        return qualitaetStufenBez[aktuelleStufe];
+    }
 
     public void qualitaetMindern()
     {
