@@ -9,6 +9,7 @@ import de.spiel.unternehmen.mitarbeiter.*;
 public class Produktion extends Abteilung
 {
     private ArrayList<Maschine> maschinenpark;
+    private Produktionsprozess produktionsprozess;
     
     public Produktion()
     {
@@ -16,6 +17,7 @@ public class Produktion extends Abteilung
 	this.abteilungName = "Produktion";
 	this.mitarbeiter = new ArrayList<Mitarbeiter>();
 	this.maschinenpark = new ArrayList<Maschine>();
+	this.produktionsprozess = new Produktionsprozess(maschinenpark, mitarbeiter);
     }
 
     @Override
