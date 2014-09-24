@@ -19,11 +19,7 @@ public class Einkauf extends Abteilung
 	this.mitarbeiter.add(new Vertrieb());
     }
 
-    @Override
-    public void entlasseMitarbeiter(String name)
-    {
-	
-    }
+
 
     
 

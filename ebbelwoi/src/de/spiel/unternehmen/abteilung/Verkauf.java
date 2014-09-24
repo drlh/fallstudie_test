@@ -10,11 +10,5 @@ public class Verkauf extends Abteilung
 	
     }
 
-    @Override
-    public void entlasseMitarbeiter(String name)
-    {
-	// TODO Auto-generated method stub
-	
-    }
 
 }

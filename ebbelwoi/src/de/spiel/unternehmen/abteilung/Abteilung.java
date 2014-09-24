@@ -8,14 +8,13 @@ public abstract class Abteilung
 {
     protected String abteilungName;
     protected ArrayList<Mitarbeiter> mitarbeiter;
-    
+
     public Abteilung()
     {
 	
     }
 
     public abstract void addMitarbeiter();
-    public abstract void entlasseMitarbeiter(String name);
 
     public Mitarbeiter get(int arg0)
     {
@@ -26,17 +25,15 @@ public abstract class Abteilung
     {
 	return mitarbeiter.remove(arg0);
     }
+
     public boolean remove(Object arg0)
     {
 	return mitarbeiter.remove(arg0);
     }
-    
+
     public int size()
     {
 	return mitarbeiter.size();
     }
 
-
-    
-    
 }
