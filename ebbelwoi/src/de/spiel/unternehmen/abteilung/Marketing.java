@@ -10,7 +10,7 @@ public class Marketing extends Abteilung
     public Marketing()
     {
 	super();
-	this.abteilungName = "Einkauf";
+	this.abteilungName = "Marketing";
 	this.mitarbeiter = new ArrayList<Mitarbeiter>();
     }
 

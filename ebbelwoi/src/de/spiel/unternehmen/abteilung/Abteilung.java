@@ -1,7 +1,6 @@
 package de.spiel.unternehmen.abteilung;
 
 import java.util.ArrayList;
-
 import de.spiel.unternehmen.mitarbeiter.*;
 
 public abstract class Abteilung
@@ -11,14 +10,24 @@ public abstract class Abteilung
 
     public Abteilung()
     {
-	
+
     }
 
     public abstract void addMitarbeiter();
 
+    public void addMitarbeiterO(Mitarbeiter obj)
+    {
+	this.mitarbeiter.add(obj);
+    }
+
     public Mitarbeiter get(int arg0)
     {
 	return mitarbeiter.get(arg0);
+    }
+
+    public ArrayList<Mitarbeiter> getMitarbeiterListe()
+    {
+	return this.mitarbeiter;
     }
 
     public Mitarbeiter remove(int arg0)
