@@ -1,7 +1,8 @@
-package de.spiel.unternehmen.abteilung;
+package de.spiel.unternehmen.abteilung.produktion;
 
 import java.util.ArrayList;
 
+import de.spiel.unternehmen.abteilung.Abteilung;
 import de.spiel.unternehmen.maschinen.Maschine;
 import de.spiel.unternehmen.mitarbeiter.*;
 

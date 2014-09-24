@@ -1,28 +1,28 @@
 package de.spiel.basic;
 
-public class Rohstoff
+public class Produkt
 {
     private String name;
     private double menge;
     private Qualitaetstufe qualitaet;
 
-    public Rohstoff()
+    public Produkt()
     {
-	this.name = "Äpfel";
+	this.name = "Apfelwein";
 	this.menge = 0.0;
 	this.qualitaet = new Qualitaetstufe();
     }
 
-    public Rohstoff(double menge)
+    public Produkt(double menge)
     {
-	this.name = "Äpfel";
+	this.name = "Apfelwein";
 	this.menge = menge;
 	this.qualitaet = new Qualitaetstufe();
     }
 
-    public Rohstoff(double menge, int qualitaet)
+    public Produkt(double menge, int qualitaet)
     {
-	this.name = "Äpfel";
+	this.name = "Apfelwein";
 	this.menge = menge;
 	this.qualitaet = new Qualitaetstufe(qualitaet);
     }
@@ -58,5 +58,4 @@ public class Rohstoff
     {
 	this.qualitaet.setAktuelleStufe(qualitaet);
     }
-
 }
