@@ -1,5 +1,15 @@
 package de.spiel.umwelt;
 
-public class Absatzmarkt {
+import java.util.ArrayList;
 
+import de.spiel.umwelt.absatz.Kunde;
+
+public class Absatzmarkt
+{
+    ArrayList<Kunde> kunden;
+
+    public Absatzmarkt()
+    {
+	kunden = new ArrayList<Kunde>();
+    }
 }
