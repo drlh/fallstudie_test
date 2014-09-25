@@ -59,4 +59,12 @@ public class Rohstoff
 	this.qualitaet.setAktuelleStufe(qualitaet);
     }
 
+    @Override
+    public String toString()
+    {
+	return "Rohstoff [name=" + name + ", menge=" + menge + ", qualitaet="+ qualitaet + "]";
+    }
+    
+    
+
 }

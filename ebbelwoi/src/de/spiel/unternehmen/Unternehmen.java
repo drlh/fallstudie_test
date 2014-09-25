@@ -7,16 +7,19 @@ import de.spiel.unternehmen.abteilung.produktion.*;
 public class Unternehmen
 {
     private Abteilung[] abteilung = new Abteilung[4];  
-    private Konto konto;
-    private Lager lager;
+    private static Konto konto;
+    private static Lager lager;
     
     public Unternehmen()
     {
     	initialisieren();
     }
     private void initialisieren(){
+	
     	Abteilung.setUnternehmen(this);
+    	
     	konto = new Konto("Kasse", 100000);
+    	lager = new Lager();
     	
     	abteilung[0] = new Einkauf();
     	abteilung[1] = new Verkauf();

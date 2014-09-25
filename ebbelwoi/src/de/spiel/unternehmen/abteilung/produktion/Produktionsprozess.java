@@ -14,14 +14,15 @@ public class Produktionsprozess
 	// TODO Auto-generated constructor stub
     }
 
-	public ArrayList<Produkt> produzieren(ArrayList<Rohstoff> rohstoffe, float produktionsFaktor) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    public ArrayList<Produkt> produzieren(ArrayList<Rohstoff> rohstoffe, float produktionsFaktor)
+    {
+	// TODO Auto-generated method stub
+	return null;
+    }
 
-	public float berechneFaktor(ArrayList<Maschine> maschinenpark,
-			ArrayList<Mitarbeiter> mitarbeiter) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+    public float berechneFaktor(ArrayList<Maschine> maschinenpark, ArrayList<Mitarbeiter> mitarbeiter)
+    {
+	// TODO Auto-generated method stub
+	return 0;
+    }
 }

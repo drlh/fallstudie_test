@@ -1,4 +1,4 @@
-package de.spiel.absatzmarkt;
+package de.spiel.umwelt;
 
 public class Absatzmarkt {
 

@@ -22,12 +22,12 @@ public abstract class Abteilung
 	Abteilung.unternehmen = unternehmen;
     }
 
-    protected Konto getKonto()
+    public Konto getKonto()
     {
 	return unternehmen.getKonto();
     }
 
-    protected Lager getLager()
+    public Lager getLager()
     {
 	return unternehmen.getLager();
     }

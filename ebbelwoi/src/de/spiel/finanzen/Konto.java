@@ -23,7 +23,7 @@ public class Konto {
 	}
 
 	// OTHER METHODS
-	protected boolean einzahlen(double betrag, String abtName, String transTyp) {
+	public boolean einzahlen(double betrag, String abtName, String transTyp) {
 		liste.add(new Transaktion(betrag, abtName, transTyp));
 		if (betrag > 0) {
 			this.kontoStand += betrag;
@@ -33,7 +33,7 @@ public class Konto {
 		}
 	}
 
-	protected boolean auszahlen(double betrag, String abtName, String transTyp) {
+	public boolean auszahlen(double betrag, String abtName, String transTyp) {
 		liste.add(new Transaktion(betrag, abtName, transTyp));
 		if (betrag > 0) {
 			double div = kontoStand - betrag;

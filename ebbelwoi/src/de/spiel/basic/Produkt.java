@@ -58,4 +58,12 @@ public class Produkt
     {
 	this.qualitaet.setAktuelleStufe(qualitaet);
     }
+
+    @Override
+    public String toString()
+    {
+	return "Produkt [name=" + name + ", menge=" + menge + ", qualitaet="+ qualitaet + "]";
+    }
+    
+    
 }
