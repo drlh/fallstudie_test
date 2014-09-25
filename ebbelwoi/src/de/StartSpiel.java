@@ -1,5 +1,8 @@
 package de;
 
-public class StartSpiel {
+import de.spiel.Spiel;
 
+public class StartSpiel 
+{
+    Spiel spiel = new Spiel();
 }

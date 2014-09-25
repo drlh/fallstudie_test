@@ -9,11 +9,25 @@ public class Spieler
     
     public Spieler()
     {
-	this.name = "";
+	this.name = "kein Name";
+	this.unternehmen = new Unternehmen();
     }
     
     public Spieler(String name)
     {
 	this.name = name;
+	this.unternehmen = new Unternehmen();
     }
+
+    
+    public String getName()
+    {
+        return name;
+    }
+    public Unternehmen getUnternehmen()
+    {
+        return unternehmen;
+    }
+    
+    
 }

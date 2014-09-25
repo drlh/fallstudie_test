@@ -1,5 +1,6 @@
 package de.spiel.unternehmen;
 
+import de.spiel.finanzen.Konto;
 import de.spiel.unternehmen.abteilung.*;
 import de.spiel.unternehmen.abteilung.produktion.*;
 
@@ -11,6 +12,8 @@ public class Unternehmen
     private Produktion produktion;
     private Lager lager;
     
+    private Konto kasse;
+    
     public Unternehmen()
     {
 	this.einkauf = new Einkauf();
@@ -18,6 +21,7 @@ public class Unternehmen
 	this.marketing = new Marketing();
 	this.produktion = new Produktion();
 	this.lager = new Lager();
+	this.kasse  = new Konto("Kasse", 100000);
     }
 
     public Einkauf getEinkauf()
