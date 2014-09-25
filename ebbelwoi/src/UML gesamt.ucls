@@ -3,7 +3,7 @@
   associations="true" dependencies="false" nesting-relationships="true">  
   <class id="1" language="java" name="de.spiel.unternehmen.mitarbeiter.Marketing" project="ebbelwoi" 
     file="/ebbelwoi/src/de/spiel/unternehmen/mitarbeiter/Marketing.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="529" y="1292"/>    
+    <position height="-1" width="-1" x="958" y="958"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -12,7 +12,7 @@
   </class>  
   <class id="2" language="java" name="de.spiel.unternehmen.mitarbeiter.Azubi" project="ebbelwoi" 
     file="/ebbelwoi/src/de/spiel/unternehmen/mitarbeiter/Azubi.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="556" y="1552"/>    
+    <position height="-1" width="-1" x="1089" y="1140"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -21,7 +21,7 @@
   </class>  
   <class id="3" language="java" name="de.spiel.unternehmen.mitarbeiter.Geselle" project="ebbelwoi" 
     file="/ebbelwoi/src/de/spiel/unternehmen/mitarbeiter/Geselle.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="789" y="1552"/>    
+    <position height="-1" width="-1" x="1336" y="1130"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -30,7 +30,7 @@
   </class>  
   <class id="4" language="java" name="de.spiel.unternehmen.mitarbeiter.Vertrieb" project="ebbelwoi" 
     file="/ebbelwoi/src/de/spiel/unternehmen/mitarbeiter/Vertrieb.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="689" y="1424"/>    
+    <position height="-1" width="-1" x="1187" y="962"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -39,7 +39,7 @@
   </class>  
   <class id="5" language="java" name="de.spiel.unternehmen.mitarbeiter.Mitarbeiter" project="ebbelwoi" 
     file="/ebbelwoi/src/de/spiel/unternehmen/mitarbeiter/Mitarbeiter.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="807" y="1185"/>    
+    <position height="-1" width="-1" x="1251" y="726"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -48,7 +48,7 @@
   </class>  
   <class id="6" language="java" name="de.spiel.unternehmen.mitarbeiter.Meister" project="ebbelwoi" 
     file="/ebbelwoi/src/de/spiel/unternehmen/mitarbeiter/Meister.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1022" y="1552"/>    
+    <position height="-1" width="-1" x="1550" y="1137"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -58,7 +58,7 @@
   <class id="7" language="java" name="de.spiel.unternehmen.mitarbeiter.Produktionsmitarbeiter" project="ebbelwoi" 
     file="/ebbelwoi/src/de/spiel/unternehmen/mitarbeiter/Produktionsmitarbeiter.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="922" y="1423"/>    
+    <position height="-1" width="-1" x="1452" y="965"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -67,7 +67,7 @@
   </class>  
   <class id="8" language="java" name="de.spiel.unternehmen.maschinen.Maschine" project="ebbelwoi" 
     file="/ebbelwoi/src/de/spiel/unternehmen/maschinen/Maschine.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1025" y="798"/>    
+    <position height="-1" width="-1" x="445" y="1012"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -76,7 +76,7 @@
   </class>  
   <class id="9" language="java" name="de.spiel.unternehmen.maschinen.MaschineM3" project="ebbelwoi" 
     file="/ebbelwoi/src/de/spiel/unternehmen/maschinen/MaschineM3.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1056" y="930"/>    
+    <position height="-1" width="-1" x="526" y="1168"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -85,7 +85,7 @@
   </class>  
   <class id="10" language="java" name="de.spiel.unternehmen.maschinen.MaschineM2" project="ebbelwoi" 
     file="/ebbelwoi/src/de/spiel/unternehmen/maschinen/MaschineM2.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="816" y="982"/>    
+    <position height="-1" width="-1" x="318" y="1200"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -94,7 +94,7 @@
   </class>  
   <class id="11" language="java" name="de.spiel.unternehmen.maschinen.MaschineM1" project="ebbelwoi" 
     file="/ebbelwoi/src/de/spiel/unternehmen/maschinen/MaschineM1.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="780" y="859"/>    
+    <position height="-1" width="-1" x="108" y="1179"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -103,7 +103,7 @@
   </class>  
   <class id="12" language="java" name="de.spiel.unternehmen.abteilung.Verkauf" project="ebbelwoi" 
     file="/ebbelwoi/src/de/spiel/unternehmen/abteilung/Verkauf.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="106" width="185" x="79" y="534"/>    
+    <position height="-1" width="-1" x="17" y="439"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -112,159 +112,105 @@
   </class>  
   <class id="13" language="java" name="de.spiel.unternehmen.abteilung.Einkauf" project="ebbelwoi" 
     file="/ebbelwoi/src/de/spiel/unternehmen/abteilung/Einkauf.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="106" width="185" x="304" y="534"/>    
+    <position height="-1" width="-1" x="16" y="579"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="14" language="java" name="de.spiel.unternehmen.abteilung.Abteilung" project="ebbelwoi" 
-    file="/ebbelwoi/src/de/spiel/unternehmen/abteilung/Abteilung.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="214" y="1180"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
-      visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="15" language="java" name="de.spiel.unternehmen.abteilung.Lager" project="ebbelwoi" 
-    file="/ebbelwoi/src/de/spiel/unternehmen/abteilung/Lager.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1282" y="-1"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
-      visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="16" language="java" name="de.spiel.unternehmen.abteilung.Marketing" project="ebbelwoi" 
+  <class id="14" language="java" name="de.spiel.unternehmen.abteilung.Marketing" project="ebbelwoi" 
     file="/ebbelwoi/src/de/spiel/unternehmen/abteilung/Marketing.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="106" width="185" x="529" y="534"/>    
+    <position height="-1" width="-1" x="21" y="707"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="17" language="java" name="de.spiel.unternehmen.abteilung.produktion.Produktion" project="ebbelwoi" 
+  <class id="15" language="java" name="de.spiel.unternehmen.abteilung.produktion.Produktion" project="ebbelwoi" 
     file="/ebbelwoi/src/de/spiel/unternehmen/abteilung/produktion/Produktion.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="916" y="602"/>    
+    <position height="-1" width="-1" x="197" y="864"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="18" language="java" name="de.spiel.unternehmen.abteilung.produktion.Produktionsprozess" project="ebbelwoi" 
+  <class id="16" language="java" name="de.spiel.unternehmen.abteilung.produktion.Produktionsprozess" project="ebbelwoi" 
     file="/ebbelwoi/src/de/spiel/unternehmen/abteilung/produktion/Produktionsprozess.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1404" y="802"/>    
+    <position height="-1" width="-1" x="98" y="1024"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="19" language="java" name="de.spiel.unternehmen.Unternehmen" project="ebbelwoi" 
-    file="/ebbelwoi/src/de/spiel/unternehmen/Unternehmen.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="664" y="138"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
-      visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="20" language="java" name="de.spiel.finanzen.Konto" project="ebbelwoi" 
-    file="/ebbelwoi/src/de/spiel/finanzen/Konto.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1124" y="333"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
-      visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="21" language="java" name="de.spiel.finanzen.Transaktion" project="ebbelwoi" 
+  <class id="17" language="java" name="de.spiel.finanzen.Transaktion" project="ebbelwoi" 
     file="/ebbelwoi/src/de/spiel/finanzen/Transaktion.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1502" y="554"/>    
+    <position height="-1" width="-1" x="1250" y="-82"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="22" language="java" name="de.spiel.finanzen.Auszahlung" project="ebbelwoi" 
-    file="/ebbelwoi/src/de/spiel/finanzen/Auszahlung.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1752" y="854"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
-      visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="23" language="java" name="de.spiel.finanzen.Einzahlung" project="ebbelwoi" 
-    file="/ebbelwoi/src/de/spiel/finanzen/Einzahlung.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1763" y="666"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
-      visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="24" language="java" name="de.spiel.basic.stufen.MitarbeiterStufe" project="ebbelwoi" 
+  <class id="18" language="java" name="de.spiel.basic.stufen.MitarbeiterStufe" project="ebbelwoi" 
     file="/ebbelwoi/src/de/spiel/basic/stufen/MitarbeiterStufe.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1207" y="1040"/>    
+    <position height="-1" width="-1" x="947" y="734"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="25" language="java" name="de.spiel.basic.stufen.Stufe" project="ebbelwoi" 
+  <class id="19" language="java" name="de.spiel.basic.stufen.Stufe" project="ebbelwoi" 
     file="/ebbelwoi/src/de/spiel/basic/stufen/Stufe.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1275" y="1233"/>    
+    <position height="-1" width="-1" x="728" y="806"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="26" language="java" name="de.spiel.basic.stufen.MaschinenStufen" project="ebbelwoi" 
+  <class id="20" language="java" name="de.spiel.basic.stufen.MaschinenStufen" project="ebbelwoi" 
     file="/ebbelwoi/src/de/spiel/basic/stufen/MaschinenStufen.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1088" y="1221"/>    
+    <position height="-1" width="-1" x="509" y="848"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="27" language="java" name="de.spiel.basic.Rohstoff" project="ebbelwoi" 
+  <class id="21" language="java" name="de.spiel.basic.Rohstoff" project="ebbelwoi" 
     file="/ebbelwoi/src/de/spiel/basic/Rohstoff.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1649" y="2"/>    
+    <position height="-1" width="-1" x="1677" y="218"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="28" language="java" name="de.spiel.basic.Produkt" project="ebbelwoi" 
+  <class id="22" language="java" name="de.spiel.basic.Produkt" project="ebbelwoi" 
     file="/ebbelwoi/src/de/spiel/basic/Produkt.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1514" y="296"/>    
+    <position height="-1" width="-1" x="1542" y="512"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="29" language="java" name="de.spiel.basic.Qualitaetstufe" project="ebbelwoi" 
+  <class id="23" language="java" name="de.spiel.basic.Qualitaetstufe" project="ebbelwoi" 
     file="/ebbelwoi/src/de/spiel/basic/Qualitaetstufe.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1860" y="297"/>    
+    <position height="-1" width="-1" x="1888" y="513"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="30" language="java" name="de.spiel.Spiel" project="ebbelwoi" file="/ebbelwoi/src/de/spiel/Spiel.java" 
+  <class id="24" language="java" name="de.spiel.Spiel" project="ebbelwoi" file="/ebbelwoi/src/de/spiel/Spiel.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="189" y="183"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
@@ -273,7 +219,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="31" language="java" name="de.spiel.Spieler" project="ebbelwoi" file="/ebbelwoi/src/de/spiel/Spieler.java" 
+  <class id="25" language="java" name="de.spiel.Spieler" project="ebbelwoi" file="/ebbelwoi/src/de/spiel/Spieler.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="188" y="-34"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
@@ -282,7 +228,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="32" language="java" name="de.StartSpiel" project="ebbelwoi" file="/ebbelwoi/src/de/StartSpiel.java" 
+  <class id="26" language="java" name="de.StartSpiel" project="ebbelwoi" file="/ebbelwoi/src/de/StartSpiel.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="174" y="359"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
@@ -291,218 +237,230 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <generalization id="33">    
-    <end type="SOURCE" refId="13"/>    
-    <end type="TARGET" refId="14"/>  
-  </generalization>  
-  <association id="34">    
-    <end type="SOURCE" refId="19" navigable="false">      
-      <attribute id="35" name="kasse"/>      
-      <multiplicity id="36" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="20" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="37">    
-    <end type="SOURCE" refId="16"/>    
-    <end type="TARGET" refId="14"/>  
-  </generalization>  
-  <generalization id="38">    
-    <end type="SOURCE" refId="11"/>    
-    <end type="TARGET" refId="8"/>  
-  </generalization>  
-  <generalization id="39">    
-    <end type="SOURCE" refId="9"/>    
-    <end type="TARGET" refId="8"/>  
-  </generalization>  
-  <association id="40">    
-    <end type="SOURCE" refId="30" navigable="false">      
-      <attribute id="41" name="spieler"/>      
-      <multiplicity id="42" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="31" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="43">    
-    <end type="SOURCE" refId="27" navigable="false">      
-      <attribute id="44" name="qualitaet"/>      
-      <multiplicity id="45" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="29" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="46">    
-    <end type="SOURCE" refId="15" navigable="false">      
-      <attribute id="47" name="lagerlisteProdukt"/>      
-      <multiplicity id="48" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="28" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="49">    
-    <end type="SOURCE" refId="19" navigable="false">      
-      <attribute id="50" name="produktion"/>      
-      <multiplicity id="51" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="17" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="52">    
+  <class id="27" language="java" name="de.spiel.unternehmen.abteilung.Abteilung" project="ebbelwoi" 
+    file="/ebbelwoi/src/de/spiel/unternehmen/abteilung/Abteilung.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="261" width="232" x="452" y="356"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="28" language="java" name="de.spiel.finanzen.Konto" project="ebbelwoi" 
+    file="/ebbelwoi/src/de/spiel/finanzen/Konto.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="261" width="157" x="856" y="-148"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="29" language="java" name="de.spiel.unternehmen.abteilung.Lager" project="ebbelwoi" 
+    file="/ebbelwoi/src/de/spiel/unternehmen/abteilung/Lager.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="261" width="246" x="941" y="216"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="30" language="java" name="de.spiel.unternehmen.Unternehmen" project="ebbelwoi" 
+    file="/ebbelwoi/src/de/spiel/unternehmen/Unternehmen.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="568" y="68"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <generalization id="31">    
     <end type="SOURCE" refId="1"/>    
     <end type="TARGET" refId="5"/>  
   </generalization>  
-  <generalization id="53">    
-    <end type="SOURCE" refId="10"/>    
-    <end type="TARGET" refId="8"/>  
-  </generalization>  
-  <generalization id="54">    
-    <end type="SOURCE" refId="6"/>    
+  <generalization id="32">    
+    <end type="SOURCE" refId="3"/>    
     <end type="TARGET" refId="7"/>  
   </generalization>  
-  <association id="55">    
-    <end type="SOURCE" refId="19" navigable="false">      
-      <attribute id="56" name="lager"/>      
-      <multiplicity id="57" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="15" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="58">    
-    <end type="SOURCE" refId="32" navigable="false">      
-      <attribute id="59" name="spiel"/>      
-      <multiplicity id="60" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="30" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="61">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="62" name="stufe"/>      
-      <multiplicity id="63" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="24" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="64">    
-    <end type="SOURCE" refId="22"/>    
-    <end type="TARGET" refId="21"/>  
-  </generalization>  
-  <association id="65">    
-    <end type="SOURCE" refId="28" navigable="false">      
-      <attribute id="66" name="qualitaet"/>      
-      <multiplicity id="67" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="29" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="68">    
-    <end type="SOURCE" refId="26"/>    
-    <end type="TARGET" refId="25"/>  
-  </generalization>  
-  <association id="69">    
-    <end type="SOURCE" refId="19" navigable="false">      
-      <attribute id="70" name="einkauf"/>      
-      <multiplicity id="71" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="13" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="72">    
+  <association id="33">    
     <end type="SOURCE" refId="15" navigable="false">      
-      <attribute id="73" name="lagerlisteRohstoffe"/>      
-      <multiplicity id="74" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="27" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="75">    
-    <end type="SOURCE" refId="19" navigable="false">      
-      <attribute id="76" name="marketing"/>      
-      <multiplicity id="77" minimum="0" maximum="1"/>    
+      <attribute id="34" name="produktionsprozess"/>      
+      <multiplicity id="35" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="16" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="78">    
-    <end type="SOURCE" refId="19" navigable="false">      
-      <attribute id="79" name="verkauf"/>      
-      <multiplicity id="80" minimum="0" maximum="1"/>    
+  <generalization id="36">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="27"/>  
+  </generalization>  
+  <generalization id="37">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="27"/>  
+  </generalization>  
+  <association id="38">    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="39" name="lagerlisteRohstoffe"/>      
+      <multiplicity id="40" minimum="0" maximum="2147483647"/>    
     </end>    
-    <end type="TARGET" refId="12" navigable="true"/>    
+    <end type="TARGET" refId="21" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="81">    
-    <end type="SOURCE" refId="23"/>    
-    <end type="TARGET" refId="21"/>  
-  </generalization>  
-  <generalization id="82">    
-    <end type="SOURCE" refId="24"/>    
-    <end type="TARGET" refId="25"/>  
-  </generalization>  
-  <association id="83">    
-    <end type="SOURCE" refId="14" navigable="false">      
-      <attribute id="84" name="mitarbeiter"/>      
-      <multiplicity id="85" minimum="0" maximum="2147483647"/>    
+  <association id="41">    
+    <end type="SOURCE" refId="25" navigable="false">      
+      <attribute id="42" name="unternehmen"/>      
+      <multiplicity id="43" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
+    <end type="TARGET" refId="30" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="86">    
+  <association id="44">    
+    <end type="SOURCE" refId="30" navigable="false">      
+      <attribute id="45" name="lager"/>      
+      <multiplicity id="46" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="29" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="47">    
+    <end type="SOURCE" refId="30" navigable="false">      
+      <attribute id="48" name="konto"/>      
+      <multiplicity id="49" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="28" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="50">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="8"/>  
+  </generalization>  
+  <generalization id="51">    
     <end type="SOURCE" refId="4"/>    
     <end type="TARGET" refId="5"/>  
   </generalization>  
-  <generalization id="87">    
-    <end type="SOURCE" refId="17"/>    
-    <end type="TARGET" refId="14"/>  
-  </generalization>  
-  <association id="88">    
-    <end type="SOURCE" refId="21" navigable="false">      
-      <attribute id="89" name="k"/>      
-      <multiplicity id="90" minimum="0" maximum="1"/>    
+  <association id="52">    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="53" name="lagerlisteProdukt"/>      
+      <multiplicity id="54" minimum="0" maximum="2147483647"/>    
     </end>    
-    <end type="TARGET" refId="20" navigable="true"/>    
+    <end type="TARGET" refId="22" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="91">    
-    <end type="SOURCE" refId="7"/>    
-    <end type="TARGET" refId="5"/>  
+  <generalization id="55">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="19"/>  
   </generalization>  
-  <generalization id="92">    
-    <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="14"/>  
+  <association id="56">    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="57" name="qualitaet"/>      
+      <multiplicity id="58" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="23" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="59">    
+    <end type="SOURCE" refId="27" navigable="false">      
+      <attribute id="60" name="unternehmen"/>      
+      <multiplicity id="61" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="30" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="62">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="27"/>  
   </generalization>  
-  <generalization id="93">    
-    <end type="SOURCE" refId="3"/>    
-    <end type="TARGET" refId="7"/>  
+  <association id="63">    
+    <end type="SOURCE" refId="21" navigable="false">      
+      <attribute id="64" name="qualitaet"/>      
+      <multiplicity id="65" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="23" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="66">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="8"/>  
   </generalization>  
-  <association id="94">    
-    <end type="SOURCE" refId="17" navigable="false">      
-      <attribute id="95" name="produktionsprozess"/>      
-      <multiplicity id="96" minimum="0" maximum="1"/>    
+  <generalization id="67">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="27"/>  
+  </generalization>  
+  <association id="68">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="69" name="stufe"/>      
+      <multiplicity id="70" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="18" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="97">    
-    <end type="SOURCE" refId="31" navigable="false">      
-      <attribute id="98" name="unternehmen"/>      
-      <multiplicity id="99" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="19" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="100">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="7"/>  
-  </generalization>  
-  <association id="101">    
-    <end type="SOURCE" refId="17" navigable="false">      
-      <attribute id="102" name="maschinenpark"/>      
-      <multiplicity id="103" minimum="0" maximum="2147483647"/>    
+  <association id="71">    
+    <end type="SOURCE" refId="15" navigable="false">      
+      <attribute id="72" name="maschinenpark"/>      
+      <multiplicity id="73" minimum="0" maximum="2147483647"/>    
     </end>    
     <end type="TARGET" refId="8" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
+  <association id="74">    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="75" name="spiel"/>      
+      <multiplicity id="76" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="24" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="77">    
+    <end type="SOURCE" refId="28" navigable="false">      
+      <attribute id="78" name="liste"/>      
+      <multiplicity id="79" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="80">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="7"/>  
+  </generalization>  
+  <generalization id="81">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="8"/>  
+  </generalization>  
+  <association id="82">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="83" name="spieler"/>      
+      <multiplicity id="84" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="25" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="85">    
+    <end type="SOURCE" refId="30" navigable="false">      
+      <attribute id="86" name="abteilung"/>      
+      <multiplicity id="87" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="27" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="88">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="5"/>  
+  </generalization>  
+  <generalization id="89">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="7"/>  
+  </generalization>  
+  <association id="90">    
+    <end type="SOURCE" refId="27" navigable="false">      
+      <attribute id="91" name="mitarbeiter"/>      
+      <multiplicity id="92" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="93">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="19"/>  
+  </generalization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    

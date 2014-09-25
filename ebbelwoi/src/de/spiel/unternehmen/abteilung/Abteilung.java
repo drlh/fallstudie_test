@@ -1,16 +1,35 @@
 package de.spiel.unternehmen.abteilung;
 
 import java.util.ArrayList;
-import de.spiel.unternehmen.mitarbeiter.*;
+
+import de.spiel.finanzen.*;
+import de.spiel.unternehmen.Unternehmen;
+import de.spiel.unternehmen.mitarbeiter.Mitarbeiter;
 
 public abstract class Abteilung
 {
     protected String abteilungName;
     protected ArrayList<Mitarbeiter> mitarbeiter;
 
+    private static Unternehmen unternehmen;
+
     public Abteilung()
     {
+    }
 
+    public static void setUnternehmen(Unternehmen unternehmen)
+    {
+	Abteilung.unternehmen = unternehmen;
+    }
+
+    protected Konto getKonto()
+    {
+	return unternehmen.getKonto();
+    }
+
+    protected Lager getLager()
+    {
+	return unternehmen.getLager();
     }
 
     public abstract void addMitarbeiter();

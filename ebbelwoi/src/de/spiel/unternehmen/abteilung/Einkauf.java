@@ -8,15 +8,16 @@ public class Einkauf extends Abteilung
 {
     public Einkauf()
     {
-	super();
-	this.abteilungName = "Einkauf";
-	this.mitarbeiter = new ArrayList<Mitarbeiter>();
+		super();
+		this.abteilungName = "Einkauf";
+		this.mitarbeiter = new ArrayList<Mitarbeiter>();
+		
     }
 
     @Override
     public void addMitarbeiter()
     {
-	this.mitarbeiter.add(new Vertrieb());
+    	this.mitarbeiter.add(new Vertrieb());
     }
 
 

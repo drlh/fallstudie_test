@@ -6,44 +6,51 @@ import de.spiel.unternehmen.abteilung.produktion.*;
 
 public class Unternehmen
 {
-    private Einkauf einkauf;
-    private Verkauf verkauf;
-    private Marketing marketing;
-    private Produktion produktion;
+    private Abteilung[] abteilung = new Abteilung[4];  
+    private Konto konto;
     private Lager lager;
-    
-    private Konto kasse;
     
     public Unternehmen()
     {
-	this.einkauf = new Einkauf();
-	this.verkauf = new Verkauf();
-	this.marketing = new Marketing();
-	this.produktion = new Produktion();
-	this.lager = new Lager();
-	this.kasse  = new Konto("Kasse", 100000);
+    	initialisieren();
+    }
+    private void initialisieren(){
+    	Abteilung.setUnternehmen(this);
+    	konto = new Konto("Kasse", 100000);
+    	
+    	abteilung[0] = new Einkauf();
+    	abteilung[1] = new Verkauf();
+    	abteilung[2] = new Marketing();
+    	abteilung[3] = new Produktion();
     }
 
     public Einkauf getEinkauf()
     {
-        return einkauf;
+        return (Einkauf)abteilung[0];
     }
     public Verkauf getVerkauf()
     {
-        return verkauf;
+    	return (Verkauf)abteilung[1];
     }
     public Marketing getMarketing()
     {
-        return marketing;
+    	return (Marketing)abteilung[2];
     }
     public Produktion getProduktion()
     {
-        return produktion;
-    }
-    public Lager getLager()
-    {
-        return lager;
-    }
+    	return (Produktion)abteilung[3];
+    }    
     
-    
+    public Abteilung getAbteilung(int nr){
+    	if(nr>3)
+    		return null;
+    	return abteilung[nr];
+    }
+
+	public Konto getKonto() {
+		return konto;
+	}
+	public Lager getLager() {
+		return lager;
+	}
 }

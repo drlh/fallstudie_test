@@ -1,22 +1,25 @@
 package de.spiel.finanzen;
 
-public abstract class Transaktion 
+public final class Transaktion 
 {
-	private Konto k;
-	private double betrag;
-	private int transaktionsNr;
+
+	private static int transaktionsNr;
 	
-	public Transaktion(Konto k, double betrag)
+	private double betrag;
+	private String abtName;
+	private String transTyp;
+	private int transNr;
+	
+	public Transaktion(double betrag, String abtName, String transTyp)
 	{
-		this.k = k;
+		transNr = transaktionsNr;
+		transaktionsNr++;
+		
 		this.betrag = betrag;
-		this.transaktionsNr = Konto.transkationsNr;
+		this.abtName = abtName;
+		this.transTyp = transTyp;
+		
 	}
-
-	public Konto getK() {
-		return k;
-	}
-
 	public double getBetrag() {
 		return betrag;
 	}
@@ -25,6 +28,16 @@ public abstract class Transaktion
 		return transaktionsNr;
 	}
 	
-	
+	public String getAbtName() {
+		return abtName;
+	}
+	public String getTransTyp() {
+		return transTyp;
+	}
+	@Override
+	public String toString() {
+		return "Transaktion [betrag=" + betrag + ", abtName=" + abtName
+				+ ", transTyp=" + transTyp + ", transNr=" + transNr + "]";
+	}
 	
 }
