@@ -2,12 +2,13 @@ package de.spiel.basic.stufen;
 
 public abstract class Stufe
 {
-    private int stufe = 0;
-    protected int[] bonus = new int[3];
-
+    private int stufe;
+    protected int[] bonus;
+    
     public Stufe()
     {
-
+	this.stufe = 0;
+	this.bonus =  new int[3];
     }
 
     public void upgrade()
