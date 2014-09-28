@@ -27,6 +27,13 @@ public class Produktion extends Abteilung
     @Override
     public void addMitarbeiter(){}
    
+    //GETTER
+    public ArrayList<Maschine> getMaschinenpark()
+    {
+        return maschinenpark;
+    }
+
+    
     //Mitarbeiter    
     public void addAzubi()
     {
@@ -52,8 +59,6 @@ public class Produktion extends Abteilung
      */
     public void produzieren()
     {
-	double ausbringungsmenge = 0.0;
-	
     	for (int i = 0; i < auftraege.size(); i++) 
     	{
 	    double menge = auftraege.get(i).getVerwendeterRohsoff().getMenge();
@@ -61,10 +66,26 @@ public class Produktion extends Abteilung
 	    double maschinenstufe = (double) auftraege.get(i).getProduzierendeMaschine().getStufe().getBonus()/100;
 	    double auswurf = auftraege.get(i).getProduzierendeMaschine().getAuswurf();
 	    
-	    ausbringungsmenge = (menge * (1 - (auswurf - maschinenstufe - ausbringungsmenge - produktivitaetMa)))*(1/3);
+	    double ausbringungsmenge = ((menge * (1 - (auswurf - maschinenstufe  - produktivitaetMa)))/3);
 	    
+	    //auf 2 Nachkommastellen runden
+	    ausbringungsmenge = Math.floor(ausbringungsmenge * 100)/100;
+	    
+	    this.getLager().addProdukt(new Produkt(ausbringungsmenge));
+	    System.out.println(ausbringungsmenge);
 	}
     	
-    	this.getLager().addProdukt(new Produkt(ausbringungsmenge));
+    	
+    	
+    	
     }
+
+    @Override
+    public String toString()
+    {
+	return "Produktion [maschinenpark=" + maschinenpark + ", auftraege="
+		+ auftraege + ", mitarbeiter=" + mitarbeiter + "]";
+    }
+    
+    
 }

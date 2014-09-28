@@ -65,4 +65,13 @@ public class Lager
     {
 	lagerlisteRohstoffe.remove(arg0);
     }
+
+    @Override
+    public String toString()
+    {
+	return "Lager [lagerlisteProdukt=" + lagerlisteProdukt
+		+ ", lagerlisteRohstoffe=" + lagerlisteRohstoffe + "]";
     }
+    
+    
+}

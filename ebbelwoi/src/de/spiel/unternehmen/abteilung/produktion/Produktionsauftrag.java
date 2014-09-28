@@ -24,6 +24,14 @@ public class Produktionsauftrag
     {
         return verwendeterRohsoff;
     }
+
+    @Override
+    public String toString()
+    {
+	return "Produktionsauftrag [produzierendeMaschine="
+		+ produzierendeMaschine + ", verwendeterRohsoff="
+		+ verwendeterRohsoff + "]";
+    }
     
     
     
