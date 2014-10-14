@@ -15,7 +15,7 @@ public class Unternehmen
     	initialisieren();
     }
     private void initialisieren(){
-	
+    	
     	Abteilung.setUnternehmen(this);
     	
     	konto = new Konto("Kasse", 100000);

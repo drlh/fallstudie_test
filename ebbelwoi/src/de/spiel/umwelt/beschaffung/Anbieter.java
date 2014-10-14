@@ -1,10 +1,19 @@
 package de.spiel.umwelt.beschaffung;
 
-public class Anbieter {
+import java.util.Random;
+import de.spiel.basic.Qualitaetstufe;
 
-	public double getAngebot() {
-		// TODO Auto-generated method stub
-		return 0;
+public class Anbieter {
+	double preis;
+	Qualitaetstufe stufe;
+	
+	public Anbieter(){
+		Random r = new Random();
+		preis = r.nextDouble();		
+	}
+
+	public double getPreis() {
+		return preis;
 	}
 
 }

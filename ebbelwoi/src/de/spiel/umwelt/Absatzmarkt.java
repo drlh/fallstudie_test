@@ -6,18 +6,22 @@ import de.spiel.umwelt.absatz.Kunde;
 
 public class Absatzmarkt {
 	ArrayList<Kunde> kunden;
+	ArrayList<Angebot> angeboteKneipen;
+	ArrayList<Angebot> angeboteSupermarkt;
 	double gesAbsatz;
 
 	public Absatzmarkt() {
+		// bei Spielstart: für jeden Spieler werden einige Kneipen und 1-2 Supermarktketten erzeugt
 		kunden = new ArrayList<Kunde>();
-		// wie wird befüllt?
+		angeboteKneipen = new ArrayList<Angebot>();
+		angeboteSupermarkt = new ArrayList<Angebot>();
 	}
 
-	public double getPotAbsatz() {
-		gesAbsatz = 0;
-		for (int i = 0; i < kunden.size(); i++) {
-			gesAbsatz += kunden.get(i).getAbsatz();
-		}
-		return gesAbsatz;
+	public ArrayList<Angebot> getKneipenAngebote() {
+		return angeboteKneipen;
+	}
+	
+	public ArrayList<Angebot> getSupermarktAngebote() {
+		return angeboteSupermarkt;
 	}
 }

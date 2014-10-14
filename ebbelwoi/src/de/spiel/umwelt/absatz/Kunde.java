@@ -1,10 +1,23 @@
 package de.spiel.umwelt.absatz;
 
+import java.util.Random;
+
 public class Kunde {
+	double menge;
+	double preis;
 	
-	public double getAbsatz() {
-		// TODO Auto-generated method stub
-		return 0;
+	public Kunde(){
+		Random r = new Random();
+		menge = r.nextDouble();
+		preis = r.nextDouble();		
+	}
+	
+	public double getMenge() {
+		return menge;
 	}
 
+	public double getPreis() {
+		return preis;
+	}
+	
 }

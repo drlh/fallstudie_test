@@ -6,62 +6,55 @@ import de.spiel.finanzenALT.*;
 import de.spiel.unternehmen.Unternehmen;
 import de.spiel.unternehmen.mitarbeiter.Mitarbeiter;
 
-public abstract class Abteilung
-{
-    protected String abteilungName;
-    protected ArrayList<Mitarbeiter> mitarbeiter;
+public abstract class Abteilung {
+	protected String abteilungName;
+	protected ArrayList<Mitarbeiter> mitarbeiter;
 
-    private static Unternehmen unternehmen;
+	private static Unternehmen unternehmen;
 
-    public Abteilung()
-    {
-    }
+	public Abteilung() {
+	}
 
-    public static void setUnternehmen(Unternehmen unternehmen)
-    {
-	Abteilung.unternehmen = unternehmen;
-    }
+	public static void setUnternehmen(Unternehmen unternehmen) {
+		Abteilung.unternehmen = unternehmen;
+	}
 
-    public Konto getKonto()
-    {
-	return unternehmen.getKonto();
-    }
+	public Konto getKonto() {
+		return unternehmen.getKonto();
+	}
 
-    public Lager getLager()
-    {
-	return unternehmen.getLager();
-    }
+	public static Unternehmen getUnternehmen() {
+		return unternehmen;
+	}
 
-    public abstract void addMitarbeiter();
+	public Lager getLager() {
+		return unternehmen.getLager();
+	}
 
-    public void addMitarbeiterO(Mitarbeiter obj)
-    {
-	this.mitarbeiter.add(obj);
-    }
+	public abstract void addMitarbeiter();
 
-    public Mitarbeiter get(int arg0)
-    {
-	return mitarbeiter.get(arg0);
-    }
+	public void addMitarbeiterO(Mitarbeiter obj) {
+		this.mitarbeiter.add(obj);
+	}
 
-    public ArrayList<Mitarbeiter> getMitarbeiterListe()
-    {
-	return this.mitarbeiter;
-    }
+	public Mitarbeiter get(int arg0) {
+		return mitarbeiter.get(arg0);
+	}
 
-    public Mitarbeiter remove(int arg0)
-    {
-	return mitarbeiter.remove(arg0);
-    }
+	public ArrayList<Mitarbeiter> getMitarbeiterListe() {
+		return this.mitarbeiter;
+	}
 
-    public boolean remove(Object arg0)
-    {
-	return mitarbeiter.remove(arg0);
-    }
+	public Mitarbeiter remove(int arg0) {
+		return mitarbeiter.remove(arg0);
+	}
 
-    public int size()
-    {
-	return mitarbeiter.size();
-    }
+	public boolean remove(Object arg0) {
+		return mitarbeiter.remove(arg0);
+	}
+
+	public int size() {
+		return mitarbeiter.size();
+	}
 
 }

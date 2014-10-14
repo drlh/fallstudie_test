@@ -1,15 +1,13 @@
 package de.spiel.umwelt.beschaffung;
 
 public class Bauer extends Anbieter {
-	private double angebot;
+	private final int STUFE = 6;
+	private final double MINP = 0.60;
+	private final double MAXP = 1.00;
 
-	public Bauer(double angebot) {
+	public Bauer() {
 		super();
-		this.angebot = angebot;
+		stufe.setAktuelleStufe(STUFE);
+		preis = Math.floor((preis * (MAXP - MINP) + MINP) * 100) / 100;
 	}
-
-	public double getAngebot() {
-		return angebot;
-	}
-
 }

@@ -1,15 +1,14 @@
 package de.spiel.umwelt.beschaffung;
 
 public class Grosshaendler extends Anbieter {
-	private double angebot;
+	private final int STUFE = 4;
+	private final double MINP = 0.40;
+	private final double MAXP = 0.70;
 
-	public Grosshaendler(double angebot) {
+	public Grosshaendler() {
 		super();
-		this.angebot = angebot;
-	}
-
-	public double getAngebot() {
-		return angebot;
+		stufe.setAktuelleStufe(STUFE);
+		preis = Math.floor((preis * (MAXP - MINP) + MINP) * 100) / 100;
 	}	
 	
 }
