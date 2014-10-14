@@ -2,7 +2,6 @@ package de.spiel.unternehmen.abteilung;
 
 import java.util.ArrayList;
 
-import de.spiel.finanzenALT.*;
 import de.spiel.unternehmen.Unternehmen;
 import de.spiel.unternehmen.mitarbeiter.Mitarbeiter;
 
@@ -19,9 +18,9 @@ public abstract class Abteilung {
 		Abteilung.unternehmen = unternehmen;
 	}
 
-	public Konto getKonto() {
-		return unternehmen.getKonto();
-	}
+//	public Konto getKonto() {
+//		return unternehmen.getKonto();
+//	}
 
 	public static Unternehmen getUnternehmen() {
 		return unternehmen;

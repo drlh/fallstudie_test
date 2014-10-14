@@ -20,7 +20,7 @@ public abstract class Konto
     public Konto(String name, double kontostand)
     {
 	this.name = name;
-	this.einzahlen(kontostand);
+	this.erhoehen(kontostand);
     }
 
     private void sollErhoehen(double betrag)
@@ -52,7 +52,7 @@ public abstract class Konto
     
     
 
-    public void einzahlen(double betrag)
+    public void erhoehen(double betrag)
     {
 	// Bestandskonten
 	// Aktiva
@@ -68,7 +68,7 @@ public abstract class Konto
 
     }
 
-    public void auszahlen(double betrag)
+    public void mindern(double betrag)
     {
 	// Bestandskonten
 	// Aktiv
@@ -84,4 +84,10 @@ public abstract class Konto
 
     }
 
+    
+    @Override
+    public String toString()
+    {
+	return "Konto[name="+name+" , soll="+soll+",haben="+haben+"]";       
+    }
 }

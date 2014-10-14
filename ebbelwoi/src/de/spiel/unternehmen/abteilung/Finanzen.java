@@ -1,13 +1,28 @@
 package de.spiel.unternehmen.abteilung;
 
+import java.util.HashMap;
+
+import de.spiel.finanzen.konto.*;
+import de.spiel.unternehmen.Unternehmen;
+
+import java.lang.System.*;
+
 public class Finanzen extends Abteilung
 {
+    private Kontenplan konten;
+
     public Finanzen()
     {
-	// TODO Auto-generated constructor stub
+	super();
+	this.abteilungName = "Finanzen";
+	this.konten = new Kontenplan();
+
     }
 
+
     @Override
-    public void addMitarbeiter() { }
+    // Wird nicht benutzt
+    public void addMitarbeiter() {}
+
 
 }
