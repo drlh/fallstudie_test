@@ -74,10 +74,6 @@ public class Produktion extends Abteilung
 	    this.getLager().addProdukt(new Produkt(ausbringungsmenge));
 	    System.out.println(ausbringungsmenge);
 	}
-    	
-    	
-    	
-    	
     }
 
     @Override

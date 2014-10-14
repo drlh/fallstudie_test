@@ -1,6 +1,6 @@
 package de.spiel.unternehmen;
 
-import de.spiel.finanzen.Konto;
+import de.spiel.finanzenALT.Konto;
 import de.spiel.unternehmen.abteilung.*;
 import de.spiel.unternehmen.abteilung.produktion.*;
 

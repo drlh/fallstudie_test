@@ -82,8 +82,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="10" language="java" name="de.spiel.finanzen.Konto" project="ebbelwoi" 
-    file="/ebbelwoi/src/de/spiel/finanzen/Konto.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="10" language="java" name="de.spiel.finanzenALT.Konto" project="ebbelwoi" 
+    file="/ebbelwoi/src/de/spiel/finanzenALT/Konto.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="232" width="293" x="1612" y="156"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -91,8 +91,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="11" language="java" name="de.spiel.finanzen.Transaktion" project="ebbelwoi" 
-    file="/ebbelwoi/src/de/spiel/finanzen/Transaktion.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="11" language="java" name="de.spiel.finanzenALT.Transaktion" project="ebbelwoi" 
+    file="/ebbelwoi/src/de/spiel/finanzenALT/Transaktion.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="2095" y="258"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -355,279 +355,279 @@
     </display>  
   </class>  
   <generalization id="40">    
-    <end type="SOURCE" refId="19"/>    
-    <end type="TARGET" refId="17"/>  
-  </generalization>  
-  <generalization id="41">    
-    <end type="SOURCE" refId="38"/>    
-    <end type="TARGET" refId="36"/>  
-  </generalization>  
-  <generalization id="42">    
-    <end type="SOURCE" refId="32"/>    
-    <end type="TARGET" refId="36"/>  
-  </generalization>  
-  <association id="43">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="44" name="spieler"/>      
-      <multiplicity id="45" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="3" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="46">    
-    <end type="SOURCE" refId="26"/>    
+    <end type="SOURCE" refId="25"/>    
     <end type="TARGET" refId="23"/>  
   </generalization>  
-  <generalization id="47">    
-    <end type="SOURCE" refId="30"/>    
-    <end type="TARGET" refId="28"/>  
-  </generalization>  
-  <generalization id="48">    
-    <end type="SOURCE" refId="29"/>    
-    <end type="TARGET" refId="28"/>  
-  </generalization>  
-  <generalization id="49">    
-    <end type="SOURCE" refId="34"/>    
-    <end type="TARGET" refId="38"/>  
-  </generalization>  
-  <association id="50">    
-    <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="51" name="unternehmen"/>      
-      <multiplicity id="52" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="20" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="53">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="54" name="umwelt"/>      
-      <multiplicity id="55" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="39" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="56">    
-    <end type="SOURCE" refId="18"/>    
-    <end type="TARGET" refId="17"/>  
-  </generalization>  
-  <generalization id="57">    
-    <end type="SOURCE" refId="15"/>    
-    <end type="TARGET" refId="16"/>  
-  </generalization>  
-  <association id="58">    
-    <end type="SOURCE" refId="23" navigable="false">      
-      <attribute id="59" name="unternehmen"/>      
-      <multiplicity id="60" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="20" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="61">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="62" name="qualitaet"/>      
-      <multiplicity id="63" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="64">    
-    <end type="SOURCE" refId="24" navigable="false">      
-      <attribute id="65" name="lagerlisteProdukt"/>      
-      <multiplicity id="66" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="67">    
-    <end type="SOURCE" refId="10" navigable="false">      
-      <attribute id="68" name="liste"/>      
-      <multiplicity id="69" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="11" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="70">    
-    <end type="SOURCE" refId="24" navigable="false">      
-      <attribute id="71" name="lagerlisteRohstoffe"/>      
-      <multiplicity id="72" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="73">    
-    <end type="SOURCE" refId="13" navigable="false">      
-      <attribute id="74" name="anbieter"/>      
-      <multiplicity id="75" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="17" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="76">    
-    <end type="SOURCE" refId="7"/>    
-    <end type="TARGET" refId="8"/>  
-  </generalization>  
-  <generalization id="77">    
-    <end type="SOURCE" refId="31"/>    
-    <end type="TARGET" refId="28"/>  
-  </generalization>  
-  <association id="78">    
-    <end type="SOURCE" refId="39" navigable="false">      
-      <attribute id="79" name="beschaffung"/>      
-      <multiplicity id="80" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="13" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="81">    
-    <end type="SOURCE" refId="21"/>    
-    <end type="TARGET" refId="23"/>  
-  </generalization>  
-  <association id="82">    
-    <end type="SOURCE" refId="36" navigable="false">      
-      <attribute id="83" name="stufe"/>      
-      <multiplicity id="84" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="7" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="85">    
+  <association id="41">    
     <end type="SOURCE" refId="28" navigable="false">      
-      <attribute id="86" name="stufe"/>      
-      <multiplicity id="87" minimum="0" maximum="1"/>    
+      <attribute id="42" name="stufe"/>      
+      <multiplicity id="43" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="9" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="88">    
-    <end type="SOURCE" refId="12" navigable="false">      
-      <attribute id="89" name="kunden"/>      
-      <multiplicity id="90" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="16" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="91">    
-    <end type="SOURCE" refId="33"/>    
-    <end type="TARGET" refId="38"/>  
-  </generalization>  
-  <generalization id="92">    
-    <end type="SOURCE" refId="14"/>    
-    <end type="TARGET" refId="16"/>  
-  </generalization>  
-  <association id="93">    
-    <end type="SOURCE" refId="26" navigable="false">      
-      <attribute id="94" name="auftraege"/>      
-      <multiplicity id="95" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="27" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="96">    
-    <end type="SOURCE" refId="35"/>    
-    <end type="TARGET" refId="36"/>  
-  </generalization>  
-  <association id="97">    
-    <end type="SOURCE" refId="20" navigable="false">      
-      <attribute id="98" name="lager"/>      
-      <multiplicity id="99" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="24" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="100">    
-    <end type="SOURCE" refId="25"/>    
+  <generalization id="44">    
+    <end type="SOURCE" refId="22"/>    
     <end type="TARGET" refId="23"/>  
   </generalization>  
-  <generalization id="101">    
-    <end type="SOURCE" refId="9"/>    
-    <end type="TARGET" refId="8"/>  
+  <generalization id="45">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="17"/>  
   </generalization>  
-  <association id="102">    
-    <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="103" name="qualitaet"/>      
-      <multiplicity id="104" minimum="0" maximum="1"/>    
+  <generalization id="46">    
+    <end type="SOURCE" refId="37"/>    
+    <end type="TARGET" refId="38"/>  
+  </generalization>  
+  <association id="47">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="48" name="unternehmen"/>      
+      <multiplicity id="49" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
+    <end type="TARGET" refId="20" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="105">    
-    <end type="SOURCE" refId="27" navigable="false">      
-      <attribute id="106" name="verwendeterRohsoff"/>      
-      <multiplicity id="107" minimum="0" maximum="1"/>    
+  <association id="50">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="51" name="liste"/>      
+      <multiplicity id="52" minimum="0" maximum="2147483647"/>    
     </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
+    <end type="TARGET" refId="11" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="108">    
+  <association id="53">    
     <end type="SOURCE" refId="39" navigable="false">      
-      <attribute id="109" name="absatz"/>      
-      <multiplicity id="110" minimum="0" maximum="1"/>    
+      <attribute id="54" name="absatz"/>      
+      <multiplicity id="55" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="12" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="111">    
+  <association id="56">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="57" name="umwelt"/>      
+      <multiplicity id="58" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="39" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="59">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="8"/>  
+  </generalization>  
+  <generalization id="60">    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="23"/>  
+  </generalization>  
+  <generalization id="61">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="8"/>  
+  </generalization>  
+  <generalization id="62">    
+    <end type="SOURCE" refId="38"/>    
+    <end type="TARGET" refId="36"/>  
+  </generalization>  
+  <association id="63">    
+    <end type="SOURCE" refId="27" navigable="false">      
+      <attribute id="64" name="verwendeterRohsoff"/>      
+      <multiplicity id="65" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="66">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="16"/>  
+  </generalization>  
+  <association id="67">    
     <end type="SOURCE" refId="20" navigable="false">      
-      <attribute id="112" name="abteilung"/>      
-      <multiplicity id="113" minimum="0" maximum="2147483647"/>    
+      <attribute id="68" name="abteilung"/>      
+      <multiplicity id="69" minimum="0" maximum="2147483647"/>    
     </end>    
     <end type="TARGET" refId="23" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="114">    
+  <generalization id="70">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="23"/>  
+  </generalization>  
+  <association id="71">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="72" name="spieler"/>      
+      <multiplicity id="73" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="74">    
+    <end type="SOURCE" refId="34"/>    
+    <end type="TARGET" refId="38"/>  
+  </generalization>  
+  <association id="75">    
     <end type="SOURCE" refId="28" navigable="false">      
-      <attribute id="115" name="maschinenfuehrer"/>      
-      <multiplicity id="116" minimum="0" maximum="1"/>    
+      <attribute id="76" name="maschinenfuehrer"/>      
+      <multiplicity id="77" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="36" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="117">    
-    <end type="SOURCE" refId="27" navigable="false">      
-      <attribute id="118" name="produzierendeMaschine"/>      
-      <multiplicity id="119" minimum="0" maximum="1"/>    
+  <generalization id="78">    
+    <end type="SOURCE" refId="35"/>    
+    <end type="TARGET" refId="36"/>  
+  </generalization>  
+  <association id="79">    
+    <end type="SOURCE" refId="36" navigable="false">      
+      <attribute id="80" name="stufe"/>      
+      <multiplicity id="81" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="28" navigable="true"/>    
+    <end type="TARGET" refId="7" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="120">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="121" name="spiel"/>      
-      <multiplicity id="122" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="2" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="123">    
-    <end type="SOURCE" refId="26" navigable="false">      
-      <attribute id="124" name="maschinenpark"/>      
-      <multiplicity id="125" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="28" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="126">    
-    <end type="SOURCE" refId="37"/>    
+  <generalization id="82">    
+    <end type="SOURCE" refId="33"/>    
     <end type="TARGET" refId="38"/>  
   </generalization>  
-  <association id="127">    
+  <association id="83">    
     <end type="SOURCE" refId="20" navigable="false">      
-      <attribute id="128" name="konto"/>      
-      <multiplicity id="129" minimum="0" maximum="1"/>    
+      <attribute id="84" name="konto"/>      
+      <multiplicity id="85" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="10" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="130">    
-    <end type="SOURCE" refId="22"/>    
-    <end type="TARGET" refId="23"/>  
-  </generalization>  
-  <association id="131">    
+  <association id="86">    
     <end type="SOURCE" refId="23" navigable="false">      
-      <attribute id="132" name="mitarbeiter"/>      
-      <multiplicity id="133" minimum="0" maximum="2147483647"/>    
+      <attribute id="87" name="mitarbeiter"/>      
+      <multiplicity id="88" minimum="0" maximum="2147483647"/>    
     </end>    
     <end type="TARGET" refId="36" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="89">    
+    <end type="SOURCE" refId="27" navigable="false">      
+      <attribute id="90" name="produzierendeMaschine"/>      
+      <multiplicity id="91" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="28" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="92">    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="93" name="lager"/>      
+      <multiplicity id="94" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="24" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="95">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="96" name="kunden"/>      
+      <multiplicity id="97" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="98">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="99" name="qualitaet"/>      
+      <multiplicity id="100" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="101">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="102" name="qualitaet"/>      
+      <multiplicity id="103" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="104">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="17"/>  
+  </generalization>  
+  <generalization id="105">    
+    <end type="SOURCE" refId="32"/>    
+    <end type="TARGET" refId="36"/>  
+  </generalization>  
+  <generalization id="106">    
+    <end type="SOURCE" refId="29"/>    
+    <end type="TARGET" refId="28"/>  
+  </generalization>  
+  <association id="107">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="108" name="anbieter"/>      
+      <multiplicity id="109" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="110">    
+    <end type="SOURCE" refId="39" navigable="false">      
+      <attribute id="111" name="beschaffung"/>      
+      <multiplicity id="112" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="113">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="16"/>  
+  </generalization>  
+  <association id="114">    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="115" name="auftraege"/>      
+      <multiplicity id="116" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="27" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="117">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="118" name="lagerlisteRohstoffe"/>      
+      <multiplicity id="119" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="120">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="121" name="lagerlisteProdukt"/>      
+      <multiplicity id="122" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="123">    
+    <end type="SOURCE" refId="30"/>    
+    <end type="TARGET" refId="28"/>  
+  </generalization>  
+  <association id="124">    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="125" name="maschinenpark"/>      
+      <multiplicity id="126" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="28" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="127">    
+    <end type="SOURCE" refId="23" navigable="false">      
+      <attribute id="128" name="unternehmen"/>      
+      <multiplicity id="129" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="20" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="130">    
+    <end type="SOURCE" refId="31"/>    
+    <end type="TARGET" refId="28"/>  
+  </generalization>  
+  <association id="131">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="132" name="spiel"/>      
+      <multiplicity id="133" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 

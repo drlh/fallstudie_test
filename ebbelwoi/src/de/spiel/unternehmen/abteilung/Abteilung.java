@@ -2,7 +2,7 @@ package de.spiel.unternehmen.abteilung;
 
 import java.util.ArrayList;
 
-import de.spiel.finanzen.*;
+import de.spiel.finanzenALT.*;
 import de.spiel.unternehmen.Unternehmen;
 import de.spiel.unternehmen.mitarbeiter.Mitarbeiter;
 

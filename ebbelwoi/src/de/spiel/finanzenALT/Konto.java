@@ -1,4 +1,4 @@
-package de.spiel.finanzen;
+package de.spiel.finanzenALT;
 
 import java.util.ArrayList;
 
