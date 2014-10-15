@@ -85,7 +85,7 @@ public class Kontenplan
 	AUFWAND.put("ARS", new Aufwandskonto("Aufwand für Rohstoffe"));
     }
 
-    private ArrayList<HashMap<String, Konto>> getAll()
+    public ArrayList<HashMap<String, Konto>> getAll()
     {
 	ArrayList<HashMap<String, Konto>> k = new ArrayList<>();
 	k.add(AV);

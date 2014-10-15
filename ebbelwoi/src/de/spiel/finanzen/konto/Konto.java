@@ -1,100 +1,87 @@
 package de.spiel.finanzen.konto;
 
-public abstract class Konto
-{
-    private String name;
-    private double soll;
-    private double haben;
-    
-    /**
-     * Gibt an ob Konto aktiv (true) oder pasiv (false) ist
-     */
-    protected boolean aktiv;
-    /**
-     * Gibt an ob das Konto ein Konto der Bilanz ist (true)
-     */
-    protected boolean bestand;
-    /**
-     * Gibt an ob das Konto ein Ertrags (true) oder Aufwandskonto (false) der GuV ist
-     */
-    protected boolean ertrag;
+public abstract class Konto {
+	private String name;
+	private double soll;
+	private double haben;
 
-    public Konto(String name)
-    {
-	this.name = name;
-	this.haben = 0;
-	this.soll = 0;
-    }
+	/**
+	 * Gibt an ob Konto aktiv (true) oder pasiv (false) ist
+	 */
+	protected boolean aktiv;
+	/**
+	 * Gibt an ob das Konto ein Konto der Bilanz ist (true)
+	 */
+	protected boolean bestand;
+	/**
+	 * Gibt an ob das Konto ein Ertrags (true) oder Aufwandskonto (false) der
+	 * GuV ist
+	 */
+	protected boolean ertrag;
 
-    public Konto(String name, double kontostand)
-    {
-	this.name = name;
-	this.sollBuchen(kontostand);
-    }
+	public Konto(String name) {
+		this.name = name;
+		this.haben = 0;
+		this.soll = 0;
+	}
 
-    private void sollErhoehen(double betrag)
-    {
-	this.soll += betrag;
-    }
+	public Konto(String name, double kontostand) {
+		this.name = name;
+		this.sollBuchen(kontostand);
+	}
 
-    private void sollVerringern(double betrag)
-    {
-	this.soll -= betrag;
-    }
+	//Erhoehen
+	public void sollBuchen(double betrag) {
+		this.soll += betrag;
+	}
+	private void habenBuchen(double betrag) {
+		this.haben += betrag;
+	}
+	
+	//Verringern
+	private void sollVerringern(double betrag) {
+		this.soll -= betrag;
+	}
+	private void habenVerringern(double betrag) {
+		this.haben -= betrag;
+	}
 
-    private void habenErhoehen(double betrag)
-    {
-	this.haben += betrag;
-    }
+	protected void setType(boolean aktiv, boolean bestand, boolean ertrag) {
+		this.aktiv = aktiv;
+		this.bestand = bestand;
+		this.ertrag = ertrag;
+	}
 
-    private void habenVerringern(double betrag)
-    {
-	this.haben -= betrag;
-    }
-    
-    protected void setType(boolean aktiv, boolean bestand, boolean ertrag)
-    {
-	this.aktiv = aktiv;
-	this.bestand = bestand;
-	this.ertrag = ertrag;
-    }
-    
-    
 
-    public void sollBuchen(double betrag)
-    {
-	// Bestandskonten
-	// Aktiva
-	if (aktiv && bestand && !ertrag) sollErhoehen(betrag);
-	// Passiva
-	if (!aktiv && bestand && !ertrag) sollErhoehen(betrag);
 
-	// Aufwands und Ertragskonten
-	// Aufwand
-	if (aktiv && !ertrag && !bestand) sollErhoehen(betrag);
-	// Ertrag
-	if (!aktiv && !ertrag && !bestand) sollErhoehen(betrag);
-    }
 
-    public void habenBuchen(double betrag)
-    {
-	// Bestandskonten
-	// Aktiv
-	if (aktiv && bestand && !ertrag) habenErhoehen(betrag);
-	// Passiva
-	if (!aktiv && bestand && !ertrag) habenErhoehen(betrag);
 
-	// Aufwands und Ertragskonten
-	// Aufwand
-	if (aktiv && !ertrag && !bestand) habenErhoehen(betrag);
-	// Ertrag
-	if (!aktiv && !ertrag && !bestand) habenErhoehen(betrag);
-    }
+	public double kontoAbrechnen()
+	{
+		String type = this.getClass().getSimpleName();
 
-    
-    @Override
-    public String toString()
-    {
-	return "Konto[name="+name+" , soll="+soll+",haben="+haben+"]";       
-    }
+		if (type.equals("Aktivkonto")) {
+			
+		}
+
+		if (type.equals("Passivkonto")) {
+			
+		}
+
+		if (type.equals("Ertragskonto")) {
+			
+		}
+
+		if (type.equals("Aufwandskonto")) {
+			
+		}
+		
+		return 0.0;
+	}
+
+	@Override
+	public String toString() {
+		return getClass().getSimpleName()+"[name=" + name + " , soll=" + soll + ",haben=" + haben
+				+ "]";
+	}
 }
