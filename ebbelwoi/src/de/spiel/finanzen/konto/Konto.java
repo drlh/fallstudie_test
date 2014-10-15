@@ -34,7 +34,7 @@ public abstract class Konto {
 	public void sollBuchen(double betrag) {
 		this.soll += betrag;
 	}
-	private void habenBuchen(double betrag) {
+	public void habenBuchen(double betrag) {
 		this.haben += betrag;
 	}
 	
