@@ -1,8 +1,14 @@
-package de.spiel.finanzen.konto;
+package de.spiel.finanzen;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import de.spiel.finanzen.konto.Aktivkonto;
+import de.spiel.finanzen.konto.Aufwandskonto;
+import de.spiel.finanzen.konto.Ertragskonto;
+import de.spiel.finanzen.konto.Konto;
+import de.spiel.finanzen.konto.Passivkonto;
 
 public class Kontenplan
 {
@@ -24,17 +30,29 @@ public class Kontenplan
     }
 
     /**
-     * Erstellt alle benötigten KOnten Kontenschlüssel: AV - Konten im
-     * Anlagevermögen GS - Grundstücke MA - Maschinen UV - Konten des
-     * Umlaufvermögens RS - Rhstoffe FE - Fertigerzeignisse BA - Bank EK -
-     * Konten des Eigenkapitals EK - Eigenkapitla FK - Konten des Fremdkapitals
-     * DA - Darlehen
+     * Erstellt alle benötigten Konten mit Kontenschlüssel: 
+     * AV - Konten im Anlagevermögen 
+     * 		GS - Grundstücke 
+     * 		MA - Maschinen 
      * 
-     * ERTRAG - Ertragskonten für Erträge die in die GuV zusammenlaufen EUE -
-     * Umsatzerlöse
+     * UV - Konten des Umlaufvermögens 
+     * 		RS - Rohstoffe 
+     * 		FE - Fertigerzeignisse 
+     * 		BA - Bank 
      * 
-     * AUFWAND - Aufwandskonten für Aufwände die in die GuV zusammenlaufen AFA -
-     * Abschreibungen AGE - Gehalt ARS - Aufwand für Rohstoffe
+     * EK - Konten des Eigenkapitals 
+     * 		EK - Eigenkapitl 
+     *
+     * FK - Konten des Fremdkapitals
+     * 		DA - Darlehen
+     * 
+     * ERTRAG - Ertragskonten für Erträge die in die GuV zusammenlaufen 
+     * 		EUE -Umsatzerlöse
+     * 
+     * AUFWAND - Aufwandskonten für Aufwände die in die GuV zusammenlaufen 
+     * 		AFA - Abschreibungen 
+     * 		AGE - Gehalt 
+     * 		ARS - Aufwand für Rohstoffe
      */
     private void initKonten()
     {
@@ -46,8 +64,9 @@ public class Kontenplan
 
 	UV = new HashMap<>();
 	UV.put("RS", new Aktivkonto("Rohstoffe"));
-	UV.put("FE", new Aktivkonto("Fertigerzeugnisse"));
 	UV.put("BA", new Aktivkonto("Bank"));
+	UV.put("FE", new Aktivkonto("Fertigerzeugnisse"));
+	
 
 	// PASSIVA
 	EK = new HashMap<>();
@@ -97,8 +116,8 @@ public class Kontenplan
 	    if (kSoll == null || kHaben == null) {
 		return false;
 	    } else {
-		kSoll.erhoehen(betrag);
-		kHaben.erhoehen(betrag);
+		kSoll.sollBuchen(betrag);
+		kHaben.habenBuchen(betrag);
 
 		return true;
 	    }

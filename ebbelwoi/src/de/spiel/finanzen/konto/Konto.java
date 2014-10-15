@@ -5,9 +5,18 @@ public abstract class Konto
     private String name;
     private double soll;
     private double haben;
-
+    
+    /**
+     * Gibt an ob Konto aktiv (true) oder pasiv (false) ist
+     */
     protected boolean aktiv;
+    /**
+     * Gibt an ob das Konto ein Konto der Bilanz ist (true)
+     */
     protected boolean bestand;
+    /**
+     * Gibt an ob das Konto ein Ertrags (true) oder Aufwandskonto (false) der GuV ist
+     */
     protected boolean ertrag;
 
     public Konto(String name)
@@ -20,7 +29,7 @@ public abstract class Konto
     public Konto(String name, double kontostand)
     {
 	this.name = name;
-	this.erhoehen(kontostand);
+	this.sollBuchen(kontostand);
     }
 
     private void sollErhoehen(double betrag)
@@ -52,36 +61,34 @@ public abstract class Konto
     
     
 
-    public void erhoehen(double betrag)
+    public void sollBuchen(double betrag)
     {
 	// Bestandskonten
 	// Aktiva
-	if (aktiv && bestand) sollErhoehen(betrag);
+	if (aktiv && bestand && !ertrag) sollErhoehen(betrag);
 	// Passiva
-	if (!aktiv && bestand) habenErhoehen(betrag);
+	if (!aktiv && bestand && !ertrag) sollErhoehen(betrag);
 
 	// Aufwands und Ertragskonten
 	// Aufwand
-	if (aktiv && !ertrag) sollErhoehen(betrag);
+	if (aktiv && !ertrag && !bestand) sollErhoehen(betrag);
 	// Ertrag
-	if (!aktiv && !ertrag) habenErhoehen(betrag);
-
+	if (!aktiv && !ertrag && !bestand) sollErhoehen(betrag);
     }
 
-    public void mindern(double betrag)
+    public void habenBuchen(double betrag)
     {
 	// Bestandskonten
 	// Aktiv
-	if (aktiv && bestand) habenErhoehen(betrag);
+	if (aktiv && bestand && !ertrag) habenErhoehen(betrag);
 	// Passiva
-	if (!aktiv && bestand) sollErhoehen(betrag);
+	if (!aktiv && bestand && !ertrag) habenErhoehen(betrag);
 
 	// Aufwands und Ertragskonten
 	// Aufwand
-	if (aktiv && !ertrag) habenErhoehen(betrag);
+	if (aktiv && !ertrag && !bestand) habenErhoehen(betrag);
 	// Ertrag
-	if (!aktiv && !ertrag) sollErhoehen(betrag);
-
+	if (!aktiv && !ertrag && !bestand) habenErhoehen(betrag);
     }
 
     

@@ -2,6 +2,7 @@ package de.spiel.unternehmen.abteilung;
 
 import java.util.HashMap;
 
+import de.spiel.finanzen.Kontenplan;
 import de.spiel.finanzen.konto.*;
 import de.spiel.unternehmen.Unternehmen;
 
