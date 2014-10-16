@@ -2,9 +2,15 @@ package de.spiel.umwelt.absatz;
 
 import java.util.Random;
 
-public class Kunde {
-	double menge;
-	double preis;
+public abstract class Kunde {
+    
+	private double MINAB;
+	private double MAXAB;
+	private double MINP;
+	private double MAXP ;
+	
+	private double preis;
+	private double menge;
 	
 	public Kunde(){
 		Random r = new Random();
@@ -19,5 +25,10 @@ public class Kunde {
 	public double getPreis() {
 		return preis;
 	}
+	
+	/**
+	 * legt die Grenzen der Intervalle fest und errechnet den aktuellen Bedarf und Preis
+	 */
+	protected abstract void initKunde();
 	
 }
