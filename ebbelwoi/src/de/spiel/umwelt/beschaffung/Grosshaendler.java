@@ -1,14 +1,18 @@
 package de.spiel.umwelt.beschaffung;
 
 public class Grosshaendler extends Anbieter {
-	private final int STUFE = 4;
-	private final double MINP = 0.40;
-	private final double MAXP = 0.70;
 
 	public Grosshaendler() {
 		super();
-		stufe.setAktuelleStufe(STUFE);
+		stufe.setAktuelleStufe(defstufe);
 		preis = Math.floor((preis * (MAXP - MINP) + MINP) * 100) / 100;
-	}	
-	
+	}
+
+	@Override
+	protected void initAnbieter() {
+		defstufe = 6;
+		MINP = 0.60;
+		MAXP = 1.00;
+	}
+
 }

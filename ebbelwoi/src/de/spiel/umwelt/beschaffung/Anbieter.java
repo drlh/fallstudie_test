@@ -3,17 +3,23 @@ package de.spiel.umwelt.beschaffung;
 import java.util.Random;
 import de.spiel.basic.Qualitaetstufe;
 
-public class Anbieter {
-	double preis;
-	Qualitaetstufe stufe;
+public abstract class Anbieter {
+	protected double MINP;
+	protected double MAXP;
+	protected int defstufe;
+	protected double preis;
+	protected Qualitaetstufe stufe;
 	
 	public Anbieter(){
 		Random r = new Random();
-		preis = r.nextDouble();		
+		preis = r.nextDouble();	
+		initAnbieter();
 	}
 
 	public double getPreis() {
 		return preis;
 	}
+	
+	protected abstract void initAnbieter();
 
 }
