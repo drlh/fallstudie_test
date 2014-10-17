@@ -6,6 +6,7 @@ import java.util.HashMap;
 
 import de.spiel.finanzen.konto.Aktivkonto;
 import de.spiel.finanzen.konto.Aufwandskonto;
+import de.spiel.finanzen.konto.Bestandsveraenderungen;
 import de.spiel.finanzen.konto.Ertragskonto;
 import de.spiel.finanzen.konto.Konto;
 import de.spiel.finanzen.konto.Passivkonto;
@@ -23,6 +24,7 @@ public class Kontenplan
     // GUV
     private HashMap<String, Konto> ERTRAG;
     private HashMap<String, Konto> AUFWAND;
+    private HashMap<String, Konto> BV;
 
     public Kontenplan()
     {
@@ -83,6 +85,10 @@ public class Kontenplan
 	AUFWAND.put("AFA", new Aufwandskonto("Aufwand für Abschreibungen"));
 	AUFWAND.put("AGE", new Aufwandskonto("Aufwand für Gehalt"));
 	AUFWAND.put("ARS", new Aufwandskonto("Aufwand für Rohstoffe"));
+	
+	BV = new HashMap<>();
+	BV.put("BVP", new Bestandsveraenderungen("Bestandsveränderung Positiv"));
+	BV.put("BVN", new Bestandsveraenderungen("Bestandsveränderung Negativ"));
     }
 
     public ArrayList<HashMap<String, Konto>> getAll()
@@ -94,6 +100,7 @@ public class Kontenplan
 	k.add(FK);
 	k.add(ERTRAG);
 	k.add(AUFWAND);
+	k.add(BV);
 
 	return k;
     }
