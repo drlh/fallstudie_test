@@ -55,6 +55,9 @@ public class Kontenplan
      * 		AFA - Abschreibungen 
      * 		AGE - Gehalt 
      * 		ARS - Aufwand für Rohstoffe
+     * 		AMA - Aufwand für Maschinen
+     * BV - Bestandsveränderungen
+     * 		BV - Bestandsveränderungskonto
      */
     private void initKonten()
     {
@@ -85,6 +88,7 @@ public class Kontenplan
 	AUFWAND.put("AFA", new Aufwandskonto("Aufwand für Abschreibungen"));
 	AUFWAND.put("AGE", new Aufwandskonto("Aufwand für Gehalt"));
 	AUFWAND.put("ARS", new Aufwandskonto("Aufwand für Rohstoffe"));
+	AUFWAND.put("AMA", new Aufwandskonto("Aufwand für Maschinen"));
 	
 	BV = new HashMap<>();
 	BV.put("BV", new Bestandsveraenderungen("Bestandsveränderung"));

@@ -13,9 +13,20 @@ public class Ertragskonto extends Konto
     }
 
     @Override
-    public void kontoAbrechnen()
+    public double kontoAbrechnen()
     {
-	// TODO Auto-generated method stub
-	
+	double differenz = 0.0;
+
+	if (this.getHaben() > getSoll()) {
+	    differenz = haben - soll;
+	    this.resetKonto();
+	    return differenz;
+	} else if (this.getSoll() == this.getHaben()) {
+	    this.resetKonto();
+	    return 0;
+	} else {
+	    return -1;
+	}
+
     }
 }

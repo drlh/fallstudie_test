@@ -6,16 +6,28 @@ public class Aktivkonto extends Konto
     {
 	super(name);
     }
-    
+
     public Aktivkonto(String name, double kontostand)
     {
 	super(name, kontostand);
     }
 
     @Override
-    public void kontoAbrechnen()
+    public double kontoAbrechnen()
     {
-	// TODO Auto-generated method stub
-	
+	double differenz = 0.0;
+
+	if (this.getHaben() < getSoll()) {
+	    differenz = soll - haben;
+	    this.resetKonto();
+	    this.sollBuchen(differenz);
+	    return getHaben();
+	} else if (this.getSoll() == this.getHaben()) {
+	    this.resetKonto();
+	    return 0;
+	} else {
+	    return -1;
+	}
+
     }
 }

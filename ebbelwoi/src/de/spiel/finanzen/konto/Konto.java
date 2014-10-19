@@ -3,8 +3,8 @@ package de.spiel.finanzen.konto;
 public abstract class Konto
 {
     private String name;
-    private double soll;
-    private double haben;
+    protected double soll;
+    protected double haben;
 
     private String type;
 
@@ -29,28 +29,28 @@ public abstract class Konto
 	return name;
     }
 
-    private double getSoll()
+    public double getSoll()
     {
 	return soll;
     }
 
-    private double getHaben()
+    public double getHaben()
     {
 	return haben;
     }
 
     // SET
-    private void setSoll(double soll)
+    protected void setSoll(double soll)
     {
 	this.soll = soll;
     }
 
-    private void setHaben(double haben)
+    protected void setHaben(double haben)
     {
 	this.haben = haben;
     }
 
-    private void resetKonto()
+    protected void resetKonto()
     {
 	this.setHaben(0);
 	this.setSoll(0);
@@ -112,7 +112,7 @@ public abstract class Konto
     /**
      * Schlieﬂt das Konto ab.
      */
-    public abstract void kontoAbrechnen();
+    public abstract double kontoAbrechnen();
 
     @Override
     public String toString()

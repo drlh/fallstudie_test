@@ -9,10 +9,20 @@ public class Bestandsveraenderungen extends Konto
     }
 
     @Override
-    public void kontoAbrechnen()
+    public double kontoAbrechnen()
     {
-	// TODO Auto-generated method stub
-	
+	double differenz = 0.0;
+
+	if (getSoll() > getHaben()) {
+	    differenz = soll - haben;
+	    return differenz * (-1);
+	} else if (getSoll() < getHaben()) {
+	    differenz = haben - soll;
+	    return differenz;
+	} else {
+	    return 0;
+	}
+
     }
 
 }

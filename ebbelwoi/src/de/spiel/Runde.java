@@ -7,5 +7,7 @@ package de.spiel;
  */
 public class Runde
 {
-
+    public static int aktuelleRunde;
+    public static int aktullerSpieler;
+    public static int akutelleAuswertung;
 }

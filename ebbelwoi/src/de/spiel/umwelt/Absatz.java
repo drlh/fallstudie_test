@@ -10,6 +10,12 @@ public class Absatz
 	this.menge = menge;
 	this.preis = preis;
     }
+    
+    public Absatz(Angebot angebot)
+    {
+	this.menge = angebot.getMenge();
+	this.preis = angebot.getPreis();
+    }
 
     public double getPreis()
     {

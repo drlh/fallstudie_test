@@ -13,10 +13,20 @@ public class Passivkonto extends Konto
     }
 
     @Override
-    public void kontoAbrechnen()
+    public double kontoAbrechnen()
     {
-	if (true) {
-	    
+	double differenz = 0.0;
+	
+	if (this.getHaben() > getSoll()) {
+	    differenz = haben - soll;
+	    this.resetKonto();
+	    this.habenBuchen(differenz);
+	    return getHaben();
+	}else if (this.getSoll() == this.getHaben()) {
+	    this.resetKonto();
+	    return 0;
+	}else {
+	    return -1;
 	}
 	
     }

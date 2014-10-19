@@ -2,32 +2,41 @@ package de.spiel.umwelt;
 
 import java.util.ArrayList;
 
+import de.spiel.umwelt.absatz.Kneipe;
 import de.spiel.umwelt.absatz.Kunde;
+import de.spiel.umwelt.absatz.Supermarktkette;
 
 public class Absatzmarkt
 {
-    ArrayList<Kunde> kunden;
-
-    // ANGEBOTSLISTEN
-    ArrayList<Angebot> angeboteKneipen;
-    ArrayList<Angebot> angeboteSupermarkt;
+    Kunde[] kundenListe = new Kunde[3];
 
     public Absatzmarkt()
     {
-	// bei Spielstart: für jeden Spieler werden einige Kneipen und 1-2
-	// Supermarktketten erzeugt
-	kunden = new ArrayList<Kunde>();
-	angeboteKneipen = new ArrayList<Angebot>();
-	angeboteSupermarkt = new ArrayList<Angebot>();
+	initKundenListe();
     }
 
-    public ArrayList<Angebot> getKneipenAngebote()
+    private void initKundenListe()
     {
-	return angeboteKneipen;
+	kundenListe[0] = new Kneipe();
+	kundenListe[1] = new Supermarktkette();
+	kundenListe[2] = new Supermarktkette();
     }
 
-    public ArrayList<Angebot> getSupermarktAngebote()
+    public Kunde[] getKundenListe()
     {
-	return angeboteSupermarkt;
+	return kundenListe;
     }
+    
+    private Kunde getKneipe()
+    {
+	return (Kneipe) kundenListe[0];
+    }
+    
+    private Kunde getSupermarktkette()
+    {
+	return (Supermarktkette) kundenListe[1];
+    }
+    
+    
+
 }
