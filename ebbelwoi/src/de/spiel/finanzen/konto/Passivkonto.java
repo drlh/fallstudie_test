@@ -15,7 +15,9 @@ public class Passivkonto extends Konto
     @Override
     public void kontoAbrechnen()
     {
-	// TODO Auto-generated method stub
+	if (true) {
+	    
+	}
 	
     }
 }

@@ -97,6 +97,19 @@ public abstract class Konto
     }
 
     /**
+     * Gibt den Kontostand zurück
+     */
+    private double getKontostand()
+    {
+	if (type.equals("Aktivkonto") | type.equals("Aufwandskonto")) {
+	    return getSoll();
+	} else {
+	    return getHaben();
+	}
+
+    }
+
+    /**
      * Schließt das Konto ab.
      */
     public abstract void kontoAbrechnen();
@@ -104,7 +117,7 @@ public abstract class Konto
     @Override
     public String toString()
     {
-	return this.type + "[name=" + name + " , soll=" + soll
-		+ ",haben=" + haben + "]";
+	return this.type + "[name=" + name + " , soll=" + soll + ",haben="
+		+ haben + "]";
     }
 }

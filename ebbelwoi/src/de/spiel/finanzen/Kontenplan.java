@@ -87,8 +87,7 @@ public class Kontenplan
 	AUFWAND.put("ARS", new Aufwandskonto("Aufwand für Rohstoffe"));
 	
 	BV = new HashMap<>();
-	BV.put("BVP", new Bestandsveraenderungen("Bestandsveränderung Positiv"));
-	BV.put("BVN", new Bestandsveraenderungen("Bestandsveränderung Negativ"));
+	BV.put("BV", new Bestandsveraenderungen("Bestandsveränderung"));
     }
 
     public ArrayList<HashMap<String, Konto>> getAll()

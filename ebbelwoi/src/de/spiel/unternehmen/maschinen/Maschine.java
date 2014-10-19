@@ -21,70 +21,78 @@ public abstract class Maschine
     {
 	this.stufe = new MaschinenStufen();
     }
-    
-    //GETTER
+
+    // GETTER
     public double getAnschaffungskosten()
     {
-        return anschaffungskosten;
+	return anschaffungskosten;
     }
+
     public int getAbschreibungsdauer()
     {
-        return abschreibungsdauer;
+	return abschreibungsdauer;
     }
+
     public double getAbschreibung()
     {
-        return abschreibung;
+	return abschreibung;
     }
+
     public double getAktuellerWert()
     {
-        return aktuellerWert;
+	return aktuellerWert;
     }
+
     public double getFixkosten()
     {
-        return fixkosten;
+	return fixkosten;
     }
+
     public double getKapazitaet()
     {
-        return kapazitaet;
+	return kapazitaet;
     }
+
     public double getAuswurf()
     {
-        return auswurf;
+	return auswurf;
     }
+
     public Mitarbeiter getMaschinenfuehrer()
     {
-        return maschinenfuehrer;
+	return maschinenfuehrer;
     }
+
     public MaschinenStufen getStufe()
     {
-        return stufe;
+	return stufe;
     }
-    
-  
-    //SETTER
+
+    // SETTER
     public void setMaschinenfuehrer(Mitarbeiter maschinenfuehrer)
     {
-        this.maschinenfuehrer = maschinenfuehrer;
+	this.maschinenfuehrer = maschinenfuehrer;
     }
 
     protected void setAktuellerWert(double aktuellerWert)
     {
-        this.aktuellerWert = aktuellerWert;
+	this.aktuellerWert = aktuellerWert;
     }
-    
-    //OTHER
+
+    // OTHER
     protected void calcAbschreibung()
     {
 	this.abschreibung = anschaffungskosten / abschreibungsdauer;
     }
+
     protected void calcFixkosten()
     {
 	this.fixkosten = 0.15 * anschaffungskosten;
     }
-    
+
     protected void doAbschreibung()
     {
-	setAktuellerWert(aktuellerWert-abschreibung);
+	setAktuellerWert(aktuellerWert - abschreibung);
     }
 
 }
