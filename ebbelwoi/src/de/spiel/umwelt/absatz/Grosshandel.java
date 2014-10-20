@@ -11,8 +11,8 @@ public class Grosshandel extends Kunde
     @Override
     protected void initKunde()
     {
-	MINAB = 500;
-	MAXAB = 1500;
+	MINAB = 3000;
+	MAXAB = 10000;
 	menge = Math.floor((menge * (MAXAB - MINAB) + MINAB) * 100) / 100;
     }
 

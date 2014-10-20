@@ -1,25 +1,29 @@
 package de.spiel.umwelt;
 
-import java.util.ArrayList;
-
-import de.spiel.umwelt.beschaffung.Anbieter;
+import de.spiel.umwelt.beschaffung.*;
 
 public class Beschaffungsmarkt {
-	ArrayList<Anbieter> anbieter;
-	ArrayList<Angebot> angeboteBauern;
-	ArrayList<Angebot> angeboteGrosshaendler;
+	Anbieter[] anbieterListe = new  Anbieter[2];
 
 	public Beschaffungsmarkt() {
-		anbieter = new ArrayList<Anbieter>();
-		angeboteBauern = new ArrayList<Angebot>();
-		angeboteGrosshaendler = new ArrayList<Angebot>();
+		initAbsatzliste();
 	}
 
-	public ArrayList<Angebot> getBauernAngebot() {
-		return angeboteBauern;
+	private void initAbsatzliste() {
+		anbieterListe[0] = new Bauer();
+		anbieterListe[1] = new Grosshaendler();
+		
 	}
 	
-	public ArrayList<Angebot> getGrosshaendlerAngebot() {
-		return angeboteGrosshaendler;
+	public Anbieter[] getAnbieterListe(){
+		return anbieterListe;
+	}
+
+	public Bauer getBauer() {
+		return (Bauer) anbieterListe[0];
+	}
+	
+	public Grosshaendler getGrosshaendler() {
+		return (Grosshaendler) anbieterListe[1];
 	}
 }

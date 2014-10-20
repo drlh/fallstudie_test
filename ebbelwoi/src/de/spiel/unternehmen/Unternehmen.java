@@ -69,7 +69,7 @@ public class Unternehmen
 	return abteilung[nr];
     }
 
-    private Umwelt getUmwelt()
+    public Umwelt getUmwelt()
     {
 	return umwelt;
     }
