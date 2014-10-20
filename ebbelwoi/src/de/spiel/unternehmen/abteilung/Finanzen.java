@@ -1,20 +1,21 @@
 package de.spiel.unternehmen.abteilung;
 
 import java.util.ArrayList;
+
 import de.spiel.finanzen.*;
-import de.spiel.finanzen.Kontenplan;
 
 public class Finanzen extends Abteilung
 {
     private Kontenplan konten;
     private ArrayList<Bilanz> bilanzen;
-
+    
     public Finanzen()
     {
 	super();
 	this.abteilungName = "Finanzen";
 	this.konten = new Kontenplan();
 	this.bilanzen = new ArrayList<Bilanz>();
+	
 
     }
 
@@ -36,7 +37,9 @@ public class Finanzen extends Abteilung
     
     public void rundeAbrechnen()
     {
-	
+	Bilanz b = konten.erstelleBilanz();
+	b.aufstellenBilanz();	
+	bilanzen.add(b);
     }
     
 

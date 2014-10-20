@@ -2,7 +2,8 @@ package de.spiel.finanzen;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Enumeration;
+import java.util.Hashtable;
 
 import de.spiel.finanzen.konto.Aktivkonto;
 import de.spiel.finanzen.konto.Aufwandskonto;
@@ -15,16 +16,16 @@ public class Kontenplan
 {
     // BILANZ
     // AKTIVA
-    private HashMap<String, Konto> AV;
-    private HashMap<String, Konto> UV;
+    private Hashtable<String, Konto> AV;
+    private Hashtable<String, Konto> UV;
     // PASSIVA
-    private HashMap<String, Konto> EK;
-    private HashMap<String, Konto> FK;
+    private Hashtable<String, Konto> EK;
+    private Hashtable<String, Konto> FK;
 
     // GUV
-    private HashMap<String, Konto> ERTRAG;
-    private HashMap<String, Konto> AUFWAND;
-    private HashMap<String, Konto> BV;
+    private Hashtable<String, Konto> ERTRAG;
+    private Hashtable<String, Konto> AUFWAND;
+    private Hashtable<String, Konto> BV;
 
     public Kontenplan()
     {
@@ -32,71 +33,61 @@ public class Kontenplan
     }
 
     /**
-     * Erstellt alle benötigten Konten mit Kontenschlüssel: 
-     * AV - Konten im Anlagevermögen 
-     * 		MA - Maschinen 
+     * Erstellt alle benötigten Konten mit Kontenschlüssel: AV - Konten im
+     * Anlagevermögen MA - Maschinen
      * 
-     * UV - Konten des Umlaufvermögens 
-     * 		RS - Rohstoffe 
-     * 		FE - Fertigerzeignisse 
-     * 		BA - Bank 
+     * UV - Konten des Umlaufvermögens RS - Rohstoffe FE - Fertigerzeignisse BA
+     * - Bank
      * 
-     * EK - Konten des Eigenkapitals 
-     * 		EK - Eigenkapitl 
-     *
-     * FK - Konten des Fremdkapitals
-     * 		DA - Darlehen
+     * EK - Konten des Eigenkapitals EK - Eigenkapitl
      * 
-     * ERTRAG - Ertragskonten für Erträge die in die GuV zusammenlaufen 
-     * 		EUE -Umsatzerlöse
+     * FK - Konten des Fremdkapitals DA - Darlehen
      * 
-     * AUFWAND - Aufwandskonten für Aufwände die in die GuV zusammenlaufen 
-     * 		AFA - Abschreibungen 
-     * 		AGE - Gehalt 
-     * 		ARS - Aufwand für Rohstoffe
-     * 		AMA - Aufwand für Maschinen
-     * 		AFS - Aufwand für Schulungen
-     * BV - Bestandsveränderungen
-     * 		BV - Bestandsveränderungskonto
+     * ERTRAG - Ertragskonten für Erträge die in die GuV zusammenlaufen EUE
+     * -Umsatzerlöse
+     * 
+     * AUFWAND - Aufwandskonten für Aufwände die in die GuV zusammenlaufen AFA -
+     * Abschreibungen AGE - Gehalt ARS - Aufwand für Rohstoffe AMA - Aufwand für
+     * Maschinen AFS - Aufwand für Schulungen BV - Bestandsveränderungen BV -
+     * Bestandsveränderungskonto
      */
     private void initKonten()
     {
 	// BILANZ
 	// AKTIVA
-	AV = new HashMap<>();
+	AV = new Hashtable<>();
 	AV.put("MA", new Aktivkonto("Maschinen"));
 
-	UV = new HashMap<>();
+	UV = new Hashtable<>();
 	UV.put("RS", new Aktivkonto("Rohstoffe"));
 	UV.put("BA", new Aktivkonto("Bank"));
 	UV.put("FE", new Aktivkonto("Fertigerzeugnisse"));
-	
 
 	// PASSIVA
-	EK = new HashMap<>();
+	EK = new Hashtable<>();
 	EK.put("EK", new Passivkonto("Eigenkapital"));
 
-	FK = new HashMap<>();
+	FK = new Hashtable<>();
 	FK.put("DA", new Passivkonto("Darlehen"));
 
 	// GUV Konten
-	ERTRAG = new HashMap<>();
+	ERTRAG = new Hashtable<>();
 	ERTRAG.put("EUE", new Ertragskonto("Umsatzerlöse"));
 
-	AUFWAND = new HashMap<>();
+	AUFWAND = new Hashtable<>();
 	AUFWAND.put("AFA", new Aufwandskonto("Aufwand für Abschreibungen"));
 	AUFWAND.put("AGE", new Aufwandskonto("Aufwand für Gehalt"));
 	AUFWAND.put("ARS", new Aufwandskonto("Aufwand für Rohstoffe"));
 	AUFWAND.put("AMA", new Aufwandskonto("Aufwand für Maschinen"));
 	AUFWAND.put("AFS", new Aufwandskonto("Aufwand für Schulungen"));
-	
-	BV = new HashMap<>();
+
+	BV = new Hashtable<>();
 	BV.put("BV", new Bestandsveraenderungen("Bestandsveränderung"));
     }
 
-    public ArrayList<HashMap<String, Konto>> getAll()
+    public ArrayList<Hashtable<String, Konto>> getAll()
     {
-	ArrayList<HashMap<String, Konto>> k = new ArrayList<>();
+	ArrayList<Hashtable<String, Konto>> k = new ArrayList<>();
 	k.add(AV);
 	k.add(UV);
 	k.add(EK);
@@ -113,7 +104,7 @@ public class Kontenplan
 	if (soll.equals(haben)) {
 	    return false;
 	} else {
-	    ArrayList<HashMap<String, Konto>> k = getAll();
+	    ArrayList<Hashtable<String, Konto>> k = getAll();
 
 	    Konto kSoll = null;
 	    Konto kHaben = null;
@@ -135,4 +126,73 @@ public class Kontenplan
 	}
 
     }
+
+    //TODO: Fertigstellen
+    public Bilanz erstelleBilanz()
+    {
+	GuV guv = erstelleGuV();
+	Bilanz b = new Bilanz(guv);
+	
+	//AV
+	Enumeration<String> bezeichnungenAV = AV.keys();
+	Enumeration<String> bezeichnungenUV = UV.keys();
+	
+	//UV
+	Enumeration<String> bezeichnungenEK = EK.keys();
+	Enumeration<String> bezeichnungenFK = FK.keys();
+	
+	
+	while (bezeichnungenAV.hasMoreElements()) {
+	    String s = (String) bezeichnungenAV.nextElement();
+	    double d = AV.get(s).kontoAbrechnen();
+	    b.putAktiva(s, new Double(d));
+	}
+	while (bezeichnungenUV.hasMoreElements()) {
+	    String s = (String) bezeichnungenUV.nextElement();
+	    double d = UV.get(s).kontoAbrechnen();
+	    b.putAktiva(s, new Double(d));
+	}
+	while (bezeichnungenEK.hasMoreElements()) {
+	    String s = (String) bezeichnungenEK.nextElement();
+	    double d = EK.get(s).kontoAbrechnen();
+	    b.putPassiva(s, new Double(d));
+	}
+	while (bezeichnungenFK.hasMoreElements()) {
+	    String s = (String) bezeichnungenFK.nextElement();
+	    double d = FK.get(s).kontoAbrechnen();
+	    b.putPassiva(s, new Double(d));
+	}
+
+	return b;
+    }
+
+    private GuV erstelleGuV()
+    {
+	GuV guv = new GuV();
+
+	Enumeration<String> bezeichnungenAufwand = AUFWAND.keys();
+	Enumeration<String> bezeichnungenErtrag = ERTRAG.keys();
+	Enumeration<String> bezeichnungenBV = BV.keys();
+
+	while (bezeichnungenAufwand.hasMoreElements()) {
+	    String konto = bezeichnungenAufwand.nextElement();
+	    double wert = AUFWAND.get(konto).kontoAbrechnen();
+	    guv.putAufwand(konto, new Double(wert));
+	}
+	
+	while (bezeichnungenErtrag.hasMoreElements()) {
+	    String konto = bezeichnungenErtrag.nextElement();
+	    double wert = ERTRAG.get(konto).kontoAbrechnen();
+	    guv.putErtrag(konto, new Double(wert));
+	}
+	
+	while (bezeichnungenBV.hasMoreElements()) {
+	    String konto = bezeichnungenBV.nextElement();
+	    double wert = BV.get(konto).kontoAbrechnen();
+	    guv.putBV(konto, new Double(wert));
+	}
+
+	return guv;
+    }
+
 }
