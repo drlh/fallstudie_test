@@ -36,7 +36,6 @@ public class Spiel
 		spieler.add(new Spieler(name));
 	    }
 	}
-	
     }
 
     // SPIELER
