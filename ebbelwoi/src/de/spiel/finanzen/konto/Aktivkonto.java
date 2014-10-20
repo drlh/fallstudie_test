@@ -21,7 +21,7 @@ public class Aktivkonto extends Konto
 	    differenz = soll - haben;
 	    this.resetKonto();
 	    this.sollBuchen(differenz);
-	    return getHaben();
+	    return getSoll();
 	} else if (this.getSoll() == this.getHaben()) {
 	    this.resetKonto();
 	    return 0;

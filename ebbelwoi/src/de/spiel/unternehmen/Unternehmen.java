@@ -7,6 +7,7 @@ import de.spiel.unternehmen.abteilung.produktion.*;
 public class Unternehmen
 {
     private static Umwelt umwelt;
+    
     private Abteilung[] abteilung;
     private static Lager lager;
 
@@ -17,6 +18,7 @@ public class Unternehmen
 
     private void initialisieren()
     {
+	umwelt = new Umwelt();
 
 	abteilung = new Abteilung[5];
 	Abteilung.setUnternehmen(this);
