@@ -34,7 +34,6 @@ public class Kontenplan
     /**
      * Erstellt alle benötigten Konten mit Kontenschlüssel: 
      * AV - Konten im Anlagevermögen 
-     * 		GS - Grundstücke 
      * 		MA - Maschinen 
      * 
      * UV - Konten des Umlaufvermögens 
@@ -56,6 +55,7 @@ public class Kontenplan
      * 		AGE - Gehalt 
      * 		ARS - Aufwand für Rohstoffe
      * 		AMA - Aufwand für Maschinen
+     * 		AFS - Aufwand für Schulungen
      * BV - Bestandsveränderungen
      * 		BV - Bestandsveränderungskonto
      */
@@ -64,7 +64,6 @@ public class Kontenplan
 	// BILANZ
 	// AKTIVA
 	AV = new HashMap<>();
-	AV.put("GS", new Aktivkonto("Grundstück"));
 	AV.put("MA", new Aktivkonto("Maschinen"));
 
 	UV = new HashMap<>();
@@ -89,6 +88,7 @@ public class Kontenplan
 	AUFWAND.put("AGE", new Aufwandskonto("Aufwand für Gehalt"));
 	AUFWAND.put("ARS", new Aufwandskonto("Aufwand für Rohstoffe"));
 	AUFWAND.put("AMA", new Aufwandskonto("Aufwand für Maschinen"));
+	AUFWAND.put("AFS", new Aufwandskonto("Aufwand für Schulungen"));
 	
 	BV = new HashMap<>();
 	BV.put("BV", new Bestandsveraenderungen("Bestandsveränderung"));
