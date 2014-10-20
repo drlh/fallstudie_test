@@ -1,22 +1,20 @@
 package de.spiel.unternehmen.abteilung;
 
-import java.util.HashMap;
-
+import java.util.ArrayList;
+import de.spiel.finanzen.*;
 import de.spiel.finanzen.Kontenplan;
-import de.spiel.finanzen.konto.*;
-import de.spiel.unternehmen.Unternehmen;
-
-import java.lang.System.*;
 
 public class Finanzen extends Abteilung
 {
     private Kontenplan konten;
+    private ArrayList<Bilanz> bilanzen;
 
     public Finanzen()
     {
 	super();
 	this.abteilungName = "Finanzen";
 	this.konten = new Kontenplan();
+	this.bilanzen = new ArrayList<Bilanz>();
 
     }
 
@@ -24,6 +22,23 @@ public class Finanzen extends Abteilung
     @Override
     // Wird nicht benutzt
     public void addMitarbeiter() {}
+    
+    
+    public Kontenplan getKonten()
+    {
+	return konten;
+    }
+    
+    public boolean buchen(String soll, String haben, double betrag)
+    {
+	return konten.buchen(soll, haben, betrag);
+    }
+    
+    public void rundeAbrechnen()
+    {
+	
+    }
+    
 
-
+    
 }

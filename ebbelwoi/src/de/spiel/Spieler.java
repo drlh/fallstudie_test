@@ -28,6 +28,14 @@ public class Spieler
     {
         return unternehmen;
     }
+
+    @Override
+    public String toString()
+    {
+	return "Spieler [name=" + name+ "]";
+    }
+    
+    
     
     
 }
