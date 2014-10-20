@@ -12,10 +12,6 @@ public abstract class Kunde
 
     protected double MINAB;
     protected double MAXAB;
-    protected double MINP;
-    protected double MAXP;
-
-    protected double preis;
     protected double menge;
 
     // Angebote
@@ -27,7 +23,6 @@ public abstract class Kunde
     {
 	Random r = new Random();
 	menge = r.nextDouble();
-	preis = r.nextDouble();
 
 	angebote = new ArrayList<Angebot>();
 	absatz = new ArrayList<Absatz>();
@@ -38,10 +33,6 @@ public abstract class Kunde
 	return menge;
     }
 
-    public double getPreis()
-    {
-	return preis;
-    }
 
     /**
      * legt die Grenzen der Intervalle fest und errechnet den aktuellen Bedarf
