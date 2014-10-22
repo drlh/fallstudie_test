@@ -19,19 +19,22 @@ public class Verkauf extends Abteilung {
 		this.mitarbeiter.add(new Vertrieb());
 	}
 
-	public void KneipeAngebotErstellen(double preis) {
+	public Angebot KneipeAngebotErstellen(double preis) {
 		Kneipe k = (Kneipe) this.getUnternehmen().getUmwelt().getAbsatz().getKneipe();
 		Angebot a = new Angebot(k.getMenge(), preis);
+		return a;
 	}
 
-	public void SMAngebotErstellen(double preis) {
+	public Angebot SMAngebotErstellen(double preis) {
 		Supermarktkette s = (Supermarktkette) this.getUnternehmen().getUmwelt().getAbsatz().getSupermarktkette();
 		Angebot a = new Angebot(s.getMenge(), preis);
+		return a;
 	}
 
-	public void GHAngebotErstellen(double preis) {
+	public Angebot GHAngebotErstellen(double preis) {
 		Grosshandel g = (Grosshandel) this.getUnternehmen().getUmwelt().getAbsatz().getGrosshandel();
 		Angebot a = new Angebot(g.getMenge(), preis);
+		return a;
 	}
 
 }
