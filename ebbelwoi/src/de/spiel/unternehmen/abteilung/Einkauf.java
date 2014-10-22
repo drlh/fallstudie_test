@@ -19,14 +19,14 @@ public class Einkauf extends Abteilung {
 		this.mitarbeiter.add(new Vertrieb());
 	}
 
-	public void getBauernAngebot() {
+	public double getBauernAngebot() {
 		Bauer b = this.getUnternehmen().getUmwelt().getBeschaffung().getBauer();
-		double bauernAngebot = b.getPreis();
+		return b.getPreis();
 	}
 	
-	public void getGrosshaendlerAngebot() {
+	public double getGrosshaendlerAngebot() {
 		Grosshaendler g = this.getUnternehmen().getUmwelt().getBeschaffung().getGrosshaendler();
-		double grosshAngebot = g.getPreis();
+		return g.getPreis();
 	}
 
 }
