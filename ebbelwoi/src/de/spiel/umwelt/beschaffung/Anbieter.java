@@ -8,7 +8,7 @@ public abstract class Anbieter {
 	protected double MAXP;
 	protected int defstufe;
 	protected double preis;
-	protected Qualitaetstufe stufe;
+	protected Qualitaetstufe stufe = new Qualitaetstufe();
 	
 	public Anbieter(){
 		Random r = new Random();
