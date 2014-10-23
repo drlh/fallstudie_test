@@ -30,6 +30,7 @@ public class ProduktionTest {
 		ma.upgrade();
 		ma.upgrade();
 		p.getMitarbeiterListe().add(ma);
+		assertEquals(3, ma.getStufe());
 
 		MaschineM1 m1 = new MaschineM1(ma);
 
