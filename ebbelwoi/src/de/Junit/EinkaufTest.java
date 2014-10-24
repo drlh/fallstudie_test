@@ -17,6 +17,8 @@ public class EinkaufTest {
 
 	@Before
 	public void setUp() {
+	    
+	    
 		e = new Einkauf();
 
 		e1 = new Vertrieb();

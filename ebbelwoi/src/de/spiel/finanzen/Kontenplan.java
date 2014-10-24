@@ -36,20 +36,28 @@ public class Kontenplan
      * Erstellt alle benötigten Konten mit Kontenschlüssel: AV - Konten im
      * Anlagevermögen MA - Maschinen
      * 
-     * UV - Konten des Umlaufvermögens RS - Rohstoffe FE - Fertigerzeignisse BA
-     * - Bank
+     * UV - Konten des Umlaufvermögens 
+     * 		RS - Rohstoffe 
+     * 		FE - Fertigerzeignisse 
+     * 		BA - Bank
      * 
-     * EK - Konten des Eigenkapitals EK - Eigenkapitl
+     * EK - Konten des Eigenkapitals 
+     * 		EK - Eigenkapitl
      * 
-     * FK - Konten des Fremdkapitals DA - Darlehen
+     * FK - Konten des Fremdkapitals 
+     * 		DA - Darlehen
      * 
-     * ERTRAG - Ertragskonten für Erträge die in die GuV zusammenlaufen EUE
-     * -Umsatzerlöse
+     * ERTRAG - Ertragskonten für Erträge die in die GuV zusammenlaufen 
+     * 		EUE-Umsatzerlöse
      * 
-     * AUFWAND - Aufwandskonten für Aufwände die in die GuV zusammenlaufen AFA -
-     * Abschreibungen AGE - Gehalt ARS - Aufwand für Rohstoffe AMA - Aufwand für
-     * Maschinen AFS - Aufwand für Schulungen BV - Bestandsveränderungen BV -
-     * Bestandsveränderungskonto
+     * AUFWAND - Aufwandskonten für Aufwände die in die GuV zusammenlaufen 
+     * 		AFA - Abschreibungen 
+     * 		AGE - Gehalt 
+     * 		ARS - Aufwand für Rohstoffe 
+     * 		AMA - Aufwand für Maschinen 
+     * 		AFS - Aufwand für Schulungen 
+     * BV - Bestandsveränderungen 
+     * 		BV - Bestandsveränderungskonto
      */
     private void initKonten()
     {
@@ -127,21 +135,20 @@ public class Kontenplan
 
     }
 
-    //TODO: Fertigstellen
+    // TODO: Fertigstellen
     public Bilanz erstelleBilanz()
     {
 	GuV guv = erstelleGuV();
 	Bilanz b = new Bilanz(guv);
-	
-	//AV
+
+	// AV
 	Enumeration<String> bezeichnungenAV = AV.keys();
 	Enumeration<String> bezeichnungenUV = UV.keys();
-	
-	//UV
+
+	// UV
 	Enumeration<String> bezeichnungenEK = EK.keys();
 	Enumeration<String> bezeichnungenFK = FK.keys();
-	
-	
+
 	while (bezeichnungenAV.hasMoreElements()) {
 	    String s = (String) bezeichnungenAV.nextElement();
 	    double d = AV.get(s).kontoAbrechnen();
@@ -179,13 +186,13 @@ public class Kontenplan
 	    double wert = AUFWAND.get(konto).kontoAbrechnen();
 	    guv.putAufwand(konto, new Double(wert));
 	}
-	
+
 	while (bezeichnungenErtrag.hasMoreElements()) {
 	    String konto = bezeichnungenErtrag.nextElement();
 	    double wert = ERTRAG.get(konto).kontoAbrechnen();
 	    guv.putErtrag(konto, new Double(wert));
 	}
-	
+
 	while (bezeichnungenBV.hasMoreElements()) {
 	    String konto = bezeichnungenBV.nextElement();
 	    double wert = BV.get(konto).kontoAbrechnen();

@@ -21,13 +21,26 @@ public class FinanzenTest {
 	@Test
 	public void test() {
 		// Darlehen
-		f.getKonten().buchen("BA", "DA", 10000.0);
+		f.buchen("BA", "DA", 100000.0);
+		//Kauf Maschine
+		f.buchen("MA", "BA", 50000.0);
 		// EInkauf RS
-		f.getKonten().buchen("RS", "BA", 1000.0);
-		// RS Verbrauch
-		f.getKonten().buchen("ARS", "RS", 10000.0);
+		f.buchen("RS", "BA", 1000.0);
+		//Darlehen Rückzahlung
+		f.buchen("DA", "BA", 5000.0);
+		
+		/* ERTRAG */
+		//Umsatz
+		f.buchen("BA", "EUE", 50000.0);
+		
+		/* AUFWAND */
+		//Gehalt
+		f.buchen("AGE", "BA", 100.0);
+		f.buchen("AFA", "MA", 5000.0);
 
 		f.rundeAbrechnen();
+		
+		
 	}
 
 }
