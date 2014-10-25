@@ -1,16 +1,16 @@
 package de;
 
-import de.spiel.Spiel;
+import de.spiel.GUI.SelectPlayerView;
 
-public class StartSpiel 
-{
-   
-    
-    public static void main(String[] args)
-    {
-	Spiel s = new Spiel();
-	String ss = s.getSpieler().toString();
+public class StartSpiel {
 	
-	System.out.println(ss);
-    }
+	
+
+	public static void main(String[] args) {
+		SelectPlayerView spv = new SelectPlayerView();
+		spv.setVisible(true);
+//		Spiel s = new Spiel();
+//		String ss = s.getSpieler().toString();
+//		System.out.println(ss);
+	}
 }

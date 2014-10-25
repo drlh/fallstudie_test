@@ -24,7 +24,7 @@ public class Finanzen extends Abteilung
     {
     }
 
-    private Kontenplan getKonten()
+    public Kontenplan getKonten()
     {
 	return konten;
     }
