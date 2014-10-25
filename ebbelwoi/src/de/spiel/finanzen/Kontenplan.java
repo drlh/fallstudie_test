@@ -55,7 +55,8 @@ public class Kontenplan
      * 		AGE - Gehalt 
      * 		ARS - Aufwand für Rohstoffe 
      * 		AMA - Aufwand für Maschinen 
-     * 		AFS - Aufwand für Schulungen 
+     * 		AFS - Aufwand für Schulungen
+     * 		AFZ - Aufwand für Zinsen 
      * BV - Bestandsveränderungen 
      * 		BV - Bestandsveränderungskonto
      */
@@ -201,5 +202,42 @@ public class Kontenplan
 
 	return guv;
     }
+
+    public Hashtable<String, Konto> getAV()
+    {
+        return AV;
+    }
+
+    public Hashtable<String, Konto> getUV()
+    {
+        return UV;
+    }
+
+    public Hashtable<String, Konto> getEK()
+    {
+        return EK;
+    }
+
+    public Hashtable<String, Konto> getFK()
+    {
+        return FK;
+    }
+
+    public Hashtable<String, Konto> getERTRAG()
+    {
+        return ERTRAG;
+    }
+
+    public Hashtable<String, Konto> getAUFWAND()
+    {
+        return AUFWAND;
+    }
+
+    public Hashtable<String, Konto> getBV()
+    {
+        return BV;
+    }
+    
+    
 
 }

@@ -18,8 +18,8 @@ public class MarktTest {
 	@Before
 	public void setUp(){
 		un = new Unternehmen();
-		am = un.getUmwelt().getAbsatz();
-		bm = un.getUmwelt().getBeschaffung();
+		am = Umwelt.getAbsatz();
+		bm = Umwelt.getBeschaffung();
 	}
 
 	@Test

@@ -7,5 +7,11 @@ public class Marketing extends Mitarbeiter
     {
 	super();
     }
+    
+    public Marketing(double gehalt)
+    {
+	super();
+	setGehalt(gehalt);
+    }
 
 }

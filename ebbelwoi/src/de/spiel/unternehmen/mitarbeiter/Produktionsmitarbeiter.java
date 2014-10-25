@@ -7,4 +7,10 @@ public abstract class Produktionsmitarbeiter extends Mitarbeiter
     {
 	super();
     }
+    
+    public Produktionsmitarbeiter(double gehalt)
+    {
+	super();
+	setGehalt(gehalt);
+    }
 }

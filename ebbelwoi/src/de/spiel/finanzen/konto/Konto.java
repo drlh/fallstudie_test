@@ -99,12 +99,12 @@ public abstract class Konto
     /**
      * Gibt den Kontostand zurück
      */
-    private double getKontostand()
+    public double getKontostand()
     {
 	if (type.equals("Aktivkonto") | type.equals("Aufwandskonto")) {
-	    return getSoll();
+	    return getSoll() - getHaben();
 	} else {
-	    return getHaben();
+	    return getHaben() - getSoll();
 	}
 
     }
