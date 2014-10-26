@@ -49,6 +49,8 @@ public class SpielTest
 	aktuellerSpieler.getUnternehmen().getEinkauf().einkaufenRohstoffe(1000);
 	
 	
+	
+	
 	s.neueRunde();
     }
 

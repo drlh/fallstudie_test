@@ -70,7 +70,7 @@ public class Spiel {
 		return aktuelleRunde;
 	}
 
-	public Runde getAktuelleRunde() {
+	public static Runde getAktuelleRunde() {
 		return runden.get(aktuelleRunde);
 	}
 
