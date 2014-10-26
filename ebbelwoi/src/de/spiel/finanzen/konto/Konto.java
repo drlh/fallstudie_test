@@ -8,6 +8,8 @@ public abstract class Konto
 
     private String type;
 
+    protected double bv = 0.0;
+
     public Konto(String name)
     {
 	this.name = name;
@@ -25,6 +27,11 @@ public abstract class Konto
     }
 
     // GET
+    public double getBv()
+    {
+	return bv;
+    }
+
     public String getName()
     {
 	return name;
@@ -62,8 +69,6 @@ public abstract class Konto
     {
 	this.soll += betrag;
     }
-    
-
 
     public void habenBuchen(double betrag)
     {

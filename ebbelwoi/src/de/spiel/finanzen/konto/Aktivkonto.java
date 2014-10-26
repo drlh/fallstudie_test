@@ -2,7 +2,7 @@ package de.spiel.finanzen.konto;
 
 public class Aktivkonto extends Konto
 {
-    double bv = 0.0;
+    
     
     public Aktivkonto(String name)
     {
@@ -38,8 +38,6 @@ public class Aktivkonto extends Konto
 	}
     }
     
-    public double getBv(){
-	return bv;
-    }
+
 
 }
