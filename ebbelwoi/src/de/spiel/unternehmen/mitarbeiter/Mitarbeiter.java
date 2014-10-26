@@ -30,6 +30,10 @@ public abstract class Mitarbeiter
     {
 	return stufe.getStufe();
     }
+    
+    public String getName() {
+		return vorname+" "+nachname;
+	}
 
     public int getBonus()
     {

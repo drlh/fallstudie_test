@@ -2,6 +2,7 @@ package de.spiel.GUI;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
@@ -13,6 +14,9 @@ import javax.swing.table.DefaultTableModel;
 
 import de.spiel.Spiel;
 import de.spiel.finanzen.Snapshot;
+import de.spiel.unternehmen.Unternehmen;
+import de.spiel.unternehmen.mitarbeiter.Mitarbeiter;
+import de.spiel.unternehmen.mitarbeiter.Vertrieb;
 
 /**
  * 
@@ -46,7 +50,7 @@ public class RundenView extends javax.swing.JFrame implements
 		tabsMain = new javax.swing.JTabbedPane();
 		tabUebersicht = new javax.swing.JPanel();
 		scrlUebersichtBilanz = new javax.swing.JScrollPane();
-		tableUeberischtBilanz = new javax.swing.JTable();
+		tableUebersichtBilanz = new javax.swing.JTable();
 		tabMitarbeiter = new javax.swing.JPanel();
 		tabsMitarbeiter = new javax.swing.JTabbedPane();
 		tabMitEinkauf = new javax.swing.JPanel();
@@ -145,7 +149,7 @@ public class RundenView extends javax.swing.JFrame implements
 
 		tabUebersicht.setLayout(new java.awt.BorderLayout());
 
-		tableUeberischtBilanz.setModel(new javax.swing.table.DefaultTableModel(
+		tableUebersichtBilanz.setModel(new javax.swing.table.DefaultTableModel(
 				new Object[][] {
 
 				}, new String[] { "A", "", "", "P" }) {
@@ -162,7 +166,7 @@ public class RundenView extends javax.swing.JFrame implements
 				return canEdit[columnIndex];
 			}
 		});
-		scrlUebersichtBilanz.setViewportView(tableUeberischtBilanz);
+		scrlUebersichtBilanz.setViewportView(tableUebersichtBilanz);
 
 		tabUebersicht.add(scrlUebersichtBilanz, java.awt.BorderLayout.CENTER);
 
@@ -212,7 +216,7 @@ public class RundenView extends javax.swing.JFrame implements
 				.setModel(new javax.swing.table.DefaultTableModel(
 						new Object[][] {
 
-						}, new String[] { "Mitarbeitertyp", "Details" }));
+						}, new String[] { "Name", "Typ", "Stufe" }));
 		scrlEinkaufMitarbeiter.setViewportView(tableEinkaufMitarbeiter);
 
 		tabMitEinkauf.add(scrlEinkaufMitarbeiter, java.awt.BorderLayout.CENTER);
@@ -882,7 +886,7 @@ public class RundenView extends javax.swing.JFrame implements
 	private javax.swing.JTable tableLagerRohstoffe;
 	private javax.swing.JTable tableProduktionMaschinen;
 	private javax.swing.JTable tableProduktionMitarbeiter;
-	private javax.swing.JTable tableUeberischtBilanz;
+	private javax.swing.JTable tableUebersichtBilanz;
 	private javax.swing.JTable tableVerkaufMitarbeiter;
 	private javax.swing.JTable tableVerkaufProd;
 	private javax.swing.JTabbedPane tabsMain;
@@ -942,10 +946,11 @@ public class RundenView extends javax.swing.JFrame implements
 
 	private void loadPlayerData(int player) {
 		loadBilanz(player);
+		loadMitarbeiterReiter(player);
 	}
 
 	private void loadBilanz(int player) {
-		DefaultTableModel mod = (DefaultTableModel) tableUeberischtBilanz
+		DefaultTableModel mod = (DefaultTableModel) tableUebersichtBilanz
 				.getModel();
 		mod.setRowCount(0);
 
@@ -962,7 +967,47 @@ public class RundenView extends javax.swing.JFrame implements
 		mod.addRow(new Object[] { "Bilanzsumme", snap.summeAktiva() + "",
 				"Bilanzsumme", snap.summeAktiva() + "" });
 
-		tableUeberischtBilanz.setModel(mod);
+		tableUebersichtBilanz.setModel(mod);
+	}
+	
+	private void loadMitarbeiterReiter(int player)
+	{
+		DefaultTableModel ek = (DefaultTableModel) tableEinkaufMitarbeiter.getModel();
+		ek.setRowCount(0);
+		
+		DefaultTableModel vk = (DefaultTableModel) tableVerkaufMitarbeiter.getModel();
+		vk.setRowCount(0);
+		
+		DefaultTableModel prod = (DefaultTableModel) tableProduktionMitarbeiter.getModel();
+		prod.setRowCount(0);
+		
+		Unternehmen un = Spiel.getSpieler().get(player).getUnternehmen();
+		
+		ArrayList<ArrayList<Mitarbeiter>> maUn = new ArrayList<ArrayList<Mitarbeiter>>();
+
+		maUn.add(un.getEinkauf().getMitarbeiterListe());
+		maUn.add(un.getVerkauf().getMitarbeiterListe());
+		maUn.add(un.getProduktion().getMitarbeiterListe());
+		
+		
+		try {
+			for (int i = 0; i < maUn.get(0).size(); i++) 
+			{
+				Vertrieb v = (Vertrieb) maUn.get(0).get(i);
+				ek.addRow(Object[] {v.getName(), v.getClass().getSimpleName(), }); 
+			}
+			for (int i = 0; i <  maUn.get(1).size(); i++) {
+				
+			}
+			for (int i = 0; i <  maUn.get(2).size(); i++) {
+				
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
+		
+		
 	}
 
 	@Override
