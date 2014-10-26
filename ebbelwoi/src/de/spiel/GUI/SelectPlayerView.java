@@ -225,6 +225,7 @@ public class SelectPlayerView extends javax.swing.JFrame {
 
 				} catch (Exception e) {
 					kreditBetrag[i] = 0;
+					e.printStackTrace();
 				}
 
 			} else {
