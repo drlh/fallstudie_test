@@ -18,34 +18,44 @@ public class ProduktionTest {
 
 	@Before
 	public void setUp() {
+		/**
+		 * Aufbau der Produktion: 
+		 * Produktion aus Unternehmen, 
+		 * Erzeugung eines Mitarbeiters (Azubi)
+		 */
 		un = new Unternehmen();
 		p = un.getProduktion();
 		ma = new Azubi();
 	}
 
 	@Test
-	public void test() throws AssertionError{
-		
+	public void test() throws AssertionError {
+		/**
+		 * Schulung des Azubis, Zuweisung des Azubi zur Produktion, Prüfung 
+		 */
 		ma.upgrade();
 		ma.upgrade();
 		ma.upgrade();
 		p.getMitarbeiterListe().add(ma);
 		assertEquals(3, ma.getStufe());
 
+		/**
+		 * Erzeugung einer Maschine, Zuweisung der Maschine zur Produktion, Prüfen
+		 */
 		MaschineM1 m1 = new MaschineM1(ma);
-
 		p.getMaschinenpark().add(m1);
-
-		assertEquals(1,p.getMitarbeiterListe().size());
+		assertEquals(1, p.getMitarbeiterListe().size());
 		System.out.println(p.getMitarbeiterListe());
-
+		
+		/**
+		 * Rohstoff erzeugen, Produktionsauftrag hinzufügen mit m1 und Rohstoff, Produktion anlaufen lassen
+		 */
 		Rohstoff r = new Rohstoff(100.0);
 		System.out.println(r.toString());
-
 		p.addAuftrag(m1, r);
-
 		p.produzieren();
-
+		
+		// Ergebnis ausgeben
 		System.out.println(p.getLager().toString());
 	}
 

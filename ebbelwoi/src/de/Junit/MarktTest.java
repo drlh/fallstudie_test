@@ -14,9 +14,12 @@ public class MarktTest {
 	Unternehmen un;
 	Absatzmarkt am;
 	Beschaffungsmarkt bm;
-	
+
 	@Before
-	public void setUp(){
+	public void setUp() {
+		/**
+		 * setUp der Märkte
+		 */
 		un = new Unternehmen();
 		am = Umwelt.getAbsatz();
 		bm = Umwelt.getBeschaffung();
@@ -24,11 +27,13 @@ public class MarktTest {
 
 	@Test
 	public void test() throws AssertionError {
-		
+		/**
+		 * Test der Märkte
+		 */
 		Kunde[] k = am.getKundenListe();
-//		Anbieter[] a = bm.getAnbieterListe();
+		// Anbieter[] a = bm.getAnbieterListe();
 		assertEquals(3, k.length);
-//		assertEquals(2, a.length);
+		// assertEquals(2, a.length);
 	}
 
 }

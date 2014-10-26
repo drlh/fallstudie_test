@@ -17,7 +17,9 @@ public class KontenplanTest {
 
 	@Test
 	public void test() throws AssertionError{
-
+		/**
+		 * exemplarisch eDruchführung iener einzelnen Buchung und Prüfung des Ergebnisses
+		 */
 		boolean b = k.buchen("BA", "DA", 100.0);
 		k.getAll().get(1).get("BA").kontoAbrechnen();
 		
