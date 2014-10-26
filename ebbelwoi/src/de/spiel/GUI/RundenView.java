@@ -1,5 +1,8 @@
 package de.spiel.GUI;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
@@ -16,7 +19,7 @@ import de.spiel.finanzen.Snapshot;
  * @author PR050736
  */
 public class RundenView extends javax.swing.JFrame implements
-		ListSelectionListener {
+		ListSelectionListener, ActionListener {
 
 	/**
 	 * Creates new form RundenView
@@ -927,7 +930,9 @@ public class RundenView extends javax.swing.JFrame implements
 		for (int i = 0; i < c; i++) {
 			togglePlayer[i] = new JToggleButton();
 			togglePlayer[i].setText(Spiel.getSpieler().get(i).getName());
+			togglePlayer[i].addActionListener(this);
 			toolbarSpieler.add(togglePlayer[i]);
+
 			bg.add(togglePlayer[i]);
 		}
 		togglePlayer[0].setSelected(true);
@@ -942,6 +947,8 @@ public class RundenView extends javax.swing.JFrame implements
 	private void loadBilanz(int player) {
 		DefaultTableModel mod = (DefaultTableModel) tableUeberischtBilanz
 				.getModel();
+		mod.setRowCount(0);
+
 		Snapshot snap = Spiel.getSpieler().get(player).getUnternehmen()
 				.getFinanzen().getBilanzSnapshot();
 		mod.addRow(new Object[] { "TA/Masch", snap.getMaschinenkonto() + "",
@@ -952,8 +959,36 @@ public class RundenView extends javax.swing.JFrame implements
 				"", "" });
 		mod.addRow(new Object[] { "BA", snap.getBankkonto() + "", "", "" });
 		mod.addRow(new Object[] { "", "", "", "" });
-		mod.addRow(new Object[] { "Bilanzsumme", snap.getMaschinenkonto() +"" , "Bilanzsumme", "" });
+		mod.addRow(new Object[] { "Bilanzsumme", snap.summeAktiva() + "",
+				"Bilanzsumme", snap.summeAktiva() + "" });
 
 		tableUeberischtBilanz.setModel(mod);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		Object src = e.getSource();
+
+		if (src.equals(togglePlayer[0])) {
+			loadPlayerData(0);
+			return;
+		}
+		if (src.equals(togglePlayer[1])) {
+			loadPlayerData(1);
+			return;
+		}
+		if (src.equals(togglePlayer[2])) {
+			loadPlayerData(2);
+			return;
+		}
+		if (src.equals(togglePlayer[3])) {
+			loadPlayerData(3);
+			return;
+		}
+		if (src.equals(togglePlayer[4])) {
+			loadPlayerData(4);
+			return;
+		}
+
 	}
 }
