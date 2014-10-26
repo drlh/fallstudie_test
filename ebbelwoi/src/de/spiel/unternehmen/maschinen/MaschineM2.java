@@ -9,6 +9,7 @@ public class MaschineM2 extends Maschine
     {
 	super();
 	this.anschaffungskosten = 65000.0;
+	this.aktuellerWert = anschaffungskosten;
 	this.abschreibungsdauer = 5;
 	calcAbschreibung();
 	calcFixkosten();
@@ -24,6 +25,7 @@ public class MaschineM2 extends Maschine
     {
 	super();
 	this.anschaffungskosten = 65000.0;
+	this.aktuellerWert = anschaffungskosten;
 	this.abschreibungsdauer = 5;
 	calcAbschreibung();
 	calcFixkosten();

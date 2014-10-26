@@ -16,6 +16,8 @@ public abstract class Maschine
     protected Mitarbeiter maschinenfuehrer;
 
     private boolean bereit = false;
+    
+    private int anschaffungsrunde = 0;
 
     protected MaschinenStufen stufe;
 
@@ -107,7 +109,7 @@ public abstract class Maschine
 	this.fixkosten = 0.15 * anschaffungskosten;
     }
 
-    protected void doAbschreibung()
+    public void doAbschreibung()
     {
 	setAktuellerWert(aktuellerWert - abschreibung);
     }
