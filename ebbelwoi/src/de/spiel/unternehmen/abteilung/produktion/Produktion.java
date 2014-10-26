@@ -76,12 +76,20 @@ public class Produktion extends Abteilung
 	this.maschinenpark.add(m);
 	getUnternehmen().getFinanzen().bucheEinkaufMaschine(m.getAnschaffungskosten());
     }
+    
+    public void verkaufeMaschine(int index)
+    {
+	Maschine m = maschinenpark.get(index);
+	getUnternehmen().getFinanzen().bucheMaschinenverkauf(m.getAktuellerWert());
+	this.maschinenpark.remove(index);
+    }
 
     // Produktion
     public void addAuftrag(Maschine maschine, Rohstoff rohstoff)
     {
 	this.auftraege.add(new Produktionsauftrag(maschine, rohstoff));
     }
+    
 
     /**
      * Grundlage: 1kg Äpfel - 0,33l Apfelwein (Quelle:

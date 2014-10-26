@@ -160,6 +160,11 @@ public class Finanzen extends Abteilung
     {
 	this.buchen("MA", "BA", betrag);
     }
+    
+    public void bucheMaschinenverkauf(double betrag)
+    {
+	this.buchen("BA", "MA", betrag);
+    }
 
     /* Ertrag */
     // /**
