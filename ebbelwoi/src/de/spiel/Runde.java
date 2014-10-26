@@ -42,8 +42,12 @@ public class Runde {
 	}
 
 	// GETTER
-	public int getAktuellerSpieler() {
+	public int getAktuellerSpielerNr() {
 		return aktuellerSpieler;
+	}
+	
+	public Spieler getAktuellerSpieler() {
+		return this.spielerRunde.get(getAktuellerSpielerNr());
 	}
 	
 	/**
@@ -115,11 +119,7 @@ public class Runde {
 		}
 
 	}
-	
-	/**
-	 * Rechnet die Absätze der einzelnen Spieler ab
-	 * @param f
-	 */
+
 	private void abrechnenAbsatzSpieler(Finanzen f) {
 		Absatz[] absatz = new Absatz[3];
 		String s = f.getUnternehmen().getSpielerName();
@@ -176,10 +176,6 @@ public class Runde {
 		}
 	}
 
-	/**
-	 * Rechnet die Endbestände des Lagers ab
-	 * @param f
-	 */
 	private void abrechnenLagerEndbestand(Finanzen f) {
 		f.bucheLagerEndbestandProdukt();
 		f.bucheLagerEndbestandRohstoffe();
