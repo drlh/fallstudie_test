@@ -1,4 +1,4 @@
-package de.spiel.GUI;
+package de.spiel.GUI.mockup;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
