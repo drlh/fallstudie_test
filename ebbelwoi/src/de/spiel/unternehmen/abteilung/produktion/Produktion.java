@@ -2,13 +2,17 @@ package de.spiel.unternehmen.abteilung.produktion;
 
 import java.util.ArrayList;
 
-import org.junit.Ignore;
-
 import de.spiel.basic.Produkt;
 import de.spiel.basic.Rohstoff;
 import de.spiel.unternehmen.abteilung.Abteilung;
 import de.spiel.unternehmen.maschinen.Maschine;
-import de.spiel.unternehmen.mitarbeiter.*;
+import de.spiel.unternehmen.maschinen.MaschineM1;
+import de.spiel.unternehmen.maschinen.MaschineM2;
+import de.spiel.unternehmen.maschinen.MaschineM3;
+import de.spiel.unternehmen.mitarbeiter.Azubi;
+import de.spiel.unternehmen.mitarbeiter.Geselle;
+import de.spiel.unternehmen.mitarbeiter.Meister;
+import de.spiel.unternehmen.mitarbeiter.Mitarbeiter;
 
 public class Produktion extends Abteilung
 {
@@ -51,6 +55,28 @@ public class Produktion extends Abteilung
 	this.mitarbeiter.add(new Meister());
     }
 
+    // Maschinen
+    public void addM1()
+    {
+	MaschineM1 m = new MaschineM1();
+	this.maschinenpark.add(m);
+	getUnternehmen().getFinanzen().bucheEinkaufMaschine(m.getAnschaffungskosten());
+    }
+
+    public void addM2()
+    {
+	MaschineM2 m = new MaschineM2();
+	this.maschinenpark.add(m);
+	getUnternehmen().getFinanzen().bucheEinkaufMaschine(m.getAnschaffungskosten());
+    }
+
+    public void addM3()
+    {
+	MaschineM3 m = new MaschineM3();
+	this.maschinenpark.add(m);
+	getUnternehmen().getFinanzen().bucheEinkaufMaschine(m.getAnschaffungskosten());
+    }
+
     // Produktion
     public void addAuftrag(Maschine maschine, Rohstoff rohstoff)
     {
@@ -75,7 +101,7 @@ public class Produktion extends Abteilung
 			.getAuswurf();
 
 		double ausbringungsmenge = ((menge * (1 - (auswurf
-			- maschinenstufe - produktivitaetMa))) / (4/3));
+			- maschinenstufe - produktivitaetMa))) / (4 / 3));
 
 		// auf 2 Nachkommastellen runden
 		ausbringungsmenge = Math.floor(ausbringungsmenge * 100) / 100;

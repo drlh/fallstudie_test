@@ -103,8 +103,12 @@ public class Finanzen extends Abteilung
 		.getMaschinenpark();
 
 	for (int i = 0; i < maschinen.size(); i++) {
-	    double d = maschinen.get(i).getAbschreibung();
-	    if (d > 0) this.buchen("AFA", "MA", d);
+	    Maschine m =maschinen.get(i); 
+	    double d = m.getAbschreibung();
+	    if (d > 0) {
+		this.buchen("AFA", "MA", d);
+		m.doAbschreibung();
+	    }
 	}
     }
 
@@ -150,6 +154,11 @@ public class Finanzen extends Abteilung
     public void bucheMaschinenUpgrade(double betrag)
     {
 	this.buchen("AMA", "BA", betrag);
+    }
+    
+    public void bucheMaschinenAnschaffung(double betrag)
+    {
+	this.buchen("MA", "BA", betrag);
     }
 
     /* Ertrag */
