@@ -6,8 +6,10 @@ import javax.swing.JOptionPane;
 import javax.swing.JToggleButton;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+import javax.swing.table.DefaultTableModel;
 
 import de.spiel.Spiel;
+import de.spiel.finanzen.Snapshot;
 
 /**
  * 
@@ -145,7 +147,7 @@ public class RundenView extends javax.swing.JFrame implements
 
 				}, new String[] { "A", "", "", "P" }) {
 			Class[] types = new Class[] { java.lang.String.class,
-					java.lang.Double.class, java.lang.Double.class,
+					java.lang.String.class, java.lang.String.class,
 					java.lang.String.class };
 			boolean[] canEdit = new boolean[] { false, false, false, false };
 
@@ -916,9 +918,11 @@ public class RundenView extends javax.swing.JFrame implements
 
 	}
 
+	JToggleButton[] togglePlayer;
+
 	private void fillToolbar() {
 		int c = Spiel.getSpieler().size();
-		JToggleButton[] togglePlayer = new JToggleButton[c];
+		togglePlayer = new JToggleButton[c];
 		ButtonGroup bg = new ButtonGroup();
 		for (int i = 0; i < c; i++) {
 			togglePlayer[i] = new JToggleButton();
@@ -927,15 +931,29 @@ public class RundenView extends javax.swing.JFrame implements
 			bg.add(togglePlayer[i]);
 		}
 		togglePlayer[0].setSelected(true);
+		loadPlayerData(0);
 
 	}
-	
-	private void loadPlayerData(int anz) {
-		loadBilanz(anz);
+
+	private void loadPlayerData(int player) {
+		loadBilanz(player);
 	}
 
-	private void loadBilanz(int anz) {
-				
-	}
+	private void loadBilanz(int player) {
+		DefaultTableModel mod = (DefaultTableModel) tableUeberischtBilanz
+				.getModel();
+		Snapshot snap = Spiel.getSpieler().get(player).getUnternehmen()
+				.getFinanzen().getBilanzSnapshot();
+		mod.addRow(new Object[] { "TA/Masch", snap.getMaschinenkonto() + "",
+				"EK", snap.getEKkonto() + "" });
+		mod.addRow(new Object[] { "RS", snap.getRohstoffkonto() + "", "DA",
+				snap.getDarlehenkonto() + "" });
+		mod.addRow(new Object[] { "FE", snap.getFertigerzeugniskonto() + "",
+				"", "" });
+		mod.addRow(new Object[] { "BA", snap.getBankkonto() + "", "", "" });
+		mod.addRow(new Object[] { "", "", "", "" });
+		mod.addRow(new Object[] { "Bilanzsumme", snap.getMaschinenkonto() +"" , "Bilanzsumme", "" });
 
+		tableUeberischtBilanz.setModel(mod);
+	}
 }
