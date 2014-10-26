@@ -5,6 +5,7 @@ public class Azubi extends Produktionsmitarbeiter
     public Azubi()
     {
 	super();
+	setGehalt(500);
     }
     
     public Azubi(double gehalt)
