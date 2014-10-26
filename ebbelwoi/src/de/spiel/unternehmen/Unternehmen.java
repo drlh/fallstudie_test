@@ -9,7 +9,7 @@ public class Unternehmen
     private static Umwelt umwelt;
     
     private Abteilung[] abteilung;
-    private static Lager lager;
+    private Lager lager;
     
     public String spielerName = "";
 
