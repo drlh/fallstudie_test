@@ -126,7 +126,7 @@ public class Spiel
 	return spieler.get(arg0);
     }
 
-    public ArrayList<Spieler> getSpieler()
+    public static ArrayList<Spieler> getSpieler()
     {
 	return spieler;
     }
