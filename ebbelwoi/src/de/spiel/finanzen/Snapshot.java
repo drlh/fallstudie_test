@@ -12,7 +12,8 @@ public class Snapshot
     
     public Snapshot()
     {
-	
+	aktiva = new Hashtable<String, Double>();
+	passiva = new Hashtable<String, Double>();
     }
     
     public void addAktiva(String s, double d)
