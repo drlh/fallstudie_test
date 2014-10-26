@@ -35,7 +35,7 @@ public class SpielTest
     public void test()
     {
 	s.ersteRunde();
-	Spieler aktuellerSpieler = s.getAktuelleRunde().getAktuellerSpieler();
+	Spieler aktuellerSpieler = Spiel.getAktuelleRunde().getAktuellerSpieler();
 	//leo
 	Azubi m11 = new Azubi();
 	Maschine ma11 = new MaschineM1(m11);
