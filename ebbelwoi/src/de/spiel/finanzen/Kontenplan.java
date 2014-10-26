@@ -151,9 +151,9 @@ public class Kontenplan
 	    String s = (String) bezeichnungenUV.nextElement();
 
 	    double d = UV.get(s).kontoAbrechnen();
-//	    if (s == "RS" || s == "FE") {
-//		
-//	    }
+	    if (s == "RS" || s == "FE") {
+		
+	    }
 	    b.putAktiva(s, new Double(d));
 
 	}
