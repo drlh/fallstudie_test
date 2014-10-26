@@ -39,6 +39,21 @@ public class Finanzen extends Abteilung
     {
 	return konten;
     }
+    
+    public Snapshot getBilanzSnapshot()
+    {
+	Snapshot b = new Snapshot();
+	
+	b.addAktiva("MA", getKonten().getAV().get("MA").getKontostand());
+	b.addAktiva("RS", getKonten().getUV().get("RS").getKontostand());
+	b.addAktiva("FE", getKonten().getUV().get("FE").getKontostand());
+	b.addAktiva("BA", getKonten().getUV().get("BA").getKontostand());
+	
+	b.addPassiva("EK", getKonten().getEK().get("EK").getKontostand());
+	b.addPassiva("DA", getKonten().getFK().get("DA").getKontostand());
+	
+	return b;
+    }
 
     public Bilanz getBilanz(int runde)
     {
@@ -101,7 +116,6 @@ public class Finanzen extends Abteilung
 	    } catch (NullPointerException e) {
 		// TODO: handle exception
 	    }
-
 	}
     }
 
@@ -179,27 +193,6 @@ public class Finanzen extends Abteilung
     }
 
     /* Ertrag */
-    // /**
-    // *
-    // */
-    // public void bucheUmsatz()
-    // {
-    // String spielerName = getUnternehmen().getSpielerName();
-    // Absatzmarkt am = Umwelt.getAbsatz();
-    //
-    // Absatz kn, gh, su;
-    // try {
-    // kn = am.getKneipe().getAbsatz().get(spielerName);
-    // gh = am.getGrosshandel().getAbsatz().get(spielerName);
-    // su = am.getSupermarktkette().getAbsatz().get(spielerName);
-    //
-    // this.buchen("BA", "EUE", kn.getUmsatz());
-    // this.buchen("BA", "EUE", gh.getUmsatz());
-    // this.buchen("BA", "EUE", su.getUmsatz());
-    // } catch (NullPointerException e) {
-    // }
-    // }
-
     /**
      * 
      */

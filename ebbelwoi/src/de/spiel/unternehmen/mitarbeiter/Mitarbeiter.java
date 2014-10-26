@@ -8,8 +8,10 @@ public abstract class Mitarbeiter
     MitarbeiterStufe stufe;
     private double gehalt;
 
-    String[] vornamen = { "Christina", "Yannick", "Niklas", "Leo", "Basti","Fabi" };
-    String[] nachnamen = { "Junghans", "Sarnoch", "Miroll", "Hellwich","Brehm", "Angst" };
+    String[] vornamen = { "Christina", "Yannick", "Niklas", "Leo", "Basti",
+	    "Fabi" };
+    String[] nachnamen = { "Junghans", "Sarnoch", "Miroll", "Hellwich",
+	    "Brehm", "Angst" };
 
     public Mitarbeiter()
     {
@@ -33,21 +35,22 @@ public abstract class Mitarbeiter
     {
 	return this.stufe.getBonus();
     }
-    
+
     public double getGehalt()
     {
 	return gehalt;
     }
 
-    
     protected void setGehalt(double gehalt)
     {
 	this.gehalt = gehalt;
     }
+
     @Override
-	public String toString() 
-	{
-		return this.getClass().getSimpleName()+"[vorname="+vorname+", nachname="+nachname+", stufe="+this.getStufe()+"]";
-	}
+    public String toString()
+    {
+	return this.getClass().getSimpleName() + "[vorname=" + vorname
+		+ ", nachname=" + nachname + ", stufe=" + this.getStufe() + "]";
+    }
 
 }
