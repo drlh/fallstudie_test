@@ -23,7 +23,6 @@ public class Unternehmen
 	umwelt = new Umwelt();
 
 	abteilung = new Abteilung[5];
-	Abteilung.setUnternehmen(this);
 
 	lager = new Lager();
 
@@ -32,6 +31,10 @@ public class Unternehmen
 	abteilung[2] = new Marketing();
 	abteilung[3] = new Produktion();
 	abteilung[4] = new Finanzen();
+	
+	for (int i = 0; i < abteilung.length; i++) {
+	    abteilung[i].setUnternehmen(this);
+	}
 	
 	getFinanzen().bucheStartguthaben();
     }

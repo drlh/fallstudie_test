@@ -36,29 +36,20 @@ public class Kontenplan
      * Erstellt alle benötigten Konten mit Kontenschlüssel: AV - Konten im
      * Anlagevermögen MA - Maschinen
      * 
-     * UV - Konten des Umlaufvermögens 
-     * 		RS - Rohstoffe 
-     * 		FE - Fertigerzeignisse 
-     * 		BA - Bank
+     * UV - Konten des Umlaufvermögens RS - Rohstoffe FE - Fertigerzeignisse BA
+     * - Bank
      * 
-     * EK - Konten des Eigenkapitals 
-     * 		EK - Eigenkapitl
+     * EK - Konten des Eigenkapitals EK - Eigenkapitl
      * 
-     * FK - Konten des Fremdkapitals 
-     * 		DA - Darlehen
+     * FK - Konten des Fremdkapitals DA - Darlehen
      * 
-     * ERTRAG - Ertragskonten für Erträge die in die GuV zusammenlaufen 
-     * 		EUE-Umsatzerlöse
+     * ERTRAG - Ertragskonten für Erträge die in die GuV zusammenlaufen
+     * EUE-Umsatzerlöse
      * 
-     * AUFWAND - Aufwandskonten für Aufwände die in die GuV zusammenlaufen 
-     * 		AFA - Abschreibungen 
-     * 		AGE - Gehalt 
-     * 		ARS - Aufwand für Rohstoffe 
-     * 		AMA - Aufwand für Maschinen 
-     * 		AFS - Aufwand für Schulungen
-     * 		AFZ - Aufwand für Zinsen 
-     * BV - Bestandsveränderungen 
-     * 		BV - Bestandsveränderungskonto
+     * AUFWAND - Aufwandskonten für Aufwände die in die GuV zusammenlaufen AFA -
+     * Abschreibungen AGE - Gehalt ARS - Aufwand für Rohstoffe AMA - Aufwand für
+     * Maschinen AFS - Aufwand für Schulungen AFZ - Aufwand für Zinsen BV -
+     * Bestandsveränderungen BV - Bestandsveränderungskonto
      */
     private void initKonten()
     {
@@ -158,8 +149,10 @@ public class Kontenplan
 	}
 	while (bezeichnungenUV.hasMoreElements()) {
 	    String s = (String) bezeichnungenUV.nextElement();
+
 	    double d = UV.get(s).kontoAbrechnen();
 	    b.putAktiva(s, new Double(d));
+
 	}
 	while (bezeichnungenEK.hasMoreElements()) {
 	    String s = (String) bezeichnungenEK.nextElement();
@@ -206,39 +199,37 @@ public class Kontenplan
 
     public Hashtable<String, Konto> getAV()
     {
-        return AV;
+	return AV;
     }
 
     public Hashtable<String, Konto> getUV()
     {
-        return UV;
+	return UV;
     }
 
     public Hashtable<String, Konto> getEK()
     {
-        return EK;
+	return EK;
     }
 
     public Hashtable<String, Konto> getFK()
     {
-        return FK;
+	return FK;
     }
 
     public Hashtable<String, Konto> getERTRAG()
     {
-        return ERTRAG;
+	return ERTRAG;
     }
 
     public Hashtable<String, Konto> getAUFWAND()
     {
-        return AUFWAND;
+	return AUFWAND;
     }
 
     public Hashtable<String, Konto> getBV()
     {
-        return BV;
+	return BV;
     }
-    
-    
 
 }

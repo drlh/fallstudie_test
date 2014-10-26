@@ -46,23 +46,15 @@ public class Runde {
 		return aktuellerSpieler;
 	}
 	
+	public void setAktuellerSpielerNr(int aktuellerSpieler)
+	{
+	    this.aktuellerSpieler = aktuellerSpieler;
+	}
+	
 	public Spieler getAktuellerSpieler() {
 		return this.spielerRunde.get(getAktuellerSpielerNr());
 	}
 	
-	/**
-	 * nächster Spieler kommt an die Reihe
-	 */
-	private void nextSpieler() {
-		if (aktuellerSpieler < spielerRunde.size()) {
-			aktuellerSpieler++;
-			Spiel.aktuellerSpielerName = spielerRunde.get(aktuellerSpieler)
-					.getName();
-		} else {
-			beenden();
-		}
-
-	}
 
 	/**
 	 * Startet die gesamte Rundenauswertung

@@ -2,6 +2,8 @@ package de.spiel.finanzen.konto;
 
 public class Aktivkonto extends Konto
 {
+    double bv = 0.0;
+    
     public Aktivkonto(String name)
     {
 	super(name);
@@ -17,7 +19,13 @@ public class Aktivkonto extends Konto
     {
 	double differenz = 0.0;
 
-	if (this.getHaben() < getSoll()) {
+	if (this.getName().equals("Rohstoffe") || this.getName().equals("Fertigerzeignisse")) {
+	    bv = haben - soll;
+	    double endbestand = getHaben();
+	    this.resetKonto();
+	    return endbestand;
+
+	} else if (getSoll() > getHaben()) {
 	    differenz = soll - haben;
 	    this.resetKonto();
 	    this.sollBuchen(differenz);
@@ -26,8 +34,12 @@ public class Aktivkonto extends Konto
 	    this.resetKonto();
 	    return 0;
 	} else {
-	    return -1;
+	    return 0;
 	}
-
     }
+    
+    public double getBv(){
+	return bv;
+    }
+
 }

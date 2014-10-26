@@ -66,7 +66,7 @@ public class Finanzen extends Abteilung
     public void bucheStartguthaben()
     {
 	if (start) {
-//	    this.getKonten().getUV().get("BA").sollBuchen(Spiel.STARTGUTHABEN);
+	    // this.getKonten().getUV().get("BA").sollBuchen(Spiel.STARTGUTHABEN);
 	    this.buchen("BA", "EK", 10000.0);
 	    start = false;
 	}
@@ -89,9 +89,13 @@ public class Finanzen extends Abteilung
 	    try {
 		for (int j = 0; j < ma.size(); j++) {
 
-		    double d = ma.get(i).getGehalt();
+		    try {
+			double d = ma.get(i).getGehalt();
+			if (d > 0) this.buchen("AGE", "BA", d);
+		    } catch (IndexOutOfBoundsException e) {
+			// TODO: handle exception
+		    }
 
-		    if (d > 0) this.buchen("AGE", "BA", d);
 		}
 
 	    } catch (NullPointerException e) {

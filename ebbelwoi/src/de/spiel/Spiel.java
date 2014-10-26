@@ -159,6 +159,17 @@ public class Spiel
 	Spiel.runden.add(new Runde(spieler));
 	aktuelleRunde++;
     }
+    
+    public void nextSpieler()
+    {
+	int i = getAktuelleRunde().getAktuellerSpielerNr();
+	if (i < spieler.size()) {
+		getAktuelleRunde().setAktuellerSpielerNr(i+1);
+		Spiel.aktuellerSpielerName = getAktuelleRunde().getAktuellerSpieler().getName();
+	} else {
+		neueRunde();
+	}
+    }
 
     private void rundeBeenden()
     {

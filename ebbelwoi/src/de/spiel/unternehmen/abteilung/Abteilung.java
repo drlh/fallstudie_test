@@ -9,20 +9,20 @@ public abstract class Abteilung {
 	protected String abteilungName;
 	protected ArrayList<Mitarbeiter> mitarbeiter;
 
-	private static Unternehmen unternehmen;
+	private  Unternehmen unternehmen;
 
 	public Abteilung() {
 	}
 
-	public static void setUnternehmen(Unternehmen unternehmen) {
-		Abteilung.unternehmen = unternehmen;
+	public void setUnternehmen(Unternehmen unternehmen) {
+		this.unternehmen = unternehmen;
 	}
 
 //	public Konto getKonto() {
 //		return unternehmen.getKonto();
 //	}
 
-	public static Unternehmen getUnternehmen() {
+	public  Unternehmen getUnternehmen() {
 		return unternehmen;
 	}
 

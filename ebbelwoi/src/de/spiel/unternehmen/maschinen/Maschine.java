@@ -101,12 +101,12 @@ public abstract class Maschine
     // OTHER
     protected void calcAbschreibung()
     {
-	this.abschreibung = anschaffungskosten / abschreibungsdauer;
+	this.abschreibung = (anschaffungskosten / abschreibungsdauer)/12;
     }
 
     protected void calcFixkosten()
     {
-	this.fixkosten = 0.15 * anschaffungskosten;
+	this.fixkosten = (0.15 * anschaffungskosten)/12;
     }
 
     public void doAbschreibung()

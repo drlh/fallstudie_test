@@ -62,6 +62,8 @@ public abstract class Konto
     {
 	this.soll += betrag;
     }
+    
+
 
     public void habenBuchen(double betrag)
     {
