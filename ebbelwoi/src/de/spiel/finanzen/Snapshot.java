@@ -48,12 +48,12 @@ public class Snapshot
 	return passiva.get("DA");
     }
     
-    public double getAkitvaSize()
+    public int getAkitvaSize()
     {
 	return aktiva.size();
     }
     
-    public double getPassivaSize()
+    public int getPassivaSize()
     {
 	return passiva.size();
     }
