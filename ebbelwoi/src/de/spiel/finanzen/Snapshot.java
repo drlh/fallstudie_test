@@ -1,6 +1,7 @@
 package de.spiel.finanzen;
 
 import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Hashtable;
 
@@ -61,5 +62,28 @@ public class Snapshot
     public int getPassivaSize()
     {
 	return passiva.size();
+    }
+    
+    //Summen
+    public double summeAktiva()
+    {
+	Enumeration<String> s = aktiva.keys();
+	double d = 0.0;
+	while (s.hasMoreElements()) {
+	    String string = (String) s.nextElement();
+	    d += aktiva.get(string);
+	}
+	return d;
+    }
+    
+    public double summePassiva()
+    {
+	Enumeration<String> s = passiva.keys();
+	double d = 0.0;
+	while (s.hasMoreElements()) {
+	    String string = (String) s.nextElement();
+	    d += passiva.get(string);
+	}
+	return d;
     }
 }
