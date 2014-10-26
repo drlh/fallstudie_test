@@ -26,7 +26,7 @@ public class Absatzmarkt {
 	public Kunde getSupermarktkette() {
 		return (Supermarktkette) kundenListe[1];
 	}
-	
+
 	public Kunde getGrosshandel() {
 		return (Grosshandel) kundenListe[2];
 	}
