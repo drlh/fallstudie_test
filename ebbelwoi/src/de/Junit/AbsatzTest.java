@@ -47,27 +47,25 @@ public class AbsatzTest {
 		
 		//tatsächliche Absätze werden geprüft
 		try {
-			Absatz a;
-			absatz[0] = ab.getKneipe().getAbsatz().get("Spieler1");
+			/*absatz[0] = ab.getKneipe().getAbsatz().get("Spieler1");
 			absatz[1] = ab.getKneipe().getAbsatz().get("Spieler2");
 			absatz[2] = ab.getKneipe().getAbsatz().get("Spieler3");
 			absatz[3] = ab.getSupermarktkette().getAbsatz().get("Spieler2");
 			absatz[4] = ab.getSupermarktkette().getAbsatz().get("Spieler3");
 			
-			System.out.println("Umsätze Spieler1:\n");	
-			a = absatz[0];
-			System.out.println("Kneipe:" + a.getUmsatz());
-			System.out.println("\nAbsätze Spieler2:\n");	
-			a = absatz[1];
-			System.out.println("Kneipe:" + a.getUmsatz() + "\n");
-			a = absatz[3];
-			System.out.println("Supermarktkette:" + a.getUmsatz());
-			System.out.println("\nAbsätze Spieler3:\n");
-			a = absatz[2];
-			System.out.println("Kneipe:" + a.getUmsatz() + "\n");
-			a = absatz[4];
-			System.out.println("Supermarktkette:" + a.getUmsatz());
-			
+			for (int i = 0; i < absatz.length; i++) {
+				if (absatz[i] != null) {
+					System.out.println(absatz[i].toString());
+				}				
+			}*/
+			System.out.println("Kneipe:\nAngebote:\n");
+			ab.getKneipe().getAngebote().toString();
+			System.out.println("\ntatsächliche Absätze:\n");
+			ab.getKneipe().getAbsatz().toString();
+			System.out.println("Supermarktkette:\nAngebote:\n");
+			ab.getSupermarktkette().getAngebote().toString();
+			System.out.println("\ntatsächliche Absätze:\n");
+			ab.getSupermarktkette().getAbsatz().toString();
 		} catch (Exception e) {
 			// TODO: handle exception
 		}

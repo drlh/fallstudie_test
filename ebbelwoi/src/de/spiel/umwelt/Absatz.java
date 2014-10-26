@@ -36,4 +36,10 @@ public class Absatz {
 		this.lagerpos = lagerpos;
 	}
 
+	@Override
+	public String toString() {
+		return "Absatz [preis=" + preis + ", menge=" + menge + ", getUmsatz()="
+				+ getUmsatz() + "]";
+	}
+
 }
