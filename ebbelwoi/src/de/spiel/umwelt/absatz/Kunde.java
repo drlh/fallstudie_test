@@ -152,8 +152,9 @@ public abstract class Kunde
 		break;
 	    
 	    if (restNachfrage - best.getMenge() < 0) {
-		absatz.put(bestesAngebot,
-			new Absatz(restNachfrage, best.getPreis()));
+		Absatz a = new Absatz(restNachfrage, best.getPreis());
+		a.setLagerpos(best.getLagerpos());
+		absatz.put(bestesAngebot, a);
 		break;
 	    } else if (restNachfrage - angebote.get(bestesAngebot).getMenge() >= 0) {
 		double dif = (best.getMenge() - restNachfrage) + (-1);

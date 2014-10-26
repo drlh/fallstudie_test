@@ -35,7 +35,11 @@ public abstract class Maschine
 
     public double getAbschreibung()
     {
-	return abschreibung;
+	if (aktuellerWert-abschreibung >= 0) {
+	    return abschreibung;
+	}else
+	    return 0.0;
+	
     }
 
     public double getAktuellerWert()

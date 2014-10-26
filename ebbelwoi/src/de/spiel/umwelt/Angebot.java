@@ -14,6 +14,13 @@ public class Angebot
 	this.menge = menge;
 	this.preis = preis;
     }
+    
+    public Angebot(double preis, double menge, int lagerpos)
+    {
+	this.menge = menge;
+	this.preis = preis;
+	this.lagerpos = lagerpos;
+    }
 
     public Angebot(Produkt p, double preis)
     {

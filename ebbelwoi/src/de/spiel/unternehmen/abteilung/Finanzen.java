@@ -104,7 +104,6 @@ public class Finanzen extends Abteilung
 
 	for (int i = 0; i < maschinen.size(); i++) {
 	    double d = maschinen.get(i).getAbschreibung();
-
 	    if (d > 0) this.buchen("AFA", "MA", d);
 	}
     }
@@ -154,24 +153,33 @@ public class Finanzen extends Abteilung
     }
 
     /* Ertrag */
+    // /**
+    // *
+    // */
+    // public void bucheUmsatz()
+    // {
+    // String spielerName = getUnternehmen().getSpielerName();
+    // Absatzmarkt am = Umwelt.getAbsatz();
+    //
+    // Absatz kn, gh, su;
+    // try {
+    // kn = am.getKneipe().getAbsatz().get(spielerName);
+    // gh = am.getGrosshandel().getAbsatz().get(spielerName);
+    // su = am.getSupermarktkette().getAbsatz().get(spielerName);
+    //
+    // this.buchen("BA", "EUE", kn.getUmsatz());
+    // this.buchen("BA", "EUE", gh.getUmsatz());
+    // this.buchen("BA", "EUE", su.getUmsatz());
+    // } catch (NullPointerException e) {
+    // }
+    // }
+
     /**
      * 
      */
-    public void bucheUmsatz()
+    public void bucheUmsatz(double betrag)
     {
-	String spielerName = getUnternehmen().getSpielerName();
-	Absatzmarkt am = Umwelt.getAbsatz();
-
-	Absatz kn, gh, su;
-	try {
-	    kn = am.getKneipe().getAbsatz().get(spielerName);
-	    gh = am.getGrosshandel().getAbsatz().get(spielerName);
-	    su = am.getSupermarktkette().getAbsatz().get(spielerName);
-
-	    this.buchen("BA", "EUE", kn.getUmsatz());
-	    this.buchen("BA", "EUE", gh.getUmsatz());
-	    this.buchen("BA", "EUE", su.getUmsatz());
-	} catch (NullPointerException e) {}
+	this.buchen("BA", "EUE", betrag);
     }
 
     // ERFOLGSNEUTRAL

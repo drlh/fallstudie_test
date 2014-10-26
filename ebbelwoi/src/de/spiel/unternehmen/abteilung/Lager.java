@@ -87,6 +87,18 @@ public class Lager
 	
 	return d;
     }
+    
+    public void bestandMindernProdukt(double mindermenge, int index)
+    {
+	double menge = getProdukt(index).getMenge() - mindermenge;
+	getProdukt(index).setMenge(menge);
+    }
+    
+    public void bestandMindernRohstoff(double mindermenge, int index)
+    {
+	double menge = getRohstoff(index).getMenge() - mindermenge;
+	getRohstoff(index).setMenge(menge);
+    }
 
     @Override
     public String toString()
