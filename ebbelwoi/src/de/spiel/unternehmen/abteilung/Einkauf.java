@@ -26,19 +26,25 @@ public class Einkauf extends Abteilung
     {
 	this.mitarbeiter.add(new Vertrieb());
     }
-    
+
     /**
-     * Kauft die gewünnschte Menge an Rohstoffen der besten Qualität ein
-     * Lagert diese direkt ein und buch den Aufwand in {@link Aufwandskonto} Aufwand für Rohstoffe und {@link Aktivkonto} Bank
-     * @param menge gewünnschte Menge
+     * Kauft die gewünnschte Menge an Rohstoffen der besten Qualität ein Lagert
+     * diese direkt ein und buch den Aufwand in {@link Aufwandskonto} Aufwand
+     * für Rohstoffe und {@link Aktivkonto} Bank
+     * 
+     * @param menge
+     *            gewünnschte Menge
      */
     public void einkaufenRohstoffe(double menge)
     {
-	Rohstoff r = new Rohstoff(menge);
-	getUnternehmen().getLager().addRohstoff(r);
-	
-	double betrag = menge * Spiel.EINKAUFSPREIS;
-	getUnternehmen().getFinanzen().bucheEinkaufRS(betrag);
+	if (this.mitarbeiter.size() > 0) {
+	    Rohstoff r = new Rohstoff(menge);
+	    getUnternehmen().getLager().addRohstoff(r);
+
+	    double betrag = menge * Spiel.EINKAUFSPREIS;
+	    getUnternehmen().getFinanzen().bucheEinkaufRS(betrag);
+	}
+
     }
 
     // public double getBauernAngebot() {

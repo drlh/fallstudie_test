@@ -15,6 +15,8 @@ public abstract class Maschine
     protected double auswurf;
     protected Mitarbeiter maschinenfuehrer;
 
+    private boolean bereit = false;
+
     protected MaschinenStufen stufe;
 
     public Maschine()
@@ -35,11 +37,11 @@ public abstract class Maschine
 
     public double getAbschreibung()
     {
-	if (aktuellerWert-abschreibung >= 0) {
+	if (aktuellerWert - abschreibung >= 0) {
 	    return abschreibung;
-	}else
+	} else
 	    return 0.0;
-	
+
     }
 
     public double getAktuellerWert()
@@ -72,6 +74,11 @@ public abstract class Maschine
 	return stufe;
     }
 
+    public boolean isBereit()
+    {
+	return bereit;
+    }
+
     // SETTER
     public void setMaschinenfuehrer(Mitarbeiter maschinenfuehrer)
     {
@@ -81,6 +88,11 @@ public abstract class Maschine
     protected void setAktuellerWert(double aktuellerWert)
     {
 	this.aktuellerWert = aktuellerWert;
+    }
+
+    public void setBereit(boolean bereit)
+    {
+	this.bereit = bereit;
     }
 
     // OTHER

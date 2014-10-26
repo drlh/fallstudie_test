@@ -46,8 +46,7 @@ public class Verkauf extends Abteilung
     // return a;
     // }
 
-    
- // Funktionen ohne Gui
+    // Funktionen ohne Gui
     public void erstelleAngebotKneipe(double menge, double preis)
     {
 	erstelleAngebot("KN", menge, preis);
@@ -65,46 +64,52 @@ public class Verkauf extends Abteilung
 
     private void erstelleAngebot(String s, double menge, double preis)
     {
-	String spielerName = getUnternehmen().getSpielerName();
-	Angebot a = new Angebot(preis, menge);
-	Absatzmarkt am = Umwelt.getAbsatz();
+	if (this.mitarbeiter.size() > 0) {
+	    String spielerName = getUnternehmen().getSpielerName();
+	    Angebot a = new Angebot(preis, menge);
+	    Absatzmarkt am = Umwelt.getAbsatz();
 
-	switch (s) {
-	case "GR":
-	    am.getGrosshandel().erstelleAngebot(spielerName, a);
-	    break;
-	case "KN":
-	    am.getKneipe().erstelleAngebot(spielerName, a);
-	    break;
-	case "SU":
-	    am.getSupermarktkette().erstelleAngebot(spielerName, a);
-	    break;
+	    switch (s) {
+	    case "GR":
+		am.getGrosshandel().erstelleAngebot(spielerName, a);
+		break;
+	    case "KN":
+		am.getKneipe().erstelleAngebot(spielerName, a);
+		break;
+	    case "SU":
+		am.getSupermarktkette().erstelleAngebot(spielerName, a);
+		break;
+	    }
 	}
+
     }
-    
-//FUNKTIONEN mit GUI
-    
+
+    // FUNKTIONEN mit GUI
+
     public void erstelleAngebotKneipe(double menge, double preis, int lagerpos)
     {
 	erstelleAngebotPos("KN", menge, preis, lagerpos);
     }
 
-    public void erstelleAngebotSupermarkt(double menge, double preis, int lagerpos)
+    public void erstelleAngebotSupermarkt(double menge, double preis,
+	    int lagerpos)
     {
 	erstelleAngebotPos("SU", menge, preis, lagerpos);
     }
 
-    public void erstelleAngebotGroﬂhandel(double menge, double preis, int lagerpos)
+    public void erstelleAngebotGroﬂhandel(double menge, double preis,
+	    int lagerpos)
     {
 	erstelleAngebotPos("GR", menge, preis, lagerpos);
     }
 
-    private void erstelleAngebotPos(String s, double menge, double preis, int lagerpos)
+    private void erstelleAngebotPos(String s, double menge, double preis,
+	    int lagerpos)
     {
 	String spielerName = getUnternehmen().getSpielerName();
 	Angebot a = new Angebot(preis, menge);
 	a.setLagerpos(lagerpos);
-	
+
 	Absatzmarkt am = Umwelt.getAbsatz();
 
 	switch (s) {
