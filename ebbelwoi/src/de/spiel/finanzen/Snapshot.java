@@ -39,6 +39,11 @@ public class Snapshot
     {
 	return aktiva.get("FE");
     }
+    public double getBankkonto()
+    {
+	return aktiva.get("BA");
+    }
+    
     public double getEKkonto()
     {
 	return passiva.get("EK");
