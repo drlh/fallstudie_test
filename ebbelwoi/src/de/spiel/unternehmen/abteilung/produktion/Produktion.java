@@ -56,31 +56,55 @@ public class Produktion extends Abteilung
     }
 
     // Maschinen
+    public void addMaschine(Maschine m)
+    {
+	if (getUnternehmen().getFinanzen().getKonten().getUV().get("BA")
+		.getKontostand() > m.getAnschaffungskosten()) {
+	    this.maschinenpark.add(m);
+	    getUnternehmen().getFinanzen().bucheEinkaufMaschine(
+		    m.getAnschaffungskosten());
+	}
+    }
+
     public void addM1()
     {
 	MaschineM1 m = new MaschineM1();
-	this.maschinenpark.add(m);
-	getUnternehmen().getFinanzen().bucheEinkaufMaschine(m.getAnschaffungskosten());
+	if (getUnternehmen().getFinanzen().getKonten().getUV().get("BA")
+		.getKontostand() > m.getAnschaffungskosten()) {
+	    this.maschinenpark.add(m);
+	    getUnternehmen().getFinanzen().bucheEinkaufMaschine(
+		    m.getAnschaffungskosten());
+	}
+
     }
 
     public void addM2()
     {
 	MaschineM2 m = new MaschineM2();
-	this.maschinenpark.add(m);
-	getUnternehmen().getFinanzen().bucheEinkaufMaschine(m.getAnschaffungskosten());
+	if (getUnternehmen().getFinanzen().getKonten().getUV().get("BA")
+		.getKontostand() > m.getAnschaffungskosten()) {
+	    this.maschinenpark.add(m);
+	    getUnternehmen().getFinanzen().bucheEinkaufMaschine(
+		    m.getAnschaffungskosten());
+	}
     }
 
     public void addM3()
     {
 	MaschineM3 m = new MaschineM3();
-	this.maschinenpark.add(m);
-	getUnternehmen().getFinanzen().bucheEinkaufMaschine(m.getAnschaffungskosten());
+	if (getUnternehmen().getFinanzen().getKonten().getUV().get("BA")
+		.getKontostand() > m.getAnschaffungskosten()) {
+	    this.maschinenpark.add(m);
+	    getUnternehmen().getFinanzen().bucheEinkaufMaschine(
+		    m.getAnschaffungskosten());
+	}
     }
-    
+
     public void verkaufeMaschine(int index)
     {
 	Maschine m = maschinenpark.get(index);
-	getUnternehmen().getFinanzen().bucheMaschinenverkauf(m.getAktuellerWert());
+	getUnternehmen().getFinanzen().bucheMaschinenverkauf(
+		m.getAktuellerWert());
 	this.maschinenpark.remove(index);
     }
 
@@ -89,7 +113,6 @@ public class Produktion extends Abteilung
     {
 	this.auftraege.add(new Produktionsauftrag(maschine, rohstoff));
     }
-    
 
     /**
      * Grundlage: 1kg Äpfel - 0,33l Apfelwein (Quelle:

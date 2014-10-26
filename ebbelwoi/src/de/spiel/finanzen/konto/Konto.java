@@ -13,6 +13,7 @@ public abstract class Konto
 	this.name = name;
 	this.haben = 0;
 	this.soll = 0;
+	this.type = this.getClass().getSimpleName();
     }
 
     public Konto(String name, double kontostand)

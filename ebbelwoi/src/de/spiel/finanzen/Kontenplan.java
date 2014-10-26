@@ -85,6 +85,7 @@ public class Kontenplan
 
 	AUFWAND = new Hashtable<>();
 	AUFWAND.put("AFA", new Aufwandskonto("Aufwand für Abschreibungen"));
+	AUFWAND.put("AFZ", new Aufwandskonto("Aufwand für Zinsen"));
 	AUFWAND.put("AGE", new Aufwandskonto("Aufwand für Gehalt"));
 	AUFWAND.put("ARS", new Aufwandskonto("Aufwand für Rohstoffe"));
 	AUFWAND.put("AMA", new Aufwandskonto("Aufwand für Maschinen"));

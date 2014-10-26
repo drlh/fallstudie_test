@@ -66,7 +66,8 @@ public class Finanzen extends Abteilung
     public void bucheStartguthaben()
     {
 	if (start) {
-	    this.getKonten().getUV().get("BA").sollBuchen(Spiel.STARTGUTHABEN);
+//	    this.getKonten().getUV().get("BA").sollBuchen(Spiel.STARTGUTHABEN);
+	    this.buchen("BA", "EK", 10000.0);
 	    start = false;
 	}
     }
@@ -85,12 +86,18 @@ public class Finanzen extends Abteilung
 	for (int i = 0; i < maUn.size(); i++) {
 	    ArrayList<Mitarbeiter> ma = maUn.get(i);
 
-	    for (int j = 0; j < ma.size(); j++) {
+	    try {
+		for (int j = 0; j < ma.size(); j++) {
 
-		double d = ma.get(i).getGehalt();
+		    double d = ma.get(i).getGehalt();
 
-		if (d > 0) this.buchen("AGE", "BA", d);
+		    if (d > 0) this.buchen("AGE", "BA", d);
+		}
+
+	    } catch (NullPointerException e) {
+		// TODO: handle exception
 	    }
+
 	}
     }
 
@@ -103,7 +110,7 @@ public class Finanzen extends Abteilung
 		.getMaschinenpark();
 
 	for (int i = 0; i < maschinen.size(); i++) {
-	    Maschine m =maschinen.get(i); 
+	    Maschine m = maschinen.get(i);
 	    double d = m.getAbschreibung();
 	    if (d > 0) {
 		this.buchen("AFA", "MA", d);
@@ -134,6 +141,7 @@ public class Finanzen extends Abteilung
 
 	if (kreditbetrag > 0) {
 	    double zinsAufwand = kreditbetrag * ((Spiel.KREDITZINS / 100) / 12);
+	    zinsAufwand = Math.floor((zinsAufwand * 100) + 0.5) / 100;
 	    this.buchen("AFZ", "BA", zinsAufwand);
 	}
     }
@@ -155,12 +163,12 @@ public class Finanzen extends Abteilung
     {
 	this.buchen("AMA", "BA", betrag);
     }
-    
+
     public void bucheMaschinenAnschaffung(double betrag)
     {
 	this.buchen("MA", "BA", betrag);
     }
-    
+
     public void bucheMaschinenverkauf(double betrag)
     {
 	this.buchen("BA", "MA", betrag);

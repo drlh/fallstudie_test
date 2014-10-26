@@ -32,6 +32,8 @@ public class Unternehmen
 	abteilung[2] = new Marketing();
 	abteilung[3] = new Produktion();
 	abteilung[4] = new Finanzen();
+	
+	getFinanzen().bucheStartguthaben();
     }
 
     // GETTER

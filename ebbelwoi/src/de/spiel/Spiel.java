@@ -147,11 +147,28 @@ public class Spiel
 	return runden.get(i);
     }
 
+    public void ersteRunde()
+    {
+	Spiel.runden.add(new Runde(spieler));
+
+    }
+
     public void neueRunde()
     {
-	this.getRunde(aktuelleRunde).beenden();
-	this.runden.add(new Runde(spieler));
+	rundeBeenden();
+	Spiel.runden.add(new Runde(spieler));
 	aktuelleRunde++;
+    }
+
+    private void rundeBeenden()
+    {
+	Spiel.runden.get(aktuelleRunde).beenden();
+    }
+
+    @Override
+    public String toString()
+    {
+	return "Spiel [getSpieler()=" + getSpieler() + "]";
     }
 
 }
