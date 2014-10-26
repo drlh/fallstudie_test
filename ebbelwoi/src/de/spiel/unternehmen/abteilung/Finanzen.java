@@ -7,6 +7,9 @@ import de.spiel.Spiel;
 import de.spiel.basic.Produkt;
 import de.spiel.basic.Rohstoff;
 import de.spiel.finanzen.*;
+import de.spiel.umwelt.Absatz;
+import de.spiel.umwelt.Absatzmarkt;
+import de.spiel.umwelt.Umwelt;
 import de.spiel.unternehmen.maschinen.Maschine;
 import de.spiel.unternehmen.mitarbeiter.Mitarbeiter;
 
@@ -54,8 +57,8 @@ public class Finanzen extends Abteilung
 	bilanzen.add(b);
     }
 
-// SPEZIFISCHE BUCHUNGEN
-//ERFOLGSWIRKSAM
+    // SPEZIFISCHE BUCHUNGEN
+    // ERFOLGSWIRKSAM
     /* Aufwand */
     /**
      * 
@@ -127,11 +130,11 @@ public class Finanzen extends Abteilung
 		.getKontostand();
 
 	if (kreditbetrag > 0) {
-	    double zinsAufwand = kreditbetrag * ((Spiel.KREDITZINS / 100)/12);
+	    double zinsAufwand = kreditbetrag * ((Spiel.KREDITZINS / 100) / 12);
 	    this.buchen("AFZ", "BA", zinsAufwand);
 	}
     }
-    
+
     /**
      * 
      * @param betrag
@@ -140,7 +143,7 @@ public class Finanzen extends Abteilung
     {
 	this.buchen("AFS", "BA", betrag);
     }
-    
+
     /**
      * 
      * @param betrag
@@ -149,18 +152,29 @@ public class Finanzen extends Abteilung
     {
 	this.buchen("AMA", "BA", betrag);
     }
-   
+
     /* Ertrag */
     /**
      * 
-     * @param betrag
      */
-    public void bucheUmsatz(double betrag)
+    public void bucheUmsatz()
     {
-	this.buchen("BA", "EUE", betrag);
+	String spielerName = getUnternehmen().getSpielerName();
+	Absatzmarkt am = Umwelt.getAbsatz();
+
+	Absatz kn, gh, su;
+	try {
+	    kn = am.getKneipe().getAbsatz().get(spielerName);
+	    gh = am.getGrosshandel().getAbsatz().get(spielerName);
+	    su = am.getSupermarktkette().getAbsatz().get(spielerName);
+
+	    this.buchen("BA", "EUE", kn.getUmsatz());
+	    this.buchen("BA", "EUE", gh.getUmsatz());
+	    this.buchen("BA", "EUE", su.getUmsatz());
+	} catch (NullPointerException e) {}
     }
-    
-//ERFOLGSNEUTRAL
+
+    // ERFOLGSNEUTRAL
     /**
      * 
      * @param betrag
@@ -169,7 +183,7 @@ public class Finanzen extends Abteilung
     {
 	this.buchen("RS", "BA", betrag);
     }
-    
+
     /**
      * 
      * @param betrag
@@ -178,7 +192,7 @@ public class Finanzen extends Abteilung
     {
 	this.buchen("MA", "BA", betrag);
     }
-    
+
     /**
      * 
      * @param betrag
@@ -188,57 +202,46 @@ public class Finanzen extends Abteilung
 	this.buchen("DA", "BA", betrag);
 
     }
-    
-//BESTÄNDE
-    /**
-     * 
-     * @param menge
-     */
-    public void bucheLagerAnfangsbestandRS(double menge)
-    {
-	double wert = menge * Spiel.EINKAUFSPREIS;
-	getUnternehmen().getFinanzen().getKonten().getUV().get("RS").sollBuchen(wert);
-    }
-    
+
+    // BESTÄNDE
     /**
      * 
      */
-    public void bucheLagerEndbestandRS()
+    public void bucheLagerAnfangsbestandRohstoffe()
     {
-	double bestand = 0.0;
-	ArrayList<Rohstoff> rs = getUnternehmen().getLager().getLagerlisteRohstoffe();
-	
-	for (int i = 0; i < rs.size(); i++) {
-	    bestand += rs.get(i).getMenge();
-	}
-	
-	double wert = bestand * Spiel.EINKAUFSPREIS;
-	getUnternehmen().getFinanzen().getKonten().getUV().get("RS").habenBuchen(wert);
+	double wert = getUnternehmen().getLager().getMengeRohstoffe()
+		* Spiel.EINKAUFSPREIS;
+	getKonten().getUV().get("RS").sollBuchen(wert);
     }
-    
+
     /**
      * 
-     * @param menge
      */
-    public void bucheLagerAnfangsbestandProdukt(double menge)
+    public void bucheLagerEndbestandRohstoffe()
     {
-	double wert = menge * Spiel.PRODUKT_BILANZWERT;
-	getUnternehmen().getFinanzen().getKonten().getUV().get("FE").sollBuchen(wert);
+	double wert = getUnternehmen().getLager().getMengeRohstoffe()
+		* Spiel.EINKAUFSPREIS;
+	getKonten().getUV().get("RS").habenBuchen(wert);
     }
-    
+
+    /**
+     * 
+     */
+    public void bucheLagerAnfangsbestandProdukt()
+    {
+	double wert = getUnternehmen().getLager().getMengeProdukte()
+		* Spiel.PRODUKT_BILANZWERT;
+	getKonten().getUV().get("FE").sollBuchen(wert);
+    }
+
     /**
      * 
      */
     public void bucheLagerEndbestandProdukt()
     {
-	double bestand = 0.0;
-	ArrayList<Produkt> p = getUnternehmen().getLager().getLagerlisteProdukt();
-	
-	for (int i = 0; i < p.size(); i++) {
-	    bestand += p.get(i).getMenge();
-	}
-	
-	double wert = bestand * Spiel.PRODUKT_BILANZWERT;
-	getUnternehmen().getFinanzen().getKonten().getUV().get("FE").habenBuchen(wert);
+	double wert = getUnternehmen().getLager().getMengeProdukte()
+		* Spiel.PRODUKT_BILANZWERT;
+	getKonten().getUV().get("FE").habenBuchen(wert);
     }
+
 }

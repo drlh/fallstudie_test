@@ -10,6 +10,8 @@ public class Unternehmen
     
     private Abteilung[] abteilung;
     private static Lager lager;
+    
+    public String spielerName = "";
 
     public Unternehmen()
     {
@@ -72,5 +74,15 @@ public class Unternehmen
     public Umwelt getUmwelt()
     {
 	return umwelt;
+    }
+    
+    public String getSpielerName()
+    {
+	return spielerName;
+    }
+    
+    public void setSpielerName(String spielerName)
+    {
+	this.spielerName = spielerName;
     }
 }

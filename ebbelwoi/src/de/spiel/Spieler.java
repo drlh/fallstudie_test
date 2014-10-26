@@ -9,14 +9,16 @@ public class Spieler
     
     public Spieler()
     {
-	this.name = "kein Name";
+	this.name = "kein Name"+((int) Math.random()*10000);
 	this.unternehmen = new Unternehmen();
+	this.unternehmen.setSpielerName(name);
     }
     
     public Spieler(String name)
     {
 	this.name = name;
 	this.unternehmen = new Unternehmen();
+	this.unternehmen.setSpielerName(name);
     }
 
     

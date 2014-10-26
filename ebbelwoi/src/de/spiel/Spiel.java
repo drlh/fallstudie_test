@@ -8,6 +8,7 @@ public class Spiel
     private static ArrayList<Runde> runden;
 
     public static int aktuelleRunde = 0;
+    public static String aktuellerSpielerName = "";
 
     //SPIELKONSTANTEN
     public final static double KREDITZINS = 3.8;

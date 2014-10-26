@@ -65,6 +65,28 @@ public class Lager
     {
 	lagerlisteRohstoffe.remove(arg0);
     }
+    
+    public double getMengeProdukte()
+    {
+	double d = 0.0;
+	
+	for (int i = 0; i < lagerlisteProdukt.size(); i++) {
+	    d += lagerlisteProdukt.get(i).getMenge();
+	}
+	
+	return d;
+    }
+    
+    public double getMengeRohstoffe()
+    {
+	double d = 0.0;
+	
+	for (int i = 0; i < lagerlisteRohstoffe.size(); i++) {
+	    d += lagerlisteRohstoffe.get(i).getMenge();
+	}
+	
+	return d;
+    }
 
     @Override
     public String toString()
