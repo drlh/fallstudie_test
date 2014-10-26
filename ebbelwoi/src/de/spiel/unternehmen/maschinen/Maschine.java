@@ -82,6 +82,7 @@ public abstract class Maschine
     // SETTER
     public void setMaschinenfuehrer(Mitarbeiter maschinenfuehrer)
     {
+	this.setBereit(true);
 	this.maschinenfuehrer = maschinenfuehrer;
     }
 

@@ -30,7 +30,7 @@ public class MaschineM3 extends Maschine
 	
 	this.kapazitaet = 1000000.0;
 	this.auswurf = 0.2;
-	this.maschinenfuehrer = null;
+	setMaschinenfuehrer(mitarbeiter);
 	
 	this.stufe = new MaschinenStufen();
     }

@@ -75,7 +75,7 @@ public class Produktion extends Abteilung
 			.getAuswurf();
 
 		double ausbringungsmenge = ((menge * (1 - (auswurf
-			- maschinenstufe - produktivitaetMa))) / 3);
+			- maschinenstufe - produktivitaetMa))) / (4/3));
 
 		// auf 2 Nachkommastellen runden
 		ausbringungsmenge = Math.floor(ausbringungsmenge * 100) / 100;
