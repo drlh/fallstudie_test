@@ -1,5 +1,7 @@
 package de.Junit;
 
+import java.util.Enumeration;
+
 import org.junit.*;
 
 import de.spiel.umwelt.*;
@@ -47,25 +49,30 @@ public class AbsatzTest {
 		
 		//tatsächliche Absätze werden geprüft
 		try {
-			/*absatz[0] = ab.getKneipe().getAbsatz().get("Spieler1");
-			absatz[1] = ab.getKneipe().getAbsatz().get("Spieler2");
-			absatz[2] = ab.getKneipe().getAbsatz().get("Spieler3");
-			absatz[3] = ab.getSupermarktkette().getAbsatz().get("Spieler2");
-			absatz[4] = ab.getSupermarktkette().getAbsatz().get("Spieler3");
-			
-			for (int i = 0; i < absatz.length; i++) {
-				if (absatz[i] != null) {
-					System.out.println(absatz[i].toString());
-				}				
-			}*/
 			System.out.println("Kneipe:\nAngebote:\n");
-			ab.getKneipe().getAngebote().toString();
+			Enumeration<String> enumkneipean = ab.getKneipe().getAngebote().keys();
+			while (enumkneipean.hasMoreElements()) {
+				String string = (String) enumkneipean.nextElement();
+				System.out.println(string);
+			}
 			System.out.println("\ntatsächliche Absätze:\n");
-			ab.getKneipe().getAbsatz().toString();
+			Enumeration<String> enumkneipeab = ab.getKneipe().getAbsatz().keys();
+			while (enumkneipeab.hasMoreElements()) {
+				String string = (String) enumkneipeab.nextElement();
+				System.out.println(string);
+			}
 			System.out.println("Supermarktkette:\nAngebote:\n");
-			ab.getSupermarktkette().getAngebote().toString();
+			Enumeration<String> enumsuperan = ab.getSupermarktkette().getAngebote().keys();
+			while (enumsuperan.hasMoreElements()) {
+				String string = (String) enumsuperan.nextElement();
+				System.out.println(string);
+			}
 			System.out.println("\ntatsächliche Absätze:\n");
-			ab.getSupermarktkette().getAbsatz().toString();
+			Enumeration<String> enumsuperab = ab.getSupermarktkette().getAbsatz().keys();
+			while (enumsuperab.hasMoreElements()) {
+				String string = (String) enumsuperab.nextElement();
+				System.out.println(string);
+			}
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
