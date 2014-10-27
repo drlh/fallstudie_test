@@ -51,6 +51,7 @@ public class RundenView extends javax.swing.JFrame implements
 		btnEinkaufEntlassen.addActionListener(this);
 		btnVerkaufEntlassen.addActionListener(this);
 		btnProduktionEntlassen.addActionListener(this);
+		btnMaschineAnschaffen.addActionListener(this);
 
 		lblEinkaufProdukt_beschriftung.setText(lblEinkaufProdukt_beschriftung
 				.getText() + " Boskoop");
@@ -964,12 +965,25 @@ public class RundenView extends javax.swing.JFrame implements
 
 	}
 
-	private int player = 0;
+	public int player = 0;
 
 	private void loadPlayerData(int player) {
 		loadBilanz(player);
 		loadMitarbeiterReiter(player);
+		loadMaschinenpark(player);
 		this.player = player;
+	}
+
+	private void loadMaschinenpark(int player) {
+		DefaultTableModel mod = (DefaultTableModel) tableProduktionMaschinen
+				.getModel();
+		mod.setRowCount(0);
+
+		int c = Spiel.getSpieler().get(player).getUnternehmen().getProduktion()
+				.getMaschinenpark().size();
+		for (int i = 0; i < c; i++) {
+			mod.addRow(new Object[] {"",Spiel.getSpieler().get(player).getUnternehmen().getProduktion().getMaschinenpark().get(i).getStufe(), Spiel.getSpieler().get(player).getUnternehmen().getProduktion().getMaschinenpark().get(i).getAbschreibungsdauer()});
+		}
 	}
 
 	private void loadBilanz(int player) {
@@ -1127,9 +1141,18 @@ public class RundenView extends javax.swing.JFrame implements
 			if (row != -1) {
 
 				Spiel.getSpieler().get(player).getUnternehmen().getProduktion()
-						.getMitarbeiterListe().remove(row); // geht nicht müsste differnzeiert für azubi geselle und meister eine funktion geben
+						.getMitarbeiterListe().remove(row); // geht nicht müsste
+															// differnzeiert für
+															// azubi geselle und
+															// meister eine
+															// funktion geben
 				loadPlayerData(player);
 			}
+		}
+		if (src.equals(btnMaschineAnschaffen)) {
+			AnschaffenView av = new AnschaffenView();
+			av.setVisible(true);
+			loadPlayerData(player);
 		}
 
 	}
