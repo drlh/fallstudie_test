@@ -91,7 +91,7 @@ public class Spiel {
 
 	public void nextSpieler() {
 		int i = getAktuelleRunde().getAktuellerSpielerNr();
-		if (i < spieler.size()) {
+		if (i < spieler.size()-1) {
 			getAktuelleRunde().setAktuellerSpielerNr(i + 1);
 			Spiel.aktuellerSpielerName = getAktuelleRunde()
 					.getAktuellerSpieler().getName();
