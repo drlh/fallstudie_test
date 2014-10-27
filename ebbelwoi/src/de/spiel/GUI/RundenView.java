@@ -5,7 +5,6 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 import javax.swing.ButtonGroup;
-import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JToggleButton;
 import javax.swing.event.ListSelectionEvent;
@@ -15,7 +14,9 @@ import javax.swing.table.DefaultTableModel;
 import de.spiel.Spiel;
 import de.spiel.finanzen.Snapshot;
 import de.spiel.unternehmen.Unternehmen;
+import de.spiel.unternehmen.abteilung.Einkauf;
 import de.spiel.unternehmen.mitarbeiter.Mitarbeiter;
+import de.spiel.unternehmen.mitarbeiter.Produktionsmitarbeiter;
 import de.spiel.unternehmen.mitarbeiter.Vertrieb;
 
 /**
@@ -26,12 +27,18 @@ public class RundenView extends javax.swing.JFrame implements
 		ListSelectionListener, ActionListener {
 
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
 	 * Creates new form RundenView
 	 */
 	public RundenView() {
 		initComponents();
 		tableEinkaufProd.getSelectionModel().addListSelectionListener(this);
 		tableVerkaufProd.getSelectionModel().addListSelectionListener(this);
+		btnEinkaufBeschaffungVornehmen.addActionListener(this);
 
 	}
 
@@ -265,7 +272,7 @@ public class RundenView extends javax.swing.JFrame implements
 				.setModel(new javax.swing.table.DefaultTableModel(
 						new Object[][] {
 
-						}, new String[] { "Mitarbeitertyp", "Details" }));
+						}, new String[] { "Name", "Typ", "Stufe" }));
 		scrlVerkaufMitarbeiter.setViewportView(tableVerkaufMitarbeiter);
 
 		tabMitVerkauf.add(scrlVerkaufMitarbeiter, java.awt.BorderLayout.CENTER);
@@ -314,7 +321,7 @@ public class RundenView extends javax.swing.JFrame implements
 				.setModel(new javax.swing.table.DefaultTableModel(
 						new Object[][] {
 
-						}, new String[] { "Mitarbeitertyp", "Details" }));
+						}, new String[] { "Name", "Typ", "Stufe" }));
 		scrlProduktionMitarbeiter.setViewportView(tableProduktionMitarbeiter);
 
 		tabMitProduktion.add(scrlProduktionMitarbeiter,
@@ -944,9 +951,12 @@ public class RundenView extends javax.swing.JFrame implements
 
 	}
 
+	private int player = 0;
+
 	private void loadPlayerData(int player) {
 		loadBilanz(player);
 		loadMitarbeiterReiter(player);
+		player = Spiel.getAktuelleRunde().getAktuellerSpielerNr();
 	}
 
 	private void loadBilanz(int player) {
@@ -969,45 +979,49 @@ public class RundenView extends javax.swing.JFrame implements
 
 		tableUebersichtBilanz.setModel(mod);
 	}
-	
-	private void loadMitarbeiterReiter(int player)
-	{
-		DefaultTableModel ek = (DefaultTableModel) tableEinkaufMitarbeiter.getModel();
+
+	private void loadMitarbeiterReiter(int player) {
+		DefaultTableModel ek = (DefaultTableModel) tableEinkaufMitarbeiter
+				.getModel();
 		ek.setRowCount(0);
-		
-		DefaultTableModel vk = (DefaultTableModel) tableVerkaufMitarbeiter.getModel();
+
+		DefaultTableModel vk = (DefaultTableModel) tableVerkaufMitarbeiter
+				.getModel();
 		vk.setRowCount(0);
-		
-		DefaultTableModel prod = (DefaultTableModel) tableProduktionMitarbeiter.getModel();
+
+		DefaultTableModel prod = (DefaultTableModel) tableProduktionMitarbeiter
+				.getModel();
 		prod.setRowCount(0);
-		
+
 		Unternehmen un = Spiel.getSpieler().get(player).getUnternehmen();
-		
+
 		ArrayList<ArrayList<Mitarbeiter>> maUn = new ArrayList<ArrayList<Mitarbeiter>>();
 
 		maUn.add(un.getEinkauf().getMitarbeiterListe());
 		maUn.add(un.getVerkauf().getMitarbeiterListe());
 		maUn.add(un.getProduktion().getMitarbeiterListe());
-		
-		
+
 		try {
-			for (int i = 0; i < maUn.get(0).size(); i++) 
-			{
+			for (int i = 0; i < maUn.get(0).size(); i++) {
 				Vertrieb v = (Vertrieb) maUn.get(0).get(i);
-				ek.addRow(Object[] {v.getName(), v.getClass().getSimpleName(), }); 
+				ek.addRow(new Object[] { v.getName(),
+						v.getClass().getSimpleName(), v.getStufe() });
 			}
-			for (int i = 0; i <  maUn.get(1).size(); i++) {
-				
+			for (int i = 0; i < maUn.get(1).size(); i++) {
+				Vertrieb e = (Vertrieb) maUn.get(1).get(i);
+				ek.addRow(new Object[] { e.getName(),
+						e.getClass().getSimpleName(), e.getStufe() });
 			}
-			for (int i = 0; i <  maUn.get(2).size(); i++) {
-				
+			for (int i = 0; i < maUn.get(2).size(); i++) {
+				Produktionsmitarbeiter p = (Produktionsmitarbeiter) maUn.get(2)
+						.get(i);
+				ek.addRow(new Object[] { p.getName(),
+						p.getClass().getSimpleName(), p.getStufe() });
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
 
-		
-		
 	}
 
 	@Override
@@ -1034,6 +1048,17 @@ public class RundenView extends javax.swing.JFrame implements
 			loadPlayerData(4);
 			return;
 		}
+		if (src.equals(btnEinkaufBeschaffungVornehmen)) {
+			Spiel.getSpieler()
+					.get(Spiel.getAktuelleRunde().getAktuellerSpielerNr())
+					.getUnternehmen()
+					.getEinkauf()
+					.einkaufenRohstoffe(
+							Integer.parseInt(txtEinkaufMenge.getText()));
+			loadPlayerData(player);
+			return;
+		}
 
 	}
+
 }
