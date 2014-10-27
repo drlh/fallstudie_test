@@ -4,6 +4,7 @@ public class Supermarktkette extends Kunde {
 
 	public Supermarktkette() {
 		super();
+		initKunde();
 	}
 
 	@Override
