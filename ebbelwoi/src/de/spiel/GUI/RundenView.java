@@ -2,11 +2,17 @@ package de.spiel.GUI;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
 import javax.swing.JToggleButton;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
@@ -42,6 +48,13 @@ public class RundenView extends javax.swing.JFrame implements
 		btnEinkaufEinstellen.addActionListener(this);
 		btnVerkaufEinstellen.addActionListener(this);
 		btnProduktionEinstellen.addActionListener(this);
+
+		lblEinkaufProdukt_beschriftung.setText(lblEinkaufProdukt_beschriftung
+				.getText() + " Boskoop");
+		txtEinkaufMenge.setText("0");
+		lblEinkaufGesamtPreis_beschriftung
+				.setText(lblEinkaufGesamtPreis_beschriftung.getText() + " "
+						+ "0.00");
 
 	}
 
@@ -927,20 +940,6 @@ public class RundenView extends javax.swing.JFrame implements
 	public void valueChanged(ListSelectionEvent e) {
 		Object src = e.getSource();
 
-		if (src.equals(tableVerkaufProd)) {
-			lblVerkaufProdukt.setText(tableVerkaufProd.getModel()
-					.getValueAt(tableVerkaufProd.getSelectedRow(), 0)
-					.toString());
-		}
-		if (src.equals(tableEinkaufProd)) {
-			lblEinkaufProdukt.setText(tableEinkaufProd.getModel()
-					.getValueAt(tableEinkaufProd.getSelectedRow(), 0)
-					.toString());
-			System.out.println(tableEinkaufProd.getModel()
-					.getValueAt(tableEinkaufProd.getSelectedRow(), 0)
-					.toString());
-		}
-
 	}
 
 	JToggleButton[] togglePlayer;
@@ -1063,16 +1062,7 @@ public class RundenView extends javax.swing.JFrame implements
 		} catch (Exception e1) {
 
 		}
-		if (src.equals(btnEinkaufBeschaffungVornehmen)) {
-			Spiel.getSpieler()
-					.get(player)
-					.getUnternehmen()
-					.getEinkauf()
-					.einkaufenRohstoffe(
-							Integer.parseInt(txtEinkaufMenge.getText()));
-			loadPlayerData(player);
-			return;
-		}
+
 		if (src.equals(btnEinkaufEinstellen)) {
 			Spiel.getSpieler().get(player).getUnternehmen().getEinkauf()
 					.addMitarbeiter();
@@ -1114,4 +1104,5 @@ public class RundenView extends javax.swing.JFrame implements
 		}
 
 	}
+
 }
