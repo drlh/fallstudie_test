@@ -48,6 +48,9 @@ public class RundenView extends javax.swing.JFrame implements
 		btnEinkaufEinstellen.addActionListener(this);
 		btnVerkaufEinstellen.addActionListener(this);
 		btnProduktionEinstellen.addActionListener(this);
+		btnEinkaufEntlassen.addActionListener(this);
+		btnVerkaufEntlassen.addActionListener(this);
+		btnProduktionEntlassen.addActionListener(this);
 
 		lblEinkaufProdukt_beschriftung.setText(lblEinkaufProdukt_beschriftung
 				.getText() + " Boskoop");
@@ -91,7 +94,7 @@ public class RundenView extends javax.swing.JFrame implements
 		tabMitProduktion = new javax.swing.JPanel();
 		panTabMitProduktionButtons = new javax.swing.JPanel();
 		btnProduktionEinstellen = new javax.swing.JButton();
-		btnProduktionEntlassen1 = new javax.swing.JButton();
+		btnProduktionEntlassen = new javax.swing.JButton();
 		scrlProduktionMitarbeiter = new javax.swing.JScrollPane();
 		tableProduktionMitarbeiter = new javax.swing.JTable();
 		tabEinkauf = new javax.swing.JPanel();
@@ -299,7 +302,7 @@ public class RundenView extends javax.swing.JFrame implements
 
 		btnProduktionEinstellen.setText("Einstellen");
 
-		btnProduktionEntlassen1.setText("Entlassen");
+		btnProduktionEntlassen.setText("Entlassen");
 
 		org.jdesktop.layout.GroupLayout panTabMitProduktionButtonsLayout = new org.jdesktop.layout.GroupLayout(
 				panTabMitProduktionButtons);
@@ -315,7 +318,7 @@ public class RundenView extends javax.swing.JFrame implements
 										.createParallelGroup(
 												org.jdesktop.layout.GroupLayout.LEADING)
 										.add(btnProduktionEinstellen)
-										.add(btnProduktionEntlassen1))
+										.add(btnProduktionEntlassen))
 								.addContainerGap(17, Short.MAX_VALUE)));
 		panTabMitProduktionButtonsLayout
 				.setVerticalGroup(panTabMitProduktionButtonsLayout
@@ -327,7 +330,7 @@ public class RundenView extends javax.swing.JFrame implements
 								.add(btnProduktionEinstellen)
 								.addPreferredGap(
 										org.jdesktop.layout.LayoutStyle.RELATED)
-								.add(btnProduktionEntlassen1)
+								.add(btnProduktionEntlassen)
 								.addContainerGap(471, Short.MAX_VALUE)));
 
 		tabMitProduktion.add(panTabMitProduktionButtons,
@@ -850,7 +853,7 @@ public class RundenView extends javax.swing.JFrame implements
 	private javax.swing.JButton btnMaschineAnschaffen;
 	private javax.swing.JButton btnMaschineVerkaufen;
 	private javax.swing.JButton btnProduktionEinstellen;
-	private javax.swing.JButton btnProduktionEntlassen1;
+	private javax.swing.JButton btnProduktionEntlassen;
 	private javax.swing.JButton btnProduzieren;
 	private javax.swing.JButton btnRundeBeenden;
 	private javax.swing.JButton btnVerkaufAngebotAbgeben;
@@ -1099,8 +1102,34 @@ public class RundenView extends javax.swing.JFrame implements
 				Spiel.getSpieler().get(player).getUnternehmen().getProduktion()
 						.addMeister();
 			}
+
 			loadPlayerData(player);
 			return;
+		}
+		if (src.equals(btnEinkaufEntlassen)) {
+			int row = tableEinkaufMitarbeiter.getSelectedRow();
+			if (row != -1) {
+				Spiel.getSpieler().get(player).getUnternehmen().getEinkauf()
+						.remove(row);
+				loadPlayerData(player);
+			}
+		}
+		if (src.equals(btnVerkaufEntlassen)) {
+			int row = tableVerkaufMitarbeiter.getSelectedRow();
+			if (row != -1) {
+				Spiel.getSpieler().get(player).getUnternehmen().getVerkauf()
+						.remove(row);
+				loadPlayerData(player);
+			}
+		}
+		if (src.equals(btnProduktionEntlassen)) {
+			int row = tableProduktionMaschinen.getSelectedRow();
+			if (row != -1) {
+
+				Spiel.getSpieler().get(player).getUnternehmen().getProduktion()
+						.remove(row);
+				loadPlayerData(player);
+			}
 		}
 
 	}
