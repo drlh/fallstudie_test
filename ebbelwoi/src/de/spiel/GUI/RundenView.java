@@ -39,6 +39,9 @@ public class RundenView extends javax.swing.JFrame implements
 		tableEinkaufProd.getSelectionModel().addListSelectionListener(this);
 		tableVerkaufProd.getSelectionModel().addListSelectionListener(this);
 		btnEinkaufBeschaffungVornehmen.addActionListener(this);
+		btnEinkaufEinstellen.addActionListener(this);
+		btnVerkaufEinstellen.addActionListener(this);
+		btnProduktionEinstellen.addActionListener(this);
 
 	}
 
@@ -956,7 +959,7 @@ public class RundenView extends javax.swing.JFrame implements
 	private void loadPlayerData(int player) {
 		loadBilanz(player);
 		loadMitarbeiterReiter(player);
-		player = Spiel.getAktuelleRunde().getAktuellerSpielerNr();
+		this.player = player;
 	}
 
 	private void loadBilanz(int player) {
@@ -1009,13 +1012,13 @@ public class RundenView extends javax.swing.JFrame implements
 			}
 			for (int i = 0; i < maUn.get(1).size(); i++) {
 				Vertrieb e = (Vertrieb) maUn.get(1).get(i);
-				ek.addRow(new Object[] { e.getName(),
+				vk.addRow(new Object[] { e.getName(),
 						e.getClass().getSimpleName(), e.getStufe() });
 			}
 			for (int i = 0; i < maUn.get(2).size(); i++) {
 				Produktionsmitarbeiter p = (Produktionsmitarbeiter) maUn.get(2)
 						.get(i);
-				ek.addRow(new Object[] { p.getName(),
+				prod.addRow(new Object[] { p.getName(),
 						p.getClass().getSimpleName(), p.getStufe() });
 			}
 		} catch (Exception e) {
@@ -1028,29 +1031,33 @@ public class RundenView extends javax.swing.JFrame implements
 	public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();
 
-		if (src.equals(togglePlayer[0])) {
-			loadPlayerData(0);
-			return;
-		}
-		if (src.equals(togglePlayer[1])) {
-			loadPlayerData(1);
-			return;
-		}
-		if (src.equals(togglePlayer[2])) {
-			loadPlayerData(2);
-			return;
-		}
-		if (src.equals(togglePlayer[3])) {
-			loadPlayerData(3);
-			return;
-		}
-		if (src.equals(togglePlayer[4])) {
-			loadPlayerData(4);
-			return;
+		try {
+			if (src.equals(togglePlayer[0])) {
+				loadPlayerData(0);
+				return;
+			}
+			if (src.equals(togglePlayer[1])) {
+				loadPlayerData(1);
+				return;
+			}
+			if (src.equals(togglePlayer[2])) {
+				loadPlayerData(2);
+				return;
+			}
+			if (src.equals(togglePlayer[3])) {
+				loadPlayerData(3);
+				return;
+			}
+			if (src.equals(togglePlayer[4])) {
+				loadPlayerData(4);
+				return;
+			}
+		} catch (Exception e1) {
+
 		}
 		if (src.equals(btnEinkaufBeschaffungVornehmen)) {
 			Spiel.getSpieler()
-					.get(Spiel.getAktuelleRunde().getAktuellerSpielerNr())
+					.get(player)
 					.getUnternehmen()
 					.getEinkauf()
 					.einkaufenRohstoffe(
@@ -1058,7 +1065,45 @@ public class RundenView extends javax.swing.JFrame implements
 			loadPlayerData(player);
 			return;
 		}
+		if (src.equals(btnEinkaufEinstellen)) {
+			Spiel.getSpieler().get(player).getUnternehmen().getEinkauf()
+					.addMitarbeiter();
+			loadPlayerData(player);
+			return;
+		}
+		if (src.equals(btnVerkaufEinstellen)) {
+			Spiel.getSpieler().get(player).getUnternehmen().getVerkauf()
+					.addMitarbeiter();
+			loadPlayerData(player);
+			return;
+		}
+		if (src.equals(btnProduktionEinstellen)) {
+			String[] options = new String[3];
+			options[0] = "Auszubildender";
+			options[1] = "Geselle";
+			options[2] = "Meister";
+			int res = JOptionPane
+					.showOptionDialog(
+							this,
+							"Von welchem Typ soll der einzustellende Mitarbeiter sein?",
+							"Produktionsmitarbeiter einstellen", 0,
+							JOptionPane.INFORMATION_MESSAGE, null, options,
+							null);
+			if (res == 0) {
+				Spiel.getSpieler().get(player).getUnternehmen().getProduktion()
+						.addAzubi();
+			}
+			if (res == 1) {
+				Spiel.getSpieler().get(player).getUnternehmen().getProduktion()
+						.addGeselle();
+			}
+			if (res == 2) {
+				Spiel.getSpieler().get(player).getUnternehmen().getProduktion()
+						.addMeister();
+			}
+			loadPlayerData(player);
+			return;
+		}
 
 	}
-
 }
