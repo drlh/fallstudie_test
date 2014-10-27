@@ -1127,7 +1127,7 @@ public class RundenView extends javax.swing.JFrame implements
 			if (row != -1) {
 
 				Spiel.getSpieler().get(player).getUnternehmen().getProduktion()
-						.remove(row);
+						.getMitarbeiterListe().remove(row); // geht nicht müsste differnzeiert für azubi geselle und meister eine funktion geben
 				loadPlayerData(player);
 			}
 		}
