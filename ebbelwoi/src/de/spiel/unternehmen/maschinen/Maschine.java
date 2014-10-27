@@ -3,115 +3,113 @@ package de.spiel.unternehmen.maschinen;
 import de.spiel.basic.stufen.MaschinenStufen;
 import de.spiel.unternehmen.mitarbeiter.Mitarbeiter;
 
-public abstract class Maschine
-{
-    protected double anschaffungskosten;
-    protected int abschreibungsdauer;
-    protected double abschreibung;
-    protected double aktuellerWert;
-    protected double fixkosten;
+/**
+ * abstrakte Klasse Maschine
+ */
+public abstract class Maschine {
+	protected double anschaffungskosten;
+	protected int abschreibungsdauer;
+	protected double abschreibung;
+	protected double aktuellerWert;
+	protected double fixkosten;
 
-    protected double kapazitaet;
-    protected double auswurf;
-    protected Mitarbeiter maschinenfuehrer;
+	protected double kapazitaet;
+	protected double auswurf;
+	protected Mitarbeiter maschinenfuehrer;
 
-    private boolean bereit = false;
-    
-    private int anschaffungsrunde = 0;
+	private boolean bereit = false;
 
-    protected MaschinenStufen stufe;
+	private int anschaffungsrunde = 0;
 
-    public Maschine()
-    {
-	this.stufe = new MaschinenStufen();
-    }
+	protected MaschinenStufen stufe;
 
-    // GETTER
-    public double getAnschaffungskosten()
-    {
-	return anschaffungskosten;
-    }
+	/**
+	 * leerer Konstruktor
+	 */
+	public Maschine() {
+		this.stufe = new MaschinenStufen();
+	}
 
-    public int getAbschreibungsdauer()
-    {
-	return abschreibungsdauer;
-    }
+	// GETTER
+	public double getAnschaffungskosten() {
+		return anschaffungskosten;
+	}
 
-    public double getAbschreibung()
-    {
-	if (aktuellerWert - abschreibung >= 0) {
-	    return abschreibung;
-	} else
-	    return 0.0;
+	// GETTER
+	public int getAbschreibungsdauer() {
+		return abschreibungsdauer;
+	}
 
-    }
+	// GETTER
+	public double getAbschreibung() {
+		if (aktuellerWert - abschreibung >= 0) {
+			return abschreibung;
+		} else
+			return 0.0;
+	}
 
-    public double getAktuellerWert()
-    {
-	return aktuellerWert;
-    }
+	// GETTER
+	public double getAktuellerWert() {
+		return aktuellerWert;
+	}
 
-    public double getFixkosten()
-    {
-	return fixkosten;
-    }
+	// GETTER
+	public double getFixkosten() {
+		return fixkosten;
+	}
 
-    public double getKapazitaet()
-    {
-	return kapazitaet;
-    }
+	// GETTER
+	public double getKapazitaet() {
+		return kapazitaet;
+	}
 
-    public double getAuswurf()
-    {
-	return auswurf;
-    }
+	// GETTER
+	public double getAuswurf() {
+		return auswurf;
+	}
 
-    public Mitarbeiter getMaschinenfuehrer()
-    {
-	return maschinenfuehrer;
-    }
+	// GETTER
+	public Mitarbeiter getMaschinenfuehrer() {
+		return maschinenfuehrer;
+	}
 
-    public MaschinenStufen getStufe()
-    {
-	return stufe;
-    }
+	// GETTER
+	public MaschinenStufen getStufe() {
+		return stufe;
+	}
 
-    public boolean isBereit()
-    {
-	return bereit;
-    }
+	// GETTER
+	public boolean isBereit() {
+		return bereit;
+	}
 
-    // SETTER
-    public void setMaschinenfuehrer(Mitarbeiter maschinenfuehrer)
-    {
-	this.setBereit(true);
-	this.maschinenfuehrer = maschinenfuehrer;
-    }
+	// SETTER
+	public void setMaschinenfuehrer(Mitarbeiter maschinenfuehrer) {
+		this.setBereit(true);
+		this.maschinenfuehrer = maschinenfuehrer;
+	}
 
-    protected void setAktuellerWert(double aktuellerWert)
-    {
-	this.aktuellerWert = aktuellerWert;
-    }
+	// SETTER
+	protected void setAktuellerWert(double aktuellerWert) {
+		this.aktuellerWert = aktuellerWert;
+	}
 
-    public void setBereit(boolean bereit)
-    {
-	this.bereit = bereit;
-    }
+	// SETTER
+	public void setBereit(boolean bereit) {
+		this.bereit = bereit;
+	}
 
-    // OTHER
-    protected void calcAbschreibung()
-    {
-	this.abschreibung = (anschaffungskosten / abschreibungsdauer)/12;
-    }
+	// OTHER
+	protected void calcAbschreibung() {
+		this.abschreibung = (anschaffungskosten / abschreibungsdauer) / 12;
+	}
 
-    protected void calcFixkosten()
-    {
-	this.fixkosten = (0.15 * anschaffungskosten)/12;
-    }
+	protected void calcFixkosten() {
+		this.fixkosten = (0.15 * anschaffungskosten) / 12;
+	}
 
-    public void doAbschreibung()
-    {
-	setAktuellerWert(aktuellerWert - abschreibung);
-    }
+	public void doAbschreibung() {
+		setAktuellerWert(aktuellerWert - abschreibung);
+	}
 
 }
