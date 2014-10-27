@@ -168,7 +168,9 @@ public abstract class Kunde {
 			} else if (restNachfrage - angebote.get(bestesAngebot).getMenge() >= 0) {
 				double dif = (best.getMenge() - restNachfrage) + (-1);
 				restNachfrage += dif;
-				absatz.put(bestesAngebot, new Absatz(best));
+				Absatz a = new Absatz(best.getMenge(), best.getPreis());
+				a.setLagerpos(best.getLagerpos());
+				absatz.put(bestesAngebot, a);
 				spieler.remove(bestesAngebot);
 			}
 
