@@ -157,6 +157,7 @@ public class Produktion extends Abteilung {
 				// auf 2 Nachkommastellen runden
 				ausbringungsmenge = Math.floor(ausbringungsmenge * 100) / 100;
 
+				this.getLager().getLagerlisteRohstoffe().remove(auftraege.get(i).getVerwendeterRohsoff());
 				this.getLager().addProdukt(new Produkt(ausbringungsmenge));
 				System.out.println(ausbringungsmenge);
 			}
