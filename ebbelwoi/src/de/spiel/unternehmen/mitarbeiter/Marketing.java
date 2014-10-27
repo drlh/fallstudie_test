@@ -1,18 +1,24 @@
 package de.spiel.unternehmen.mitarbeiter;
 
-public class Marketing extends Mitarbeiter
-{
+/**
+ * Klasse für Marketing-Mitarbeiter, beerbt Mitarbeiter
+ */
+public class Marketing extends Mitarbeiter {
+	/**
+	 * leerer Konstruktor
+	 */
+	public Marketing() {
+		super();
+		setGehalt(1000);
+	}
 
-    public Marketing()
-    {
-	super();
-	setGehalt(1000);
-    }
-    
-    public Marketing(double gehalt)
-    {
-	super();
-	setGehalt(gehalt);
-    }
+	/**
+	 * Konstruktor mit Gehalt
+	 * @param gehalt
+	 */
+	public Marketing(double gehalt) {
+		super();
+		setGehalt(gehalt);
+	}
 
 }

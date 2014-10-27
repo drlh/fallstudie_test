@@ -1,16 +1,22 @@
 package de.spiel.unternehmen.mitarbeiter;
 
-public abstract class Produktionsmitarbeiter extends Mitarbeiter
-{
+/**
+ * abstrakte KLasse Produktionsmitarbeiter, beerbt Mitarbeiter
+ */
+public abstract class Produktionsmitarbeiter extends Mitarbeiter {
+	/**
+	 * leerer Konstruktor
+	 */
+	public Produktionsmitarbeiter() {
+		super();
+	}
 
-    public Produktionsmitarbeiter()
-    {
-	super();
-    }
-    
-    public Produktionsmitarbeiter(double gehalt)
-    {
-	super();
-	setGehalt(gehalt);
-    }
+	/**
+	 * Konstruktor mit Gehalt
+	 * @param gehalt
+	 */
+	public Produktionsmitarbeiter(double gehalt) {
+		super();
+		setGehalt(gehalt);
+	}
 }
