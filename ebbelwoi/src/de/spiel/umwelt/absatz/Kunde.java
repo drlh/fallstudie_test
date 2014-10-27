@@ -155,10 +155,12 @@ public abstract class Kunde
 		Absatz a = new Absatz(restNachfrage, best.getPreis());
 		a.setLagerpos(best.getLagerpos());
 		absatz.put(bestesAngebot, a);
+		
+		restNachfrage -= restNachfrage;
 		break;
 	    } else if (restNachfrage - angebote.get(bestesAngebot).getMenge() >= 0) {
 		double dif = (best.getMenge() - restNachfrage) + (-1);
-		restNachfrage -= dif;
+		restNachfrage += dif;
 		absatz.put(bestesAngebot, new Absatz(best));
 		spieler.remove(bestesAngebot);
 	    }
