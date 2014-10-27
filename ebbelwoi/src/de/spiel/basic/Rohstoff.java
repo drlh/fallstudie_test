@@ -85,4 +85,8 @@ public class Rohstoff {
 				+ qualitaet + "]";
 	}
 
+	public String getBezeichnung() {
+		return name;
+	}
+
 }

@@ -16,6 +16,7 @@ public class Produkt {
 
 	/**
 	 * Konstruktor mit Mengenangabe
+	 * 
 	 * @param menge
 	 */
 	public Produkt(double menge) {
@@ -26,6 +27,7 @@ public class Produkt {
 
 	/**
 	 * Konstruktor mit Mengen- und Qualitätsangabe
+	 * 
 	 * @param menge
 	 * @param qualitaet
 	 */
@@ -37,11 +39,12 @@ public class Produkt {
 
 	/**
 	 * GETTER für Menge abhängig von Qualitätsstufe
+	 * 
 	 * @return
 	 */
 	public double getMenge() {
 		int qualitaet = this.getQualitaet().getAktuelleStufe();
-		
+
 		switch (qualitaet) {
 		case 6:
 			return this.menge;
@@ -61,7 +64,7 @@ public class Produkt {
 
 	}
 
-	//SETTER
+	// SETTER
 	public void setMenge(double menge) {
 		this.menge = menge;
 	}
@@ -74,6 +77,10 @@ public class Produkt {
 	// SETTER
 	public void setQualitaet(int qualitaet) {
 		this.qualitaet.setAktuelleStufe(qualitaet);
+	}
+
+	public String getBezeichnung() {
+		return name;
 	}
 
 	@Override

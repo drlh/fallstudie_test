@@ -928,10 +928,10 @@ public class RundenView extends javax.swing.JFrame implements
 		Object src = e.getSource();
 
 		lblVerkaufProdukt.setText(tableVerkaufProd.getModel()
-				.getValueAt(tableVerkaufProd.getSelectedRow(), 0).toString());
+				.getValueAt(tableVerkaufProd.getSelectedRow()+1, 0).toString());
 
 		lblEinkaufProdukt.setText(tableEinkaufProd.getModel()
-				.getValueAt(tableEinkaufProd.getSelectedRow(), 0).toString());
+				.getValueAt(tableEinkaufProd.getSelectedRow()+1, 0).toString());
 
 	}
 
@@ -959,7 +959,37 @@ public class RundenView extends javax.swing.JFrame implements
 	private void loadPlayerData(int player) {
 		loadBilanz(player);
 		loadMitarbeiterReiter(player);
+		loadLager(player);
 		this.player = player;
+	}
+
+	private void loadLager(int player) {
+		DefaultTableModel modFE = (DefaultTableModel) tableLagerFE.getModel();
+		modFE.setRowCount(0);
+		int cFE = Spiel.getSpieler().get(player).getUnternehmen().getLager()
+				.getLagerlisteProdukt().size();
+		for (int i = 0; i < cFE; i++) {
+			modFE.addRow(new Object[] {
+					Spiel.getSpieler().get(player).getUnternehmen().getLager()
+							.getLagerlisteProdukt().get(i).getBezeichnung(),
+					Spiel.getSpieler().get(player).getUnternehmen().getLager()
+							.getLagerlisteProdukt().get(i).getMenge() });
+		}
+		tableLagerFE.setModel(modFE);
+
+		DefaultTableModel modR = (DefaultTableModel) tableLagerRohstoffe
+				.getModel();
+		modR.setRowCount(0);
+		int cR = Spiel.getSpieler().get(player).getUnternehmen().getLager()
+				.getLagerlisteRohstoffe().size();
+		for (int i = 0; i < cR; i++) {
+			modR.addRow(new Object[] {
+					Spiel.getSpieler().get(player).getUnternehmen().getLager()
+							.getLagerlisteRohstoffe().get(i).getBezeichnung(),
+					Spiel.getSpieler().get(player).getUnternehmen().getLager()
+							.getLagerlisteRohstoffe().get(i).getMenge() });
+		}
+		tableLagerRohstoffe.setModel(modR);
 	}
 
 	private void loadBilanz(int player) {
