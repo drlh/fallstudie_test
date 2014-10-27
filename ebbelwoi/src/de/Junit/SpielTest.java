@@ -41,46 +41,106 @@ public class SpielTest
 	Unternehmen aktuellerSpieler = Spiel.getAktuelleRunde().getAktuellerSpieler().getUnternehmen();
 	
 	//leo
+	/**
+	 * Miatrbeiter erstellen
+	 */
 	Azubi m11 = new Azubi();
+	/**
+	 * Maschine erstellen
+	 */
 	Maschine ma11 = new MaschineM1(m11);
 	
 	//Fabi
+	/**
+	 * Mitarbeiter erstellen
+	 */
 	Azubi m21 = new Azubi();
+	/**
+	 * Maschine erstellen
+	 */
 	Maschine ma21 = new MaschineM1(m21);
 	
 	
-	//LEO
+	// #### 	LEO		#####
+	/**
+	 * Mitarbeiter hinzufügen
+	 */
 	aktuellerSpieler.getProduktion().getMitarbeiterListe().add(m11);
+	/**
+	 * Maschinenführer zuweisen
+	 */
 	aktuellerSpieler.getProduktion().addMaschine(ma11);
 	
+	/**
+	 * Mitarbeiter im EK und VK hinzufügen
+	 */
 	aktuellerSpieler.getEinkauf().addMitarbeiter();
 	aktuellerSpieler.getVerkauf().addMitarbeiter();
 	
+	/**
+	 * Rohstoffeinkauf
+	 */
 	aktuellerSpieler.getEinkauf().einkaufenRohstoffe(1000);
 	
+	/**
+	 * Produktionsauftrag erstellen
+	 */
 	aktuellerSpieler.getProduktion().addAuftrag(ma11, aktuellerSpieler.getLager().getRohstoff(0));
+	/**
+	 * produzieren
+	 */
 	aktuellerSpieler.getProduktion().produzieren();
+	/**
+	 * Angebot erstellen
+	 */
 	double mengeS1 = aktuellerSpieler.getLager().getLagerlisteProdukt().get(0).getMenge();
 	aktuellerSpieler.getVerkauf().erstelleAngebotGroßhandel(mengeS1, 5.00, 0);
 	
+	/*
+	 * NÄCHSTER SPIELER
+	 */
 	s.nextSpieler();
-	//Fabi
+	
+	
+	
+	// ###		FABI 		###
+	/*
+	 * SPIELER AKTUALISIEREN
+	 */
 	aktuellerSpieler = Spiel.getAktuelleRunde().getAktuellerSpieler().getUnternehmen();
 	
 	aktuellerSpieler.getProduktion().getMitarbeiterListe().add(m21);
 	aktuellerSpieler.getProduktion().addMaschine(ma21);
 	
+	/**
+	 * Mitarbeiter im EK und VK hinzufügen
+	 */
 	aktuellerSpieler.getEinkauf().addMitarbeiter();
 	aktuellerSpieler.getVerkauf().addMitarbeiter();
 	
+	/**
+	 * Rohstoffeinkauf
+	 */
 	aktuellerSpieler.getEinkauf().einkaufenRohstoffe(1500);
 	
+	/**
+	 * Produktionsauftrag erstellen
+	 */
 	aktuellerSpieler.getProduktion().addAuftrag(ma11, aktuellerSpieler.getLager().getRohstoff(0));
+	/**
+	 * produzieren
+	 */
 	aktuellerSpieler.getProduktion().produzieren();
+	
+	/**
+	 * Angebot erstellen
+	 */
 	double mengeS2 = aktuellerSpieler.getLager().getLagerlisteProdukt().get(0).getMenge();
 	aktuellerSpieler.getVerkauf().erstelleAngebotGroßhandel(mengeS2, 4.00, 0);
 	
-	
+	/*
+	 * RUNDE WIRD BEENDET DA NUR 2 SPIELER VORHANDEN SIND
+	 */
 	s.nextSpieler();
     }
 
