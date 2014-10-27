@@ -1,7 +1,14 @@
 package de.spiel.umwelt.absatz;
 
+/**
+ * Klasse Kneipe, beerbt Kunde
+ * nimmt kleine Mengen ab
+ */
 public class Kneipe extends Kunde {
 
+	/**
+	 * leerer Konstruktor
+	 */
 	public Kneipe() {
 		super();
 		initKunde();

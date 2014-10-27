@@ -1,7 +1,14 @@
 package de.spiel.umwelt.beschaffung;
 
+/**
+ * Klasse Grosshaendler, beerbt Anbieter
+ * bietet große Mengen an Äpfeln an, jedoch nur mit guter Qualität
+ */
 public class Grosshaendler extends Anbieter {
 
+	/**
+	 * leerer Konstruktor
+	 */
 	public Grosshaendler() {
 		super();
 		stufe.setAktuelleStufe(defstufe);

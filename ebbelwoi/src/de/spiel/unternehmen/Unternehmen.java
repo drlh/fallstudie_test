@@ -4,90 +4,96 @@ import de.spiel.umwelt.Umwelt;
 import de.spiel.unternehmen.abteilung.*;
 import de.spiel.unternehmen.abteilung.produktion.*;
 
-public class Unternehmen
-{
-    private static Umwelt umwelt;
-    
-    private Abteilung[] abteilung;
-    private Lager lager;
-    
-    public String spielerName = "";
+/**
+ * Klasse für das Unternehmen, jeder Spieler erhält eines davon, unter anderen zentrales Objekt des Spiels
+ */
+public class Unternehmen {
+	private static Umwelt umwelt;
 
-    public Unternehmen()
-    {
-	initialisieren();
-    }
+	private Abteilung[] abteilung;
+	private Lager lager;
 
-    private void initialisieren()
-    {
-	umwelt = new Umwelt();
+	public String spielerName = "";
 
-	abteilung = new Abteilung[5];
-
-	lager = new Lager();
-
-	abteilung[0] = new Einkauf();
-	abteilung[1] = new Verkauf();
-	abteilung[2] = new Marketing();
-	abteilung[3] = new Produktion();
-	abteilung[4] = new Finanzen();
-	
-	for (int i = 0; i < abteilung.length; i++) {
-	    abteilung[i].setUnternehmen(this);
+	/**
+	 * leerer Konstruktor
+	 */
+	public Unternehmen() {
+		initialisieren();
 	}
-	
-	getFinanzen().bucheStartguthaben();
-    }
 
-    // GETTER
-    public Einkauf getEinkauf()
-    {
-	return (Einkauf) abteilung[0];
-    }
+	/**
+	 * Initialisierung des Unternehmens
+	 */
+	private void initialisieren() {
+		umwelt = new Umwelt();
 
-    public Verkauf getVerkauf()
-    {
-	return (Verkauf) abteilung[1];
-    }
+		abteilung = new Abteilung[5];
 
-    public Marketing getMarketing()
-    {
-	return (Marketing) abteilung[2];
-    }
+		lager = new Lager();
 
-    public Produktion getProduktion()
-    {
-	return (Produktion) abteilung[3];
-    }
+		abteilung[0] = new Einkauf();
+		abteilung[1] = new Verkauf();
+		abteilung[2] = new Marketing();
+		abteilung[3] = new Produktion();
+		abteilung[4] = new Finanzen();
 
-    public Finanzen getFinanzen()
-    {
-	return (Finanzen) abteilung[4];
-    }
+		for (int i = 0; i < abteilung.length; i++) {
+			abteilung[i].setUnternehmen(this);
+		}
 
-    public Lager getLager()
-    {
-	return lager;
-    }
+		getFinanzen().bucheStartguthaben();
+	}
 
-    public Abteilung getAbteilung(int nr)
-    {
-	if (nr > 4) return null;
-	return abteilung[nr];
-    }
+	// GETTER
+	public Einkauf getEinkauf() {
+		return (Einkauf) abteilung[0];
+	}
 
-    public Umwelt getUmwelt()
-    {
-	return umwelt;
-    }
-    
-    public String getSpielerName()
-    {
-	return spielerName;
-    }
-    
-    public void setSpielerName(String spielerName)
-    {
-	this.spielerName = spielerName;
-    }
+	// GETTER
+	public Verkauf getVerkauf() {
+		return (Verkauf) abteilung[1];
+	}
+
+	// GETTER
+	public Marketing getMarketing() {
+		return (Marketing) abteilung[2];
+	}
+
+	// GETTER
+	public Produktion getProduktion() {
+		return (Produktion) abteilung[3];
+	}
+
+	// GETTER
+	public Finanzen getFinanzen() {
+		return (Finanzen) abteilung[4];
+	}
+
+	// GETTER
+	public Lager getLager() {
+		return lager;
+	}
+
+	// GETTER
+	public Abteilung getAbteilung(int nr) {
+		if (nr > 4)
+			return null;
+		return abteilung[nr];
+	}
+
+	// GETTER
+	public Umwelt getUmwelt() {
+		return umwelt;
+	}
+
+	// GETTER
+	public String getSpielerName() {
+		return spielerName;
+	}
+
+	// SETTER
+	public void setSpielerName(String spielerName) {
+		this.spielerName = spielerName;
+	}
 }

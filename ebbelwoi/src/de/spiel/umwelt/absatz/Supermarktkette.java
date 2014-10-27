@@ -1,7 +1,14 @@
 package de.spiel.umwelt.absatz;
 
+/**
+ * Klasse Supermarktkette, beerbt Kunde
+ * nimmt große Mengen ab
+ */
 public class Supermarktkette extends Kunde {
 
+	/**
+	 * leerer Konstruktor
+	 */
 	public Supermarktkette() {
 		super();
 		initKunde();

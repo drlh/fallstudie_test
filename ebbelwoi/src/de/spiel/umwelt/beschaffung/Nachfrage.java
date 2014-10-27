@@ -1,18 +1,21 @@
 package de.spiel.umwelt.beschaffung;
 
-import de.spiel.basic.Produkt;
+/**
+ * Klasse Nachfrage
+ */
+public class Nachfrage {
+	private double menge;
 
-public class Nachfrage
-{
-    private double menge;
+	/**
+	 * Konstruktor mit Mengenangabe
+	 * @param menge
+	 */
+	public Nachfrage(double menge) {
+		this.menge = menge;
+	}
 
-    public Nachfrage(double menge)
-    {
-	this.menge = menge;
-    }
-
-    public double getMenge()
-    {
-	return menge;
-    }
+	// GETTER
+	public double getMenge() {
+		return menge;
+	}
 }
