@@ -1,11 +1,5 @@
 package de.spiel.GUI;
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
-package mockgui;
 
 import de.spiel.Spiel;
 import de.spiel.unternehmen.maschinen.Maschine;
@@ -152,7 +146,7 @@ public class AnschaffenView extends javax.swing.JFrame {
     ///CODE
     
     private void btnAnschaffungMaschineAnschaffenActionPerformed(java.awt.event.ActionEvent evt) {                                                                 
-        int select = comboAnschaffenMaschine.getSelectedIndex();
+      /*  int select = comboAnschaffenMaschine.getSelectedIndex();
         int player = Spiel.getAktuelleRunde().getAktuellerSpielerNr();
         switch (select) {
 		case 0:
@@ -167,11 +161,11 @@ public class AnschaffenView extends javax.swing.JFrame {
 
 		default:
 			break;
-		}
+		}*/
         this.setVisible(false);
     }                                                                
 
     private void comboAnschaffenMaschineActionPerformed(java.awt.event.ActionEvent evt) {                                                        
         // TODO add your handling code here:
-    }   s
+    }   
 }

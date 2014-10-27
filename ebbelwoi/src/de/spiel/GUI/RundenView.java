@@ -982,7 +982,7 @@ public class RundenView extends javax.swing.JFrame implements
 		int c = Spiel.getSpieler().get(player).getUnternehmen().getProduktion()
 				.getMaschinenpark().size();
 		for (int i = 0; i < c; i++) {
-			mod.addRow(new Object[] {"",Spiel.getSpieler().get(player).getUnternehmen().getProduktion().getMaschinenpark().get(i).getStufe(), Spiel.getSpieler().get(player).getUnternehmen().getProduktion().getMaschinenpark().get(i).getAbschreibungsdauer()});
+			mod.addRow(new Object[] {"Maschine",Spiel.getSpieler().get(player).getUnternehmen().getProduktion().getMaschinenpark().get(i).getStufe(), Spiel.getSpieler().get(player).getUnternehmen().getProduktion().getMaschinenpark().get(i).getAbschreibungsdauer()});
 		}
 	}
 
