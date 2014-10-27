@@ -159,7 +159,7 @@ public class Produktion extends Abteilung {
 
 				this.getLager().getLagerlisteRohstoffe().remove(auftraege.get(i).getVerwendeterRohsoff());
 				this.getLager().addProdukt(new Produkt(ausbringungsmenge));
-				System.out.println(ausbringungsmenge);
+				System.out.println("Produzierte Menge:"+ausbringungsmenge);
 			}
 
 		}

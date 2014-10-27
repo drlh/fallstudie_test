@@ -49,7 +49,7 @@ public class AbsatzTest {
 		
 		//tatsächliche Absätze werden geprüft
 		try {
-			System.out.println("Kneipe:\nverfügbares Volumen:\n" + ab.getKneipe().getMenge() + "\nAngebote:\n");
+			System.out.println("###\t\tKneipe:\t\t###\nverfügbares Volumen:\n" + ab.getKneipe().getMenge() + "\nAngebote:\n");
 			Enumeration<String> enumkneipean = ab.getKneipe().getAngebote().keys();
 			while (enumkneipean.hasMoreElements()) {
 				String string = (String) enumkneipean.nextElement();
@@ -64,7 +64,7 @@ public class AbsatzTest {
 				double umsatz = ab.getKneipe().getAbsatz().get(string).getUmsatz();
 				System.out.println(string + " Umsatz: " + umsatz + "€");
 			}
-			System.out.println("\nSupermarktkette:\nverfügbares Volumen:\n" + ab.getSupermarktkette().getMenge() + "\nAngebote:\n");
+			System.out.println("\n###\t\tSupermarktkette:\t\t###\nverfügbares Volumen:\n" + ab.getSupermarktkette().getMenge() + "\nAngebote:\n");
 			Enumeration<String> enumsuperan = ab.getSupermarktkette().getAngebote().keys();
 			while (enumsuperan.hasMoreElements()) {
 				String string = (String) enumsuperan.nextElement();

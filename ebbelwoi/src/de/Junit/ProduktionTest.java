@@ -30,6 +30,7 @@ public class ProduktionTest {
 
 	@Test
 	public void test() throws AssertionError {
+	    	System.out.println("###\t\tProduktion\t\t###");
 		/**
 		 * Schulung des Azubis, Zuweisung des Azubi zur Produktion, Prüfung 
 		 */
@@ -45,15 +46,16 @@ public class ProduktionTest {
 		MaschineM1 m1 = new MaschineM1(ma);
 		p.getMaschinenpark().add(m1);
 		assertEquals(1, p.getMitarbeiterListe().size());
-		System.out.println(p.getMitarbeiterListe());
+		System.out.println("Eingestellte Mitarbeiter:\n"+p.getMitarbeiterListe()+"\n");
 		
 		/**
 		 * Rohstoff erzeugen, Produktionsauftrag hinzufügen mit m1 und Rohstoff, Produktion anlaufen lassen
 		 */
 		Rohstoff r = new Rohstoff(100.0);
-		System.out.println(r.toString());
+		System.out.println(r.toString()+"\n");
 		p.addAuftrag(m1, r);
 		p.produzieren();
+		System.out.println();
 		
 		// Ergebnis ausgeben
 		System.out.println(p.getLager().toString());
