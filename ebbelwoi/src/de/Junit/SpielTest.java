@@ -26,8 +26,8 @@ public class SpielTest
 	eins = new Spieler("leo");
 	zwei = new Spieler("fabian");
 	
-	s.add(eins, 30000.0);
-	s.add(zwei, 20000.0);
+	s.add(eins, 50000.0);
+	s.add(zwei, 50000.0);
 	
 	System.out.println(s);
     }
@@ -60,7 +60,7 @@ public class SpielTest
 	
 	aktuellerSpieler.getProduktion().addAuftrag(ma11, aktuellerSpieler.getLager().getRohstoff(0));
 	aktuellerSpieler.getProduktion().produzieren();
-	double mengeS1 = aktuellerSpieler.getLager().getLagerlisteRohstoffe().get(0).getMenge();
+	double mengeS1 = aktuellerSpieler.getLager().getLagerlisteProdukt().get(0).getMenge();
 	aktuellerSpieler.getVerkauf().erstelleAngebotGroﬂhandel(mengeS1, 5.00, 0);
 	
 	s.nextSpieler();
@@ -77,7 +77,7 @@ public class SpielTest
 	
 	aktuellerSpieler.getProduktion().addAuftrag(ma11, aktuellerSpieler.getLager().getRohstoff(0));
 	aktuellerSpieler.getProduktion().produzieren();
-	double mengeS2 = aktuellerSpieler.getLager().getLagerlisteRohstoffe().get(0).getMenge();
+	double mengeS2 = aktuellerSpieler.getLager().getLagerlisteProdukt().get(0).getMenge();
 	aktuellerSpieler.getVerkauf().erstelleAngebotGroﬂhandel(mengeS2, 4.00, 0);
 	
 	
